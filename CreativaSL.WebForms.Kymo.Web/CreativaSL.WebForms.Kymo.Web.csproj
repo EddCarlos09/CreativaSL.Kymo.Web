@@ -74,6 +74,7 @@
     <Content Include="frmErrorPage.aspx" />
     <Content Include="frmGit.aspx" />
     <Content Include="frmGitKM.aspx" />
+    <Content Include="frmPruebaRR.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="frmGitKM.aspx.designer.cs">
       <DependentUpon>frmGitKM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmPruebaRR.aspx.cs">
+      <DependentUpon>frmPruebaRR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmPruebaRR.aspx.designer.cs">
+      <DependentUpon>frmPruebaRR.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmTest.aspx.cs">
       <DependentUpon>frmTest.aspx</DependentUpon>
