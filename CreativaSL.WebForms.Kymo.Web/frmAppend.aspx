@@ -11,14 +11,24 @@
 <body>
     <form id="form1" runat="server">
     <h2>Greetings</h2>
-        
+        <div class="container">            
             <div class="inner"></div>
-            <div class="inner"></div>
-        
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="inner2"></div>
+        </div>
     </form>
     <script>
-        $(".inner").append("<p>Test</p>");
+        "<%for(int i = 0; i< Lista.Count; i++){%>"        
+
+        datoo = "<%=Lista[i].Nombre%>";      
+        $(".inner2").append("<p>" + datoo + "</p>");        
+      
+        "<% } %>"
+        
+        
     </script>
-</body>
-    
+</body>    
 </html>
