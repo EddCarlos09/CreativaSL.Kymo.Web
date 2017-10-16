@@ -70,7 +70,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="frmDefault.aspx" />
     <Content Include="frmErrorPage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
@@ -91,13 +90,6 @@
   <ItemGroup>
     <Compile Include="CustomIdentity.cs" />
     <Compile Include="CustomPrincipal.cs" />
-    <Compile Include="frmDefault.aspx.cs">
-      <DependentUpon>frmDefault.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="frmDefault.aspx.designer.cs">
-      <DependentUpon>frmDefault.aspx</DependentUpon>
-    </Compile>
     <Compile Include="frmErrorPage.aspx.cs">
       <DependentUpon>frmErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
