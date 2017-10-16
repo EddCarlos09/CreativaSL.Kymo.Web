@@ -73,7 +73,6 @@
     <Content Include="expenses.aspx" />
     <Content Include="frmErrorPage.aspx" />
     <Content Include="frmGit.aspx" />
-    <Content Include="frmGitKM.aspx" />
     <Content Include="frmPrueba2.aspx" />
     <Content Include="frmPruebaRR.aspx" />
     <Content Include="Login.aspx" />
@@ -117,13 +116,6 @@
     </Compile>
     <Compile Include="frmGit.aspx.designer.cs">
       <DependentUpon>frmGit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="frmGitKM.aspx.cs">
-      <DependentUpon>frmGitKM.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="frmGitKM.aspx.designer.cs">
-      <DependentUpon>frmGitKM.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmPrueba2.aspx.cs">
       <DependentUpon>frmPrueba2.aspx</DependentUpon>
