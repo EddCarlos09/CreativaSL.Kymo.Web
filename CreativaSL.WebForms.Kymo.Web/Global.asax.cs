@@ -40,6 +40,10 @@ namespace CreativaSL.WebForms.Kymo.Web
                 "ErrorPage",
                 "~/frmErrorPage.aspx");
 
+            routes.MapPageRoute("",
+                "Home",
+                "~/frmDefault.aspx");
+
             //routes.MapPageRoute("",
             //    "Prueba/{op}/{id}",
             //    "~/frmTestUrl.aspx");
