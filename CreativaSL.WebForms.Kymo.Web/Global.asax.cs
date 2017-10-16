@@ -32,33 +32,33 @@ namespace CreativaSL.WebForms.Kymo.Web
                 "Login/{*ReturnUrl}",
                 "~/Login.aspx");
 
-            routes.MapPageRoute("",
-                "Test",
-                "~/frmTest.aspx");
+            //routes.MapPageRoute("",
+            //    "Test",
+            //    "~/frmTest.aspx");
 
             routes.MapPageRoute("",
                 "ErrorPage",
                 "~/frmErrorPage.aspx");
 
-            routes.MapPageRoute("",
-                "Prueba/{op}/{id}",
-                "~/frmTestUrl.aspx");
+            //routes.MapPageRoute("",
+            //    "Prueba/{op}/{id}",
+            //    "~/frmTestUrl.aspx");
 
-            routes.MapPageRoute("",
-                "SalesReportSummary/{year}",
-                "~/sales.aspx");
-            routes.MapPageRoute("SalesRoute",
-                "SalesReport/{locale}/{year}",
-                "~/sales.aspx");
-            routes.MapPageRoute("ExpensesRoute",
-                "ExpenseReport/{locale}/{year}/{*extrainfo}",
-                "~/expenses.aspx", true,
-                new RouteValueDictionary {
-                    { "locale", "US" },
-                    { "year", DateTime.Now.Year.ToString() } },
-                new RouteValueDictionary {
-                    { "locale", "[a-z]{2}" },
-                    { "year", @"\d{4}" } });
+            //routes.MapPageRoute("",
+            //    "SalesReportSummary/{year}",
+            //    "~/sales.aspx");
+            //routes.MapPageRoute("SalesRoute",
+            //    "SalesReport/{locale}/{year}",
+            //    "~/sales.aspx");
+            //routes.MapPageRoute("ExpensesRoute",
+            //    "ExpenseReport/{locale}/{year}/{*extrainfo}",
+            //    "~/expenses.aspx", true,
+            //    new RouteValueDictionary {
+            //        { "locale", "US" },
+            //        { "year", DateTime.Now.Year.ToString() } },
+            //    new RouteValueDictionary {
+            //        { "locale", "[a-z]{2}" },
+            //        { "year", @"\d{4}" } });
         }
 
         void Application_OnPostAuthenticateRequest(object sender, EventArgs e)
