@@ -5,18 +5,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>    
+    <title></title>   
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="inner">
-        Hey!        
-    </div>
-        <script>
+    <h2>Greetings</h2>
+        
+            <div class="inner"></div>
+            <div class="inner"></div>
+        
+    </form>
+    <script>
         $(".inner").append("<p>Test</p>");
     </script>
-    </form>
-    
 </body>
     
 </html>
