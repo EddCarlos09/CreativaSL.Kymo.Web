@@ -779,7 +779,7 @@ CSS INDEX
     text-align: center;
 }
 .breadcumb-area {
-    background: rgba(0, 0, 0, 0) url("../images/bg/breadcumb.jpg") no-repeat scroll 0 0;
+    /*background: rgba(0, 0, 0, 0) url("../images/bg/breadcumb.jpg") no-repeat scroll 0 0;*/
     min-height: 245px;
 }
 .bread-main {
@@ -2055,6 +2055,9 @@ input.sbumit-btn {
     overflow: hidden;
 }
 .contact-us-2 .contact-text span {
+    width: 100%;
+}
+.contact-us-3 .contact-text span {
     width: 100%;
 }
 .contact-us-2 .contact-info .contact-info i {

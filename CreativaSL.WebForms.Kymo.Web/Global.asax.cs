@@ -16,9 +16,14 @@ namespace CreativaSL.WebForms.Kymo.Web
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["strConnection"];
-            Comun.Conexion = settings.ConnectionString;
-            RegisterCustomRoutes(RouteTable.Routes);
+            try
+            {
+                ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["strConnection"];
+                Comun.Conexion = settings.ConnectionString;
+                RegisterCustomRoutes(RouteTable.Routes);
+            }
+            catch(Exception)
+            { }
         }
 
         void RegisterCustomRoutes(RouteCollection routes)
@@ -43,6 +48,26 @@ namespace CreativaSL.WebForms.Kymo.Web
             routes.MapPageRoute("",
                 "Home",
                 "~/frmDefault.aspx");
+
+            routes.MapPageRoute("",
+                "ContactUs",
+                "~/frmContactanos.aspx");
+
+            routes.MapPageRoute("",
+                "Product/{id}",
+                "~/frmProducto.aspx");
+
+            routes.MapPageRoute("",
+                "AboutUs",
+                "~/frmNosotros.aspx");
+
+            routes.MapPageRoute("",
+                "FAQ",
+                "~/frmFAQ.aspx");
+
+            routes.MapPageRoute("",
+                "Products/{tipo}",
+                "~/frmProductos.aspx");
 
             //routes.MapPageRoute("",
             //    "Prueba/{op}/{id}",

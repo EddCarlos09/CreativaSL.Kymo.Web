@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD820453-91D9-4347-AD37-81CC21162283}</ProjectGuid>
+    <ProjectGuid>{620DA5BE-93B2-4285-AFEE-FB9BDFB2D050}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CreativaSL.Dll.Kymo.Global</RootNamespace>
-    <AssemblyName>CreativaSL.Dll.Kymo.Global</AssemblyName>
+    <RootNamespace>CreativaSL.Dll.Kymo.Negocio</RootNamespace>
+    <AssemblyName>CreativaSL.Dll.Kymo.Negocio</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -41,18 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CH_Configuracion.cs" />
-    <Compile Include="CH_Contacto.cs" />
-    <Compile Include="CH_Imagen.cs" />
-    <Compile Include="CH_Nosotros.cs" />
-    <Compile Include="CH_RedesSociales.cs" />
-    <Compile Include="CH_SeccionA.cs" />
-    <Compile Include="CH_SeccionB.cs" />
-    <Compile Include="CH_SeccionC.cs" />
-    <Compile Include="CH_Textos.cs" />
-    <Compile Include="Comun.cs" />
-    <Compile Include="DatosUserJson.cs" />
+    <Compile Include="CH_ConfiguracionNegocio.cs" />
+    <Compile Include="CH_ContactoNegocio.cs" />
+    <Compile Include="CH_NosotrosNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CreativaSL.Dll.Kymo.Datos\CreativaSL.Dll.Kymo.Datos.csproj">
+      <Project>{d3d1d1dc-367a-42ed-a5b0-3f631fc8f558}</Project>
+      <Name>CreativaSL.Dll.Kymo.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CreativaSL.Dll.Kymo.Global\CreativaSL.Dll.Kymo.Global.csproj">
+      <Project>{ad820453-91d9-4347-ad37-81cc21162283}</Project>
+      <Name>CreativaSL.Dll.Kymo.Global</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
