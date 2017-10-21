@@ -5,30 +5,23 @@
     <!--slider area start-->
         <div class="slider-area pos-rltv carosule-pagi cp-line">
             <div class="active-slider">
-                <div class="single-slider pos-rltv">
-                    <div class="slider-img"><img src="assets/images/slider/slider01.jpg" alt=""></div>
-                    <div class="slider-content pos-abs">
-                        <h4>Mejor colección</h4>
-                        <h1 class="uppercase pos-rltv underline">La mejores tendecias en kymo</h1>
-                        <a href="#" class="btn-def btn-white">Comprar ahora</a>
-                    </div>
-                </div>
-                <div class="single-slider pos-rltv">
-                    <div class="slider-img"><img src="assets/images/slider/slider02.jpg" alt=""></div>
-                    <div class="slider-content pos-abs">
-                         <h4>Mejor colección</h4>
-                        <h1 class="uppercase pos-rltv underline">La mejores tendecias en kymo</h1>
-                        <a href="#" class="btn-def btn-white">Comprar ahora</a>
-                    </div>
-                </div>
-                <div class="single-slider pos-rltv">
-                    <div class="slider-img"><img src="assets/images/slider/slider01.jpg" alt=""></div>
-                    <div class="slider-content pos-abs">
-                         <h4>Mejor colección</h4>
-                        <h1 class="uppercase pos-rltv underline">La mejores tendecias en kymo</h1>
-                        <a href="#" class="btn-def btn-white">Comprar ahora</a>
-                    </div>
-                </div>
+                <%foreach (var item in _ListaBanner)
+                    {%>
+                        <div class="single-slider pos-rltv">
+                            <div class="slider-img">
+                                <img src="assets/images/slider/slider02.jpg" alt="<%=item.Alt%>" title="<%=item.Title%>"">
+                                <%--<img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>"">--%>
+                            </div>
+                            <div class="slider-content pos-abs">
+                                <h4><%=item.TextoInicial%></h4>
+                                <h1 class="uppercase pos-rltv underline"><%=item.TextoPrincipal%></h1>
+                                <%if (item.Comprar == true)
+                                    { %>
+                                        <a href="<%=item.UrlDestino%>" class="btn-def btn-white" target="_blank"><%=item.TextoButton%></a>
+                                <%} %>
+                            </div>
+                        </div>
+                    <%} %>
             </div>
         </div>
         <!--slider area start-->
@@ -922,44 +915,25 @@
        
         
         <!--brand area are start-->
-        <div class="brand-area ptb-60">
-            <div class="container">
-                <div class="row">
-                   <div class="total-brand">
+    <div class="brand-area ptb-60">
+        <div class="container">
+            <div class="row">
+                <div class="total-brand">
+                    <%foreach (var item in _ListaPatrocinadores)
+                        {%>
                         <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/01.png" alt=""></a></div>
+                            <div class="single-brand shadow-box">
+                                <a href="<%=item.UrlDestino%>">
+                                    <img src="assets/images/brand/01.png" alt="<%=item.Alt%>" title="<%=item.Title%>">
+                                    <%--<img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>">--%>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/02.png" alt=""></a></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/03.png" alt=""></a></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/04.png" alt=""></a></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/05.png" alt=""></a></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/06.png" alt=""></a></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/01.png" alt=""></a></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/02.png" alt=""></a></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/03.png" alt=""></a></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="single-brand shadow-box"><a href="#"><img src="assets/images/brand/04.png" alt=""></a></div>
-                        </div>
+                    <%} %>
                 </div>
             </div>
-          </div>
         </div>
+    </div>
         <!--brand area are start-->
 
 </asp:Content>
