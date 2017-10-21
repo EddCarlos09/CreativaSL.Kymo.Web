@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CH_Cliente.cs" />
+    <Compile Include="CH_ClienteJson.cs" />
     <Compile Include="CH_Configuracion.cs" />
     <Compile Include="CH_Contacto.cs" />
+    <Compile Include="CH_FAQ.cs" />
     <Compile Include="CH_Imagen.cs" />
     <Compile Include="CH_Nosotros.cs" />
     <Compile Include="CH_RedesSociales.cs" />

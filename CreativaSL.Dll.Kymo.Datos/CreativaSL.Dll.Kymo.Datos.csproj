@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CH_ClienteDatos.cs" />
     <Compile Include="CH_ConfiguracionDatos.cs" />
     <Compile Include="CH_ContactoDatos.cs" />
+    <Compile Include="CH_FaqDatos.cs" />
     <Compile Include="CH_NosotrosDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

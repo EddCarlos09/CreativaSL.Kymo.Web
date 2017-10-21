@@ -1,4 +1,5 @@
 ﻿using CreativaSL.Dll.Kymo.Global;
+using CreativaSL.Dll.Kymo.Negocio;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,31 +13,30 @@ namespace CreativaSL.WebForms.Kymo.Web
 {
     public partial class Login : System.Web.UI.Page
     {
-        private int myVar;
-        
-        public int MyProperty
-        {
-            get { return myVar; }
-            set { myVar = value; }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                if(Request.IsAuthenticated)
+                    FormsAuthentication.SignOut();
+            }
             if(Request.Form.Count > 0)
             {
-                string usuario = Request.Form["username"];
+                string usuario = Request.Form["email"];
                 string password = Request.Form["password"];
-                string idUsuario = "UserID001";
-                bool rememberMe = true; 
-                if(IsCorrectLogin(usuario, password))
+                bool rememberMe = true;
+                CH_Cliente dataCustomer = new CH_Cliente { Conexion = Comun.Conexion, Correo = usuario, Password = password};
+                CH_ClienteNegocio custNeg = new CH_ClienteNegocio();
+                CH_Cliente dataResult = custNeg.Login(dataCustomer);
+                if(dataResult.Completado && dataResult.Resultado == 1)
                 {
                     //string userDataString = string.Concat(companyName[i], "|", titleAtCompany[i]);
                     // Create the cookie that contains the forms authentication ticket
-                    HttpCookie authCookie = FormsAuthentication.GetAuthCookie(idUsuario, rememberMe);
+                    HttpCookie authCookie = FormsAuthentication.GetAuthCookie(dataResult.IdCliente, rememberMe);
                     // Get the FormsAuthenticationTicket out of the encrypted cookie
                     FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
                     // Create a new FormsAuthenticationTicket that includes our custom User Data
-                    DatosUserJson data = new DatosUserJson { IdUsuario = "User001", IdTipoUsuario=1, Nombre="Carlos Higuera" };
+                    CH_ClienteJson data = dataResult.GetClienteJson();
                     string userDataString = JsonConvert.SerializeObject(data);
                     FormsAuthenticationTicket newTicket = new FormsAuthenticationTicket(ticket.Version, ticket.Name, ticket.IssueDate, ticket.Expiration, ticket.IsPersistent, userDataString);
                     // Update the authCookie's Value to use the encrypted version of newTicket
@@ -48,13 +48,17 @@ namespace CreativaSL.WebForms.Kymo.Web
                     string redirUrl = Page.RouteData.Values["ReturnUrl"] != null ? Page.RouteData.Values["ReturnUrl"].ToString() : string.Empty;
                     if (string.IsNullOrEmpty(redirUrl))
                     {
-                        redirUrl = FormsAuthentication.GetRedirectUrl(idUsuario, rememberMe);
+                        redirUrl = FormsAuthentication.GetRedirectUrl(dataResult.IdCliente, rememberMe);
+                        if(redirUrl == null)
+                        {
+                            redirUrl = "/Home";
+                        }
                     }
                     else
                     {
                         redirUrl = "/" + redirUrl;
                     }
-                    Response.Redirect(redirUrl);
+                    Response.Redirect(redirUrl, true);
                 }
             }
         }
