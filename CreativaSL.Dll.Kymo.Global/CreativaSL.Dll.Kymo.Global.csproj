@@ -58,6 +58,8 @@
     <Compile Include="Comun.cs" />
     <Compile Include="DatosUser.cs" />
     <Compile Include="DatosUserJson.cs" />
+    <Compile Include="EM_HomeBanner.cs" />
+    <Compile Include="EM_Patrocinadores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
