@@ -50,6 +50,7 @@
     <Compile Include="CH_ContactoDatos.cs" />
     <Compile Include="CH_FaqDatos.cs" />
     <Compile Include="CH_NosotrosDatos.cs" />
+    <Compile Include="CH_ProductoDatos.cs" />
     <Compile Include="EM_HomeDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
