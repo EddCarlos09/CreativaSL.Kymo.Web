@@ -40,9 +40,8 @@
                     <div class="row">
 
                         <%foreach (var ItemAviso in _dataAviso.ListaAvisos)
-                            {%>
-                        <div class="jumbotron text-center"><h2><%=ItemAviso.Titulo%></h2> </div>
-                        <p><strong><%=ItemAviso.Texto%></strong></p>
+                            {%>                        
+                        <p><strong><%=ItemAviso.Titulo%></strong><%=ItemAviso.Texto%></p>
                         <%} %>
                     </div>
                 </div>

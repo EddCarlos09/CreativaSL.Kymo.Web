@@ -43,9 +43,9 @@
                 <div class="container">
                     <div class="row">
                         
-                      <div class="jumbotron text-center">
+                      <%--<div class="jumbotron text-center">
                           <h2 ></h2>
-                      </div>
+                      </div>--%>
                         <%foreach (var itemTerminos in _dataTerminos.ListaTerminos)
                             { %>
                       <p><strong><%=itemTerminos.Titulo %></strong><%=itemTerminos.Texto %> </p>
