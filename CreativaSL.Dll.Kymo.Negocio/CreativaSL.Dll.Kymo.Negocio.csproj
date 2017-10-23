@@ -46,6 +46,9 @@
     <Compile Include="CH_ContactoNegocio.cs" />
     <Compile Include="CH_FAQNegocio.cs" />
     <Compile Include="CH_NosotrosNegocio.cs" />
+    <Compile Include="CH_ProductoNegocio.cs" />
+    <Compile Include="EM_ClienteNegocio.cs" />
+    <Compile Include="EM_GeneroNegocio.cs" />
     <Compile Include="EM_HomeNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RR_AvisosPrivacidadNegocio.cs" />

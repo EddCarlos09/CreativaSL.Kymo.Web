@@ -314,6 +314,8 @@
     <Content Include="frmNosotros.aspx" />
     <Content Include="frmProducto.aspx" />
     <Content Include="frmProductos.aspx" />
+    <Content Include="frmRegistrar.aspx" />
+    <Content Include="frmTerminos.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.dll" />
@@ -424,6 +426,20 @@
     </Compile>
     <Compile Include="frmProductos.aspx.designer.cs">
       <DependentUpon>frmProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrar.aspx.cs">
+      <DependentUpon>frmRegistrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmRegistrar.aspx.designer.cs">
+      <DependentUpon>frmRegistrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTerminos.aspx.cs">
+      <DependentUpon>frmTerminos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTerminos.aspx.designer.cs">
+      <DependentUpon>frmTerminos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
