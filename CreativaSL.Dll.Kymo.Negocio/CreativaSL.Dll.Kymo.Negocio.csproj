@@ -49,6 +49,8 @@
     <Compile Include="CH_ProductoNegocio.cs" />
     <Compile Include="EM_HomeNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RR_AvisosPrivacidadNegocio.cs" />
+    <Compile Include="RR_TerminosCondicionesNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CreativaSL.Dll.Kymo.Datos\CreativaSL.Dll.Kymo.Datos.csproj">

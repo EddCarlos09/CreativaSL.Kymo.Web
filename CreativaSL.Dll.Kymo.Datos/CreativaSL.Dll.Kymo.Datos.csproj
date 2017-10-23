@@ -53,6 +53,8 @@
     <Compile Include="CH_ProductoDatos.cs" />
     <Compile Include="EM_HomeDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RR_AvisoPrivacidadDatos.cs" />
+    <Compile Include="RR_TerminosCondicionesDatos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CreativaSL.Dll.Kymo.Global\CreativaSL.Dll.Kymo.Global.csproj">
