@@ -25,23 +25,31 @@ namespace CreativaSL.WebForms.Kymo.Web
 
         public void EscribeJson()
         {
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales1" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales2" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales3" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales4" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales5" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales6" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales7" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales8" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales9" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales10" });
-            Lista.Add(new DatosUser() { Nombre = "Rafael Rosales11" });
-
-            File.WriteAllText(@"c:\user.json", JsonConvert.SerializeObject(Lista));
-            using (StreamWriter file = File.CreateText(@"c:\user.json"))
+            try
             {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, Lista);
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales1" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales2" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales3" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales4" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales5" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales6" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales7" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales8" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales9" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales10" });
+                Lista.Add(new DatosUser() { Nombre = "Rafael Rosales11" });
+
+                File.WriteAllText(@"c:\user.json", JsonConvert.SerializeObject(Lista));
+                using (StreamWriter file = File.CreateText(@"c:\user.json"))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(file, Lista);
+                }
+            }
+
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
         public List<DatosUser> RegresaJson()

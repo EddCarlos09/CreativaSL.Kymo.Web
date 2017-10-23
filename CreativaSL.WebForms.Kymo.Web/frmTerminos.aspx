@@ -3,16 +3,31 @@
 <asp:Content ContentPlaceHolderID="cphPrincipal" runat="server">
 
     <!--breadcumb area start -->
+    <%  var imgTitle = _dataTerminos.ListaImagenes.Find(x => x.NumPosition == 1);
+            if (imgTitle == null)
+            {
+        %>
+            <div class="breadcumb-area breadcumb overlay pos-rltv" style="background:rgba(0, 0, 0, 0) url('assets/images/bg/breadcumb.jpg') no-repeat scroll 0 0;">
+        <%}
+        else
+        {
+            Response.Write("<div class='breadcumb-area breadcumb overlay pos-rltv' style='background:rgba(0, 0, 0, 0) url(" + imgTitle.UrlImagen + ") no-repeat scroll 0 0;'>");
+        }%>
             <div class="breadcumb-area overlay pos-rltv">
                 <div class="bread-main">
                     <div class="bred-hading text-center">
-                        <h5>Terminos y condiciones</h5> </div>
+                        <%for (int i = 0; i < _dataTerminos.ListaTextos.Count; i++)
+                            { %>
+                        <h5><%=_dataTerminos.ListaTextos[i].Texto %></h5> </div>
+                    <%i++; %>
                     <ol class="breadcrumb">
-                        <li class="home"><a title="Go to Home Page" href="index.html">Terminos y condiciones</a></li>
+                        <li class="home"><a title="Go to Home Page" href="index.html"><%=_dataTerminos.ListaTextos[i].Texto %></a></li>
+                        <%} %>
                         
                     </ol>
                 </div>
             </div>
+                </div>
             <!--breadcumb area end -->
             
             <!--Total area start-->
@@ -29,38 +44,13 @@
                     <div class="row">
                         
                       <div class="jumbotron text-center">
-                          <h2 >Terminos y condiciones</h2>
+                          <h2 ></h2>
                       </div>
-                      <p><strong>Lorem ipsum dolor sit amet:</strong> consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                       <p><strong>Lorem ipsum dolor sit amet:</strong> consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                       <p><strong>Lorem ipsum dolor sit amet:</strong> consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                       <p><strong>Lorem ipsum dolor sit amet:</strong> consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                       <p><strong>Lorem ipsum dolor sit amet:</strong> consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <%foreach (var itemTerminos in _dataTerminos.ListaTerminos)
+                            { %>
+                      <p><strong><%=itemTerminos.Titulo %></strong><%=itemTerminos.Texto %> </p>
+                        <%} %>
+                      
 
                     </div>
                 </div>
