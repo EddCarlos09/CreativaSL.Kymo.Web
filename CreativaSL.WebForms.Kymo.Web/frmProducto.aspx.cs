@@ -6,16 +6,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Web.Profile;
 namespace CreativaSL.WebForms.Kymo.Web
 {
     public partial class frmProducto : System.Web.UI.Page
     {
-        public CH_Producto _dataProduct = new CH_Producto();
+        public CH_PaginaProducto _dataProduct = new CH_PaginaProducto();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
+                string ID = HttpContext.Current.Profile.UserName;
                 if (Page.RouteData.Values["id"] != null)
                 {
                     string idProducto = Page.RouteData.Values["id"].ToString();
@@ -34,7 +35,7 @@ namespace CreativaSL.WebForms.Kymo.Web
             { }
         }
 
-        public CH_Producto ObtenerDatosProducto(string _idProducto)
+        public CH_PaginaProducto ObtenerDatosProducto(string _idProducto)
         {
             try
             {

@@ -27,7 +27,7 @@
                                 <aside class="single-aside search-aside search-box">
                                     <form action="#">
                                         <div class="input-box">
-                                            <input class="single-input" placeholder="Search...." type="text">
+                                            <input class="single-input" placeholder="Buscar...." type="text">
                                             <button class="src-btn sb-2"><i class="fa fa-search"></i></button>
                                         </div>
                                     </form>

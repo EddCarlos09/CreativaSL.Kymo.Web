@@ -19,7 +19,7 @@ namespace CreativaSL.Dll.Kymo.Negocio
         /// </summary>
         /// <param name="_datos">Objeto con datos de conexión y parámetros (Id del producto)</param>
         /// <returns></returns>
-        public CH_Producto ObtenerDetalleProductoXID(CH_Producto _datos)
+        public CH_PaginaProducto ObtenerDetalleProductoXID(CH_Producto _datos)
         {
             try
             {

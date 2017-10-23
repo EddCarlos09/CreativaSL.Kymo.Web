@@ -18,6 +18,7 @@ namespace CreativaSL.Dll.Kymo.Global
         {
             _ListaImagenes = new List<CH_Imagen>();
             _ListaTextos = new List<CH_Textos>();
+            _Producto = new CH_Producto();
         }
 
         #region Datos de control

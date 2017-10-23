@@ -93,17 +93,35 @@ namespace CreativaSL.Dll.Kymo.Datos
                         {
                             CH_Imagen imgProducto = new CH_Imagen();
                             itemProducto = new CH_Producto();
-                            dataResult.IdProducto = dr.GetString(dr.GetOrdinal("IDProducto"));
+                            dataResult.IdProducto = drProductos.GetString(drProductos.GetOrdinal("IDProducto"));
                             imgProducto.UrlImagen = drProductos.GetString(drProductos.GetOrdinal("UrlImagen"));
                             itemProducto.ImagenPrincipal = imgProducto;
-                            dataResult.NombreProducto = dr.GetString(dr.GetOrdinal("Producto"));
-                            dataResult.MinPrecio = dr.GetDecimal(dr.GetOrdinal("MinPrecio"));
-                            dataResult.MinPrecioMayoreo = dr.GetDecimal(dr.GetOrdinal("MinPrecioMayoreo"));
+                            dataResult.NombreProducto = drProductos.GetString(drProductos.GetOrdinal("Producto"));
+                            dataResult.MinPrecio = drProductos.GetDecimal(drProductos.GetOrdinal("MinPrecio"));
+                            dataResult.MinPrecioMayoreo = drProductos.GetDecimal(drProductos.GetOrdinal("MinPrecioMayoreo"));
                             listaProductos.Add(itemProducto);
                         }
                         dataResult.ListaProductosRelacionados = listaProductos;
 
                         dataPageResult.Producto = dataResult;
+                        dataPageResult.Completado = true;
+
+                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
+                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
+                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
+                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
+
+                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
+                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
+                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
+                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
+
+                        dataPageResult.Producto.Valoracion = 4;
+                        dataPageResult.Producto.NombreProducto = "Pantalón Niño Preescolar";
+                        dataPageResult.Producto.MinPrecio = 280;
+                        dataPageResult.Producto.Observaciones = "Uniforme UPGCH para niños de preescolar.";
+
+                        
                     }
                 }
                 return dataPageResult;
