@@ -310,7 +310,6 @@ namespace CreativaSL.Dll.Kymo.Global
                 TarjetaSaldo = _TarjetaSaldo,
                 IdTipoCredencial = _IdTipoCredencial
             };
-            DatosJson += _customerJson.ToJSON();
             DatosJson += "";
         }
 

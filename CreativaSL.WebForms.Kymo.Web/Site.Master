@@ -55,8 +55,8 @@
                                     else
                                     { %>
                                     <li><a href="/Login">Iniciar Sesión</a></li> 
-                                    <% } %>
                                     <li><a href="/Register">Registrate</a></li>
+                                    <% } %>
                                 </ul>
                             </div>
                         </div>

@@ -248,6 +248,7 @@
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="frmAppend.aspx" />
+    <Content Include="frmAviso.aspx" />
     <Content Include="frmContactanos.aspx" />
     <Content Include="frmDefault.aspx" />
     <Content Include="frmErrorPage.aspx" />
@@ -255,6 +256,7 @@
     <Content Include="frmNosotros.aspx" />
     <Content Include="frmProducto.aspx" />
     <Content Include="frmProductos.aspx" />
+    <Content Include="frmTerminos.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.dll" />
@@ -307,6 +309,13 @@
     <Compile Include="frmAppend.aspx.designer.cs">
       <DependentUpon>frmAppend.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmAviso.aspx.cs">
+      <DependentUpon>frmAviso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmAviso.aspx.designer.cs">
+      <DependentUpon>frmAviso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmContactanos.aspx.cs">
       <DependentUpon>frmContactanos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -355,6 +364,13 @@
     </Compile>
     <Compile Include="frmProductos.aspx.designer.cs">
       <DependentUpon>frmProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTerminos.aspx.cs">
+      <DependentUpon>frmTerminos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTerminos.aspx.designer.cs">
+      <DependentUpon>frmTerminos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
