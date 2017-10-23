@@ -49,8 +49,15 @@
                         <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="login-register-area">
                                 <ul>
-                                    <li><a href="login.html">Iniciar Sesión</a></li>
-                                    <li><a href="register.html">Registrate</a></li>
+                                    <% if (Request.IsAuthenticated)
+                                        { %>
+                                    <li><a href="#">Cerrar Sesión</a></li>
+                                    <% }
+                                    else
+                                    { %>
+                                    <li><a href="/Login">Iniciar Sesión</a></li> 
+                                    <li><a href="/Register">Registrate</a></li>
+                                    <% } %>
                                 </ul>
                             </div>
                         </div>

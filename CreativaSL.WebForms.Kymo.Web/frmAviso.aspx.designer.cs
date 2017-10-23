@@ -10,6 +10,6 @@
 namespace CreativaSL.WebForms.Kymo.Web {
     
     
-    public partial class Login {
+    public partial class frmAviso {
     }
 }

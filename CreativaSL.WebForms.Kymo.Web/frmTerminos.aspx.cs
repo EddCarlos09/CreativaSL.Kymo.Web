@@ -9,15 +9,15 @@ using System.Web.UI.WebControls;
 
 namespace CreativaSL.WebForms.Kymo.Web
 {
-    public partial class frmFAQ : System.Web.UI.Page
+    public partial class frmTerminos : System.Web.UI.Page
     {
-        public CH_FAQ _dataFaqs = new CH_FAQ(); 
+        public RR_TerminosCondiciones _dataTerminos = new RR_TerminosCondiciones();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                _dataFaqs = ObtenerDatosDinamicos();
-                if (!_dataFaqs.Completado)
+                _dataTerminos = ObtenerDatosDinamicos();
+                if (!_dataTerminos.Completado)
                 {
                     Response.Redirect("/ErrorPage", true);
                 }
@@ -31,13 +31,13 @@ namespace CreativaSL.WebForms.Kymo.Web
         /// <summary>
         /// Obtener los datos para presentar la página Web de nosotros
         /// </summary>
-        private CH_FAQ ObtenerDatosDinamicos()
+        private RR_TerminosCondiciones ObtenerDatosDinamicos()
         {
             try
             {
-                CH_FAQ data = new CH_FAQ { Conexion = Comun.Conexion };
-                CH_FAQNegocio faqsNeg = new CH_FAQNegocio();
-                return faqsNeg.ObtenerDatosPagFaqs(data);
+                RR_TerminosCondiciones data = new RR_TerminosCondiciones { Conexion = Comun.Conexion };
+                RR_TerminosCondicionesNegocio faqsNeg = new RR_TerminosCondicionesNegocio();
+                return faqsNeg.ObtenerDatosTerminosCondiciones(data);
             }
             catch (Exception ex)
             {

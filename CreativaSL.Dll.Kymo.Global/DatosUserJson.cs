@@ -8,8 +8,12 @@ using System.IO;
 
 namespace CreativaSL.Dll.Kymo.Global
 {
+    /// <summary>
+    /// Definición de datos a almacenar en memoria del cliente loggueado
+    /// </summary>
     public class DatosUserJson
     {
+
         public string IdUsuario { get; set; }
         public int IdTipoUsuario { get; set; }
         public string Nombre { get; set; }

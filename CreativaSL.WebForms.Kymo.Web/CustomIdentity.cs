@@ -13,13 +13,13 @@ namespace CreativaSL.WebForms.Kymo.Web
     public class CustomIdentity : IIdentity
     {
         private FormsAuthenticationTicket _ticket;
-        private DatosUserJson _DatosUsuario;
+        private CH_ClienteJson _DatosClienteJson;
         public CustomIdentity(FormsAuthenticationTicket ticket)
         {
             _ticket = ticket;
             JObject resut = (JObject)JsonConvert.DeserializeObject(_ticket.UserData);
             JsonSerializer serializer = new JsonSerializer();
-            _DatosUsuario = (DatosUserJson)serializer.Deserialize(new JTokenReader(resut), typeof(DatosUserJson));
+            _DatosClienteJson = (CH_ClienteJson)serializer.Deserialize(new JTokenReader(resut), typeof(CH_ClienteJson));
 
         }
 
@@ -52,9 +52,9 @@ namespace CreativaSL.WebForms.Kymo.Web
             get { return _ticket; }
         }
         
-        public DatosUserJson DatosUsuario
+        public CH_ClienteJson DatosClienteJson
         {
-            get { return _DatosUsuario; }
+            get { return _DatosClienteJson; }
         }
 
     }

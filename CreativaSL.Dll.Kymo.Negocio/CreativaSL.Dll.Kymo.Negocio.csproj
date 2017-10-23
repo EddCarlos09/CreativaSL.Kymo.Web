@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CH_ClienteNegocio.cs" />
     <Compile Include="CH_ConfiguracionNegocio.cs" />
     <Compile Include="CH_ContactoNegocio.cs" />
+    <Compile Include="CH_FAQNegocio.cs" />
     <Compile Include="CH_NosotrosNegocio.cs" />
-    <Compile Include="EM_ClienteNegocio.cs" />
-    <Compile Include="EM_GeneroNegocio.cs" />
     <Compile Include="EM_HomeNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RR_AvisosPrivacidadNegocio.cs" />
+    <Compile Include="RR_TerminosCondicionesNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CreativaSL.Dll.Kymo.Datos\CreativaSL.Dll.Kymo.Datos.csproj">
