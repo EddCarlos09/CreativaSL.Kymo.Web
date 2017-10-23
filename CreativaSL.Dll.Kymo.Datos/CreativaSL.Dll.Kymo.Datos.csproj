@@ -48,6 +48,7 @@
     <Compile Include="CH_ConfiguracionDatos.cs" />
     <Compile Include="CH_ContactoDatos.cs" />
     <Compile Include="CH_NosotrosDatos.cs" />
+    <Compile Include="EM_ClienteDatos.cs" />
     <Compile Include="EM_HomeDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
