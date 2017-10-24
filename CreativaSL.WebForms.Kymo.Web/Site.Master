@@ -28,9 +28,9 @@
     <!-- User style -->
     <link rel="stylesheet" href="../assets/css/custom.css">  <link rel="stylesheet" href="../assets/css/color/skin-default.css">
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+  
     <link rel="stylesheet" href="../assets/css/plugins.css">
-    <link rel="apple-touch-icon" href="../assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/icons/favicon.ico">
     
     <!-- Modernizr JS -->
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -290,24 +290,27 @@
                     <div class="col-lg-3 col-md-3 col-sm-4 col-lg-offset-1 col-xs-12">
                         <div class="single-footer newslatter-area">
                             <div class="footer-title uppercase">
-                                <h5>Suscribete a Newsletters</h5> 
+                                <h5 id="NewsL">Suscribete a Newsletters</h5> 
                             </div>
-                            <div class="newslatter">
-                                <form action="#" method="post">
+                            <div id="IdNews"class="newslatter">
+                                <form id="formnews" method="post" onsubmit="ValidarNews()">
                                     <div class="input-box pos-rltv">
-                                        <input placeholder="Introduce tu email" type="text"> 
-                                        <a href="#">
+                                        <input type="text" name="Correo" id="Correo" value="" placeholder="Introduce tu email">
+                                        <button class="btn-def btn2 btn-kymo" type="submit">Enviar</button>
+                                        <%-- <a href="#" onClick="ValidarNews()">
                                             <i class="zmdi zmdi-arrow-right"></i>
-                                        </a>
+                                        </a>--%>
                                     </div>
                                 </form>
+                            </div>
+                            <div class="newslatter">
                                 <div class="social-icon socile-icon-style-3 mt-40">
                                     <div class="footer-title uppercase">
-                                        <h5>Redes Sociales</h5> 
+                                        <h5>Redes Sociales</h5>
                                     </div>
                                     <ul>
                                         <%
-                                            foreach(var item in _dataConfig.ListaRedesSociales)
+                                            foreach (var item in _dataConfig.ListaRedesSociales)
                                             {
                                                 Response.Write("<li><a href='" + item.UrlBase + item.Cuenta + "'><i class='" + item.CssClassIcon + "'></i></a></li>");
                                             }
@@ -450,12 +453,44 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="../assets/js/jquery-validation/dist/jquery.validate.min.js"></script>
      <script src="../assets/js/form-elements.js"></script>
+  <script src="../assets/js/form-validationNews.js"></script>
     <script>
 			jQuery(document).ready(function() {
-                FormElements.init();
+			    FormElements.init();
+			    FormValidator.init();
 			});
 		</script>
+    <script>
+     function ValidarNews() {
+             $(this).submit(function (e) {
+                 e.preventDefault();
+                 var Correo = $('#Correo').val();
+                 var data = new FormData();
+                 data.append('Correo', Correo);
+                 $.ajax({
+                     type: 'POST',
+                     url: 'sfrmSucribete.aspx',
+                     contentType: false,
+                     data: data,
+                     processData: false,
+                     cache: false,
+                     success: function () {
+                         var padre = document.getElementById('IdNews');
+                         var hijo = document.getElementById('formnews');
+                         padre.removeChild(hijo);
+                         // document.getElementById('form').style.display = "none";
+                         document.getElementById('NewsL').innerHTML = "Gracias por suscribirte";
+                     },
+                     error: function () {
+                         document.getElementById('NewsL').innerHTML = "Error al suscribirte. Intente mas tarde";
+                     }
+                 });
+                 return false;
+             });
+     }
+        </script>
     <asp:ContentPlaceHolder ID="cphScripts" runat="server">
+    
     </asp:ContentPlaceHolder>
 
 

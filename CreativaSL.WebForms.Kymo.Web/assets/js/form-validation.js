@@ -1,6 +1,6 @@
 var FormValidator = function () {
 	"use strict";
-    // function to initiate Validation Sample 1
+    // Funcion para validar registrar
     var runValidator1 = function () {
         var form1 = $('#contact-form');
         var errorHandler1 = $('.errorHandler', form1);
@@ -159,6 +159,7 @@ var FormValidator = function () {
             },
             success: function (label, element) {
                 label.addClass('help-block valid');
+                label.removeClass('color');
                 // mark the current input as valid and display OK icon
                 $(element).closest('.form-group').removeClass('has-error').addClass('has-success').find('.symbol').removeClass('required').addClass('ok');
             },
@@ -171,11 +172,11 @@ var FormValidator = function () {
             }
         });
     };
-    // function to initiate Validation Sample 2
+
     return {
         //main function to initiate template pages
         init: function () {
-            runValidator1();
+           runValidator1();
         }
     };
 }();

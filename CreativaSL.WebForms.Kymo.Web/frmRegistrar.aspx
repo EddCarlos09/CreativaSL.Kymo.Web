@@ -126,7 +126,7 @@
                             </div>
                             <div class="frm-action">
                                 <div class="input-box tci-box">
-                                     <button class="btn-def btn2" type="submit">Registrase</button>
+                                     <button class="btn-def btn2 btn-kymo" type="submit">Registrase</button>
                                 </div>
                             </div>
                         </div>

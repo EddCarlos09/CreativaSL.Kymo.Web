@@ -113,6 +113,7 @@
     <Content Include="assets\fonts\Simple-Line-Icons.svg" />
     <Content Include="assets\fonts\slick.svg" />
     <Content Include="assets\js\form-elements.js" />
+    <Content Include="assets\js\form-validationNews.js" />
     <Content Include="assets\js\form-validation.js" />
     <Content Include="assets\images\banner\01.png" />
     <Content Include="assets\images\banner\02.png" />
@@ -383,6 +384,7 @@
     <Content Include="packages.config" />
     <Content Include="sfrmMunicipios.aspx" />
     <Content Include="sfrmRegistrar.aspx" />
+    <Content Include="sfrmSucribete.aspx" />
     <Content Include="Site.Master" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />
@@ -545,6 +547,13 @@
     </Compile>
     <Compile Include="sfrmRegistrar.aspx.designer.cs">
       <DependentUpon>sfrmRegistrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmSucribete.aspx.cs">
+      <DependentUpon>sfrmSucribete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmSucribete.aspx.designer.cs">
+      <DependentUpon>sfrmSucribete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
