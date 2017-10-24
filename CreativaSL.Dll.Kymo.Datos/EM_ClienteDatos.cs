@@ -14,7 +14,7 @@ namespace CreativaSL.Dll.Kymo.Datos
         {
             try
             {
-                object[] Parametros = { Datos.Nombre, Datos.ApPaterno, Datos.ApMaterno, Datos.CorreoElec, Datos.IdPais, Datos.IdEstado, Datos.Id_Municipio, Datos.FechaNac, Datos.Colonia, Datos.IdGenero, Datos.Telefono, Datos.IdUsuario };
+                object[] Parametros = { Datos.Nombre, Datos.ApPaterno, Datos.ApMaterno, Datos.CorreoElec, Datos.IdPais, Datos.IdEstado, Datos.Id_Municipio, Datos.FechaNac, Datos.Colonia, Datos.IdGenero, Datos.Telefono, Datos.Direccion, Datos.Contrasena, Datos.NewsLetters, Datos.IdUsuario };
                 object Result = SqlHelper.ExecuteScalar(Datos.Conexion, "EM_spCSLDB_AC_CatClienteWeb", Parametros);
                 if (Result != null)
                 {

@@ -87,6 +87,7 @@
     <Content Include="assets\css\font-awesome.min.css" />
     <Content Include="assets\css\material-design-iconic-font.min.css" />
     <Content Include="assets\css\nivo-slider.css" />
+    <Content Include="assets\css\plugins.css" />
     <Content Include="assets\css\plugins\animate.css" />
     <Content Include="assets\css\plugins\custom-animation.css" />
     <Content Include="assets\css\plugins\fancybox\blank.gif" />
@@ -111,6 +112,7 @@
     <Content Include="assets\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\fonts\Simple-Line-Icons.svg" />
     <Content Include="assets\fonts\slick.svg" />
+    <Content Include="assets\js\form-elements.js" />
     <Content Include="assets\js\form-validation.js" />
     <Content Include="assets\images\banner\01.png" />
     <Content Include="assets\images\banner\02.png" />
@@ -288,6 +290,64 @@
     <Content Include="assets\js\slider\nivo-active.js" />
     <Content Include="assets\js\vendor\jquery-1.12.0.min.js" />
     <Content Include="assets\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="assets\plugins\bootstrap-select\bootstrap-select.css" />
+    <Content Include="assets\plugins\bootstrap-select\bootstrap-select.js" />
+    <Content Include="assets\plugins\bootstrap-select\bootstrap-select.min.css" />
+    <Content Include="assets\plugins\bootstrap-select\bootstrap-select.min.js" />
+    <Content Include="assets\plugins\bootstrap-select\test.html" />
+    <Content Include="assets\plugins\select2\.gitignore" />
+    <Content Include="assets\plugins\select2\select2-bootstrap.css" />
+    <Content Include="assets\plugins\select2\select2-spinner.gif" />
+    <Content Include="assets\plugins\select2\select2.css" />
+    <Content Include="assets\plugins\select2\select2.js" />
+    <Content Include="assets\plugins\select2\select2.min.js" />
+    <Content Include="assets\plugins\select2\select2.png" />
+    <Content Include="assets\plugins\select2\select2x2.png" />
+    <Content Include="assets\plugins\select2\select2_locale_ar.js" />
+    <Content Include="assets\plugins\select2\select2_locale_az.js" />
+    <Content Include="assets\plugins\select2\select2_locale_bg.js" />
+    <Content Include="assets\plugins\select2\select2_locale_ca.js" />
+    <Content Include="assets\plugins\select2\select2_locale_cs.js" />
+    <Content Include="assets\plugins\select2\select2_locale_da.js" />
+    <Content Include="assets\plugins\select2\select2_locale_de.js" />
+    <Content Include="assets\plugins\select2\select2_locale_el.js" />
+    <Content Include="assets\plugins\select2\select2_locale_es.js" />
+    <Content Include="assets\plugins\select2\select2_locale_et.js" />
+    <Content Include="assets\plugins\select2\select2_locale_eu.js" />
+    <Content Include="assets\plugins\select2\select2_locale_fa.js" />
+    <Content Include="assets\plugins\select2\select2_locale_fi.js" />
+    <Content Include="assets\plugins\select2\select2_locale_fr.js" />
+    <Content Include="assets\plugins\select2\select2_locale_gl.js" />
+    <Content Include="assets\plugins\select2\select2_locale_he.js" />
+    <Content Include="assets\plugins\select2\select2_locale_hr.js" />
+    <Content Include="assets\plugins\select2\select2_locale_hu.js" />
+    <Content Include="assets\plugins\select2\select2_locale_id.js" />
+    <Content Include="assets\plugins\select2\select2_locale_is.js" />
+    <Content Include="assets\plugins\select2\select2_locale_it.js" />
+    <Content Include="assets\plugins\select2\select2_locale_ja.js" />
+    <Content Include="assets\plugins\select2\select2_locale_ka.js" />
+    <Content Include="assets\plugins\select2\select2_locale_ko.js" />
+    <Content Include="assets\plugins\select2\select2_locale_lt.js" />
+    <Content Include="assets\plugins\select2\select2_locale_lv.js" />
+    <Content Include="assets\plugins\select2\select2_locale_mk.js" />
+    <Content Include="assets\plugins\select2\select2_locale_ms.js" />
+    <Content Include="assets\plugins\select2\select2_locale_nl.js" />
+    <Content Include="assets\plugins\select2\select2_locale_no.js" />
+    <Content Include="assets\plugins\select2\select2_locale_pl.js" />
+    <Content Include="assets\plugins\select2\select2_locale_pt-BR.js" />
+    <Content Include="assets\plugins\select2\select2_locale_pt-PT.js" />
+    <Content Include="assets\plugins\select2\select2_locale_ro.js" />
+    <Content Include="assets\plugins\select2\select2_locale_rs.js" />
+    <Content Include="assets\plugins\select2\select2_locale_ru.js" />
+    <Content Include="assets\plugins\select2\select2_locale_sk.js" />
+    <Content Include="assets\plugins\select2\select2_locale_sv.js" />
+    <Content Include="assets\plugins\select2\select2_locale_th.js" />
+    <Content Include="assets\plugins\select2\select2_locale_tr.js" />
+    <Content Include="assets\plugins\select2\select2_locale_ug-CN.js" />
+    <Content Include="assets\plugins\select2\select2_locale_uk.js" />
+    <Content Include="assets\plugins\select2\select2_locale_vi.js" />
+    <Content Include="assets\plugins\select2\select2_locale_zh-CN.js" />
+    <Content Include="assets\plugins\select2\select2_locale_zh-TW.js" />
     <Content Include="bin\CreativaSL.Dll.Kymo.Global.dll" />
     <Content Include="bin\CreativaSL.Dll.Kymo.Global.pdb" />
     <Content Include="bin\CreativaSL.WebForms.Kymo.Web.dll" />
@@ -321,6 +381,7 @@
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.dll" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.pdb" />
     <Content Include="packages.config" />
+    <Content Include="sfrmMunicipios.aspx" />
     <Content Include="sfrmRegistrar.aspx" />
     <Content Include="Site.Master" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
@@ -341,6 +402,22 @@
     <Content Include="assets\fonts\slick.woff" />
     <Content Include="assets\js\jquery-validation\package.json" />
     <Content Include="assets\js\jquery-validation\README.md" />
+    <Content Include="assets\plugins\select2\bower.json" />
+    <Content Include="assets\plugins\select2\component.json" />
+    <Content Include="assets\plugins\select2\composer.json" />
+    <Content Include="assets\plugins\select2\CONTRIBUTING.md" />
+    <Content Include="assets\plugins\select2\LICENSE" />
+    <Content Include="assets\plugins\select2\package.json" />
+    <Content Include="assets\plugins\select2\README.md" />
+    <Content Include="assets\plugins\select2\release.sh" />
+    <Content Include="assets\plugins\select2\select2.jquery.json" />
+    <Content Include="assets\plugins\select2\select2_locale_en.js.template" />
+    <Content Include="assets\plugins\bootstrap-select\bootstrap-select.jquery.json" />
+    <Content Include="assets\plugins\bootstrap-select\bower.json" />
+    <Content Include="assets\plugins\bootstrap-select\composer.json" />
+    <Content Include="assets\plugins\bootstrap-select\CONTRIBUTING.md" />
+    <Content Include="assets\plugins\bootstrap-select\package.json" />
+    <Content Include="assets\plugins\bootstrap-select\README.md" />
     <None Include="bin\CreativaSL.WebForms.Kymo.Web.dll.config" />
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
@@ -455,6 +532,13 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sfrmMunicipios.aspx.cs">
+      <DependentUpon>sfrmMunicipios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmMunicipios.aspx.designer.cs">
+      <DependentUpon>sfrmMunicipios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sfrmRegistrar.aspx.cs">
       <DependentUpon>sfrmRegistrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

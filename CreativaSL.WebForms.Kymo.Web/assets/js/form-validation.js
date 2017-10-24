@@ -49,7 +49,7 @@ var FormValidator = function () {
 
         $('#contact-form').validate({
             errorElement: "span", // contain the error msg in a span tag
-            errorClass: 'help-block',
+            errorClass: 'help-block color',
             errorPlacement: function (error, element) { // render error placement for each input type
                 if (element.attr("type") == "radio" || element.attr("type") == "checkbox") { // for chosen elements, need to insert the error after the chosen container
                     error.insertAfter($(element).closest('.form-group').children('div').children().last());
@@ -73,6 +73,11 @@ var FormValidator = function () {
                 },
                 Direccion: {
                     required: true
+                },
+                CP: {
+                    required: true,
+                    number: true,
+                    maxlength: 6
                 },
                 NExterior: {
                     required: true,
@@ -107,6 +112,11 @@ var FormValidator = function () {
                 datepicker: "Por favor, selecciones una fecha de nacimiento",
                 cmbGenero: "Por favor, seleccione su g&eacute;nero",
                 Direccion: "Por favor, ingrese su direcci&oacute;n",
+                CP: {
+                    required: "Por favor, ingrese el N&#176; c&oacute;digo postal",
+                    number: "Por favor, ingrese un n&uacute;mero valido",
+                    maxlength: "El campo tiene un limite de 6 n&uacute;meros"
+                },
                 NExterior: {
                     required: "Por favor, ingrese el N&#176; Exterior",
                     number: "Por favor, ingrese un n&uacute;mero valido",

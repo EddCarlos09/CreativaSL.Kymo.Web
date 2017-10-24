@@ -45,7 +45,44 @@ CSS INDEX
 /*----------------------------------------*/
 /*  5. promo style
 /*----------------------------------------*/
+/* line 122, ../sass/partials/_form-elements.scss */
+.color {
+    background-color:#ca4545;
+   color:#fff;
+   width: 100%;
+   font-size:12px;
+   text-align:center;
+   border-radius: 6px;
+   position: relative;
+}
 
+.color::after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -1em;
+    left: 2em;
+    width: 1em;
+    margin: 0;
+    margin-left: -8px;
+    padding: 0;
+    color: #ca4545;
+    font-size: 1em;
+    text-align: center;
+    content: "▲";
+}
+select.form-control {
+  background-color: #FFFFFF;
+  border: 1px solid #D5D5D5;
+  border-radius: 0 0 0 0;
+  color: #858585;
+}
+
+.form-control.search-select {
+  padding: 0 !important;
+  box-shadow: none;
+  border: none;
+}
 .container {
     width: 1200px
 }

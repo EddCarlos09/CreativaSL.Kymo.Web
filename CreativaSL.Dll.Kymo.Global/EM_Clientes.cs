@@ -53,6 +53,14 @@ namespace CreativaSL.Dll.Kymo.Global
             get { return _CorreoElec; }
             set { _CorreoElec = value; }
         }
+        private string _Contrasena;
+
+        public string Contrasena
+        {
+            get { return _Contrasena; }
+            set { _Contrasena = value; }
+        }
+
         private int _IdPais;
         /// <summary>
         /// El id del pais que por defaul es mexico
@@ -71,15 +79,24 @@ namespace CreativaSL.Dll.Kymo.Global
             get { return _IdEstado; }
             set { _IdEstado = value; }
         }
-        private string _IdMunicipio;
+
+        private int _IdMunicipio;
         /// <summary>
         /// el ide del municipio del cliente
         /// </summary>
-        public string Id_Municipio
+        public int Id_Municipio
         {
             get { return _IdMunicipio; }
             set { _IdMunicipio = value; }
         }
+        private string _Direccion;
+
+        public string Direccion
+        {
+            get { return _Direccion; }
+            set { _Direccion = value; }
+        }
+
         private DateTime _FechaNac;
         /// <summary>
         /// la fecha de nacimiento del cliente
@@ -125,6 +142,14 @@ namespace CreativaSL.Dll.Kymo.Global
             get { return _Conexion; }
             set { _Conexion = value; }
         }
+        private bool _NewsLetters;
+
+        public bool NewsLetters
+        {
+            get { return _NewsLetters; }
+            set { _NewsLetters = value; }
+        }
+
         private string _IdUsuario;
         /// <summary>
         /// El Usuario que por defaul es Web
