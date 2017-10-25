@@ -16,10 +16,10 @@ namespace CreativaSL.WebForms.Kymo.Web
         {
             if (Request.QueryString["IDProducto"] != null && Request.QueryString["IDColor"] != null)
             {
-                string IDProducto = "3C1B8BBD-746B-4C07-BDC6-B219A9F55D96";
-                int IDColor = 7;
-                //IDProducto = Request.QueryString["IDProducto"].ToString();
-                //int.TryParse(Request.QueryString["IDColor"], out IDColor);
+                string IDProducto = "";
+                int IDColor = 0;
+                IDProducto = Request.QueryString["IDProducto"].ToString();
+                int.TryParse(Request.QueryString["IDColor"], out IDColor);
                 CH_Producto CP = new CH_Producto();
                 CP.Color.IdColor = IDColor;
                 CP.IdProducto = IDProducto;
