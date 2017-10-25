@@ -42,9 +42,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
-                       <p class="form-messege"></p>
+                       <p id="formValidar" class="form-messege"></p>
                          <div class="row" id="IDContacto">
-                             <form id="contact-form" method="post" onsubmit="ValidarEviar()">
+                             <form id="contact-form" method="post" onsubmit="ValidarEnviar()">
                                   <div class="col-md-6">
                                        <div class="input-box mb-20">
                                            <input class="info" id="Nombre" name="Nombre" placeholder="Nombre completo" type="text">
@@ -72,7 +72,7 @@
                                     </div>
                                   <div class="col-xs-12">
                                      <div class="input-box tci-box">
-                                     <button class="btn-def btn2 btn-kymo" type="submit">ENVIAR</button>
+                                     <button id="btnEnviar" class="btn-def btn2 btn-kymo" type="submit">ENVIAR</button>
                                 </div>
                                       <%-- <div class="input-box">
                                            <input name="submit" class="sbumit-btn" value="Submit" type="submit"> 
@@ -376,8 +376,15 @@
             FormValidator.init(2);
             });
     </script>
+    <script type="text/javascript">
+$(document).ready(function () {
+    $( "#button" ).click(function() {
+        $( "#form" ).submit();
+    });
+});
+</script>
     <script>
-        function ValidarEviar() {
+        function ValidarEnviar() {
             $(this).submit(function (e) {
                 e.preventDefault();
                 var Nombre = $('#Nombre').val();
@@ -403,10 +410,10 @@
                         var hijo = document.getElementById('contact-form');
                         padre.removeChild(hijo);
                         // document.getElementById('form').style.display = "none";
-                        document.getElementById('form-messege').innerHTML = "Gracias por contactarnos";
+                        document.getElementById('formValidar').innerHTML = "Gracias por contactarnos";
                     },
                     error: function () {
-                        document.getElementById('form-messege').innerHTML = "Error al enviar los datos .Intente mas tarde";
+                        document.getElementById('formValidar').innerHTML = "Error al enviar los datos .Intente mas tarde";
                     }
                 });
                 return false;

@@ -114,6 +114,7 @@
     <Content Include="assets\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\fonts\Simple-Line-Icons.svg" />
     <Content Include="assets\fonts\slick.svg" />
+    <Content Include="assets\js\form-contacto.js" />
     <Content Include="assets\js\carritoAddItem.js" />
     <Content Include="assets\js\form-elements.js" />
     <Content Include="assets\js\form-validationNews.js" />
