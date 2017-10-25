@@ -46,9 +46,17 @@ CSS INDEX
 /*  5. promo style
 /*----------------------------------------*/
 /* line 122, ../sass/partials/_form-elements.scss */
+.btn-kymo {
+    border:1px solid white;
+    background-color:#494949;
+    color:white;
+}
+.btn-kymo:hover {
+color:#abcd40;
+}
 .color {
     background-color:#ca4545;
-   color:#fff;
+   color:#fff !important;
    width: 100%;
    font-size:12px;
    text-align:center;
@@ -2330,9 +2338,4 @@ p.success {
 }
 p.error {
     color: red
-}
-
-.buy-button-error-message {
-    display: none!important;
-    visibility: hidden!important;
 }

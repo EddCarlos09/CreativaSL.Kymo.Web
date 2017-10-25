@@ -860,12 +860,16 @@
                         <div class="heading-title color-lightgrey mb-40 text-center">
                             <h5 class="uppercase">Testimoniales</h5> 
                         </div>
+
                     </div>
+
                      <div class="col-xs-12">
+
                          <div class="total-testimonial active-slider carosule-pagi pagi-03">
+
                              <div class="single-testimonial">
                                  <div class="testimonial-img">
-                                     <img src="assets/images/team/testi-03.jpg" alt="">
+                                     <img src="images/team/testi-03.jpg" alt="">
                                  </div>
                                  <div class="testimonial-content color-lightgrey">
                                      <div class="name-degi pos-rltv">
@@ -879,7 +883,7 @@
                              </div>
                              <div class="single-testimonial">
                                  <div class="testimonial-img">
-                                     <img src="assets/images/team/testi-02.jpg" alt="">
+                                     <img src="images/team/testi-02.jpg" alt="">
                                  </div>
                                  <div class="testimonial-content color-lightgrey">
                                      <div class="name-degi pos-rltv">
@@ -893,7 +897,7 @@
                              </div>
                              <div class="single-testimonial">
                                  <div class="testimonial-img">
-                                     <img src="assets/images/team/testi-01.jpg" alt="">
+                                     <img src="images/team/testi-01.jpg" alt="">
                                  </div>
                                  <div class="testimonial-content color-lightgrey">
                                      <div class="name-degi pos-rltv">
@@ -906,11 +910,58 @@
                                  </div>
                              </div>
                          </div>
+                          <a href="#" class="btn btn-primary" title="" style="background: #333;" data-toggle="modal" data-target="#exampleModal">Comentanos</a>
                      </div>
                  </div>
              </div>
          </div>        
         <!--testimonial-area-end-->
+        
+       <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="top: 100px;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #abcd40;">
+        <h5 class="modal-title text-center" id="exampleModalLabel" style="color: white; width: 50%;margin-left: 25%;">Comentanos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -25px;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form  method="post" accept-charset="utf-8">
+      <div class="modal-body">
+       
+          <div class="form-group input-box mb-20 ">
+              <label>Nombre</label>
+              <input type="text" name="" value="" >
+              
+          </div>
+          <div class="form-group  ">
+              <!-- <label>Imagen</label>
+              <input id="file-input" style="background-color: transparent;" type="file" name="" value=""> -->
+                <img id="imgpreview" style="width: 100px;height: auto;" src="" alt="">
+
+          </div>
+          <div class="form-group  ">
+              <label>Imagen</label>
+              <input id="file-input" style="background-color: transparent;" type="file" name="" value="">
+               
+
+          </div>
+          
+          <div class="form-group ">
+              <label>Comentario <textarea name="" cols="60"></textarea></label>
+          </div>
+      
+      </div>
+      <div class="modal-footer" style="background: #abcd40;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: black;">Close</button>
+        <button type="button" class="btn btn-warning current">Enviar</button>
+      </div>
+       </form>
+    </div>
+  </div>
+</div>
+<!--====  modal  ====-->
         
        
         

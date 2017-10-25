@@ -108,12 +108,15 @@
     <Content Include="assets\css\shortcode\slider.css" />
     <Content Include="assets\css\style-customizer.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\dist\starrr.css" />
+    <Content Include="assets\dist\starrr.js" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\fonts\Simple-Line-Icons.svg" />
     <Content Include="assets\fonts\slick.svg" />
     <Content Include="assets\js\carritoAddItem.js" />
     <Content Include="assets\js\form-elements.js" />
+    <Content Include="assets\js\form-validationNews.js" />
     <Content Include="assets\js\form-validation.js" />
     <Content Include="assets\images\banner\01.png" />
     <Content Include="assets\images\banner\02.png" />
@@ -383,9 +386,10 @@
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.dll" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.pdb" />
     <Content Include="packages.config" />
-    <Content Include="sfrmAddItemCart.aspx" />
     <Content Include="sfrmMunicipios.aspx" />
     <Content Include="sfrmRegistrar.aspx" />
+    <Content Include="sfrmSucribete.aspx" />
+    <Content Include="sfrmTallas.aspx" />
     <Content Include="Site.Master" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />
@@ -442,6 +446,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClaseAuxiliar.cs" />
+    <Compile Include="ClaseAux\EnvioCorreo.cs" />
     <Compile Include="CustomIdentity.cs" />
     <Compile Include="CustomPrincipal.cs" />
     <Compile Include="frmAppend.aspx.cs">
@@ -542,13 +547,6 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sfrmAddItemCart.aspx.cs">
-      <DependentUpon>sfrmAddItemCart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sfrmAddItemCart.aspx.designer.cs">
-      <DependentUpon>sfrmAddItemCart.aspx</DependentUpon>
-    </Compile>
     <Compile Include="sfrmMunicipios.aspx.cs">
       <DependentUpon>sfrmMunicipios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -562,6 +560,20 @@
     </Compile>
     <Compile Include="sfrmRegistrar.aspx.designer.cs">
       <DependentUpon>sfrmRegistrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmSucribete.aspx.cs">
+      <DependentUpon>sfrmSucribete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmSucribete.aspx.designer.cs">
+      <DependentUpon>sfrmSucribete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmTallas.aspx.cs">
+      <DependentUpon>sfrmTallas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmTallas.aspx.designer.cs">
+      <DependentUpon>sfrmTallas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

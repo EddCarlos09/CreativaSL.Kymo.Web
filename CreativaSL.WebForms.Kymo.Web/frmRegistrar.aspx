@@ -102,31 +102,38 @@
                             <div class=" col-md-4">
                                 <div class="login-reg">
                                     <h3>Sobre su cuenta</h3>
+                                    <div class="row">
                                     <div class="input-box mb-20 col-md-12">
                                         <label class="control-label">Teléfono</label>
                                         <input type="text" name="Telefono" id="Telefono" value="" placeholder="Telefono">
                                     </div>
-
+                                    </div>
+                                                 <div class="row">
                                     <div class="input-box mb-20 col-md-12">
                                         <label class="control-label">Correo Electrónico</label>
                                         <input type="text" name="Correo" id="Correo" value="" placeholder="nombre@dominio.com">
                                     </div>
+                                                     </div>
                                     <div class="input-box mb-20 col-md-12">
                                         <label class="control-label">Contraseña</label>
                                         <input type="password" name="Contrasena" id="Contrasena" value="" placeholder="">
                                     </div>
+                                                 <div class="row">
                                     <div class="input-box mb-20 col-md-12">
                                         <label class="control-label">Repetir Contraseña</label>
                                         <input type="password" name="Contrasena2" id="Contrasena2" value="" placeholder="">
                                     </div>
+                                                     </div>
+                                                 <div class="row">
                                     <div class=" mb-20 col-md-12 col-xs-12">
                                         <input type="checkbox" name="CkRecibir" id="CkRecibir" value="true" style="width: 15px;"><label style="width: 250px; padding-left: 20px;">Quiero recibir correo electrónico ofertas y novedades</label>
                                     </div>
+                                                     </div>
                                 </div>
                             </div>
                             <div class="frm-action">
                                 <div class="input-box tci-box">
-                                     <button class="btn-def btn2" type="submit">Registrase</button>
+                                     <button class="btn-def btn2 btn-kymo" type="submit">Registrase</button>
                                 </div>
                             </div>
                         </div>
@@ -136,34 +143,35 @@
         </div>
     </div>
     </asp:Content>
-    <asp:Content runat="server" ContentPlaceHolderID="cphScripts">    
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="../assets/js/form-validation.js"></script>
-        <script>
-            jQuery(document).ready(function() {
-                FormValidator.init();
-                $( "#datepicker" ).datepicker({
-                    changeMonth: true,
-                    changeYear: true,
-                    yearRange: "1950:2002"
-                });
-                $("#cmbEstado").change(function () {
-                    $("#cmbEstado option:selected").each(function () {
-                        elegido = $(this).val();
-                        $("#cmbMunicipio option").remove();
-                        $.ajaxSetup({
-                            async: false
+<asp:Content runat="server" ContentPlaceHolderID="cphScripts">
+    
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../assets/js/form-validation.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            FormValidator.init();
+            $( "#datepicker" ).datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "1950:2002"
+            });
+            $("#cmbEstado").change(function () {
+                $("#cmbEstado option:selected").each(function () {
+                    elegido = $(this).val();
+                    $("#cmbMunicipio option").remove();
+                    $.ajaxSetup({
+                        async: false
+                    });
+                    $.getJSON('sfrmMunicipios.aspx?estado=' + elegido, function (data) {
+                        $("#cmbMunicipio").append('<option value="">&nbsp;</option>');
+                        $.each(data, function (key, value) {
+                            $("#cmbMunicipio").append('<option value="' + value.IDMunicipio + '">' + value.Descripcion + '</option>');
                         });
-                        $.getJSON('sfrmMunicipios.aspx?estado=' + elegido, function (data) {
-                            $("#cmbMunicipio").append('<option value="">&nbsp;</option>');
-                            $.each(data, function (key, value) {
-                                $("#cmbMunicipio").append('<option value="' + value.IDMunicipio + '">' + value.Descripcion + '</option>');
-                            });
-                        });
-                        $("#cmbMunicipio").trigger('change.select2');
-                        $.ajaxSetup({
-                            async: true
-                        });
+                    });
+                    $("#cmbMunicipio").trigger('change.select2');
+                    $.ajaxSetup({
+                        async: true
+                    });
 
                     });
                 });
