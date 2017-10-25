@@ -79,6 +79,8 @@
     <Compile Include="EM_Suscribite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RR_AvisoPrivacidad.cs" />
+    <Compile Include="RR_Ropa.cs" />
+    <Compile Include="RR_TallasJson.cs" />
     <Compile Include="RR_TerminosCondiciones.cs" />
   </ItemGroup>
   <ItemGroup>

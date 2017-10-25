@@ -2339,3 +2339,8 @@ p.success {
 p.error {
     color: red
 }
+
+/**------- color estrellas*/
+.colorestrellas a{
+    color:#abcd40;
+}
