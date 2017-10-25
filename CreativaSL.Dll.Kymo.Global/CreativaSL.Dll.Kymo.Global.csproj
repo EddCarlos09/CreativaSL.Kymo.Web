@@ -69,6 +69,7 @@
     <Compile Include="DatosUser.cs" />
     <Compile Include="DatosUserJson.cs" />
     <Compile Include="EM_Clientes.cs" />
+    <Compile Include="EM_ContactoCorreo.cs" />
     <Compile Include="EM_Estado.cs" />
     <Compile Include="EM_Genero.cs" />
     <Compile Include="EM_HomeBanner.cs" />

@@ -30,7 +30,7 @@
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   
     <link rel="stylesheet" href="../assets/css/plugins.css">
-    <link rel="apple-touch-icon" href="assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/icons/favicon.ico">
     
     <!-- Modernizr JS -->
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -209,10 +209,6 @@
         <asp:ContentPlaceHolder ID="cphPrincipal" runat="server">        
         </asp:ContentPlaceHolder>
 
-        
-  
-       
-        
         <!-- footer area start-->
         <div class="footer-area ptb-50">
             <div class="container">
@@ -294,10 +290,10 @@
                             </div>
                             <div id="IdNews"class="newslatter">
                                 <form id="formnews" method="post" onsubmit="ValidarNews()">
-                                    <div class="input-box pos-rltv">
-                                        <input type="text" name="Correo" id="Correo" value="" placeholder="Introduce tu email">
-                                        <button class="btn-def btn2 btn-kymo" type="submit">Enviar</button>
-                                        <%-- <a href="#" onClick="ValidarNews()">
+                                    <div class="input-box pos-rltv newLer" >
+                                        <input type="text" name="CorreoElectronico" id="CorreoElectronico" value="" placeholder="Introduce tu email" style="width:220px">
+                                        <button class="btn-def btn2 btn-kymo" type="submit"><i class="zmdi zmdi-arrow-right"></i></button>
+                                         <%--<a href="#" onClick="ValidarNews()">
                                             <i class="zmdi zmdi-arrow-right"></i>
                                         </a>--%>
                                     </div>
@@ -453,20 +449,29 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="../assets/js/jquery-validation/dist/jquery.validate.min.js"></script>
      <script src="../assets/js/form-elements.js"></script>
-  <script src="../assets/js/form-validationNews.js"></script>
+  
     <script>
 			jQuery(document).ready(function() {
 			    FormElements.init();
-			    FormValidator.init();
+			});
+		</script>
+    
+    <asp:ContentPlaceHolder ID="cphScripts" runat="server">
+    
+    </asp:ContentPlaceHolder>
+    <script src="../assets/js/form-validationNews.js"></script>
+      <script>
+			jQuery(document).ready(function() {
+			    FormValidatorNews.init();
 			});
 		</script>
     <script>
      function ValidarNews() {
              $(this).submit(function (e) {
                  e.preventDefault();
-                 var Correo = $('#Correo').val();
+                 var CorreoElectronico = $('#CorreoElectronico').val();
                  var data = new FormData();
-                 data.append('Correo', Correo);
+                 data.append('CorreoElectronico', CorreoElectronico);
                  $.ajax({
                      type: 'POST',
                      url: 'sfrmSucribete.aspx',
@@ -489,11 +494,6 @@
              });
      }
         </script>
-    <asp:ContentPlaceHolder ID="cphScripts" runat="server">
-    
-    </asp:ContentPlaceHolder>
-
-
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -43,37 +43,40 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
                          <div class="row">
-                             <form id="contact-form" method="post">
+                             <form id="contact-form" method="post" onsubmit="ValidarContacto()">
                                   <div class="col-md-6">
                                        <div class="input-box mb-20">
-                                           <input name="name" class="info" placeholder="Nombre*" type="text"> 
+                                           <input class="info" id="Nombre" name="Nombre" placeholder="Nombre completo" type="text">
                                        </div>
                                    </div>
                                   <div class="col-md-6">
                                        <div class="input-box mb-20">
-                                           <input name="email" class="info" placeholder="Email" type="email"> 
+                                           <input class="info" id="Correo" name="Correo"  placeholder="Correo" type="email">
                                        </div>
                                    </div>
                                   <div class="col-md-6">
                                        <div class="input-box mb-20">
-                                           <input name="phone" class="info" placeholder="Teléfono" type="text"> 
+                                           <input class="info" id="Telefono" name="Telefono" placeholder="Telefono" type="text">
                                        </div>
                                    </div>
                                   <div class="col-md-6">
                                        <div class="input-box mb-20">
-                                           <input name="country" class="info" placeholder="Dirección" type="text"> 
+                                           <input name="Direccion" id="Direccion" class="info" placeholder="Dirección" type="text"> 
                                        </div>
                                    </div>
                                     <div class="col-md-12">
                                         <div class="input-box mb-20">
-                                            <textarea name="message" class="area-tex" placeholder="Tu mensaje*"></textarea>
+                                            <textarea class="info" id="Mensaje" name="Mensaje" placeholder="Mensaje"></textarea>
                                         </div>
                                     </div>
                                     <p class="form-messege"></p>
                                   <div class="col-xs-12">
-                                       <div class="input-box">
+                                     <div class="input-box tci-box">
+                                     <button class="btn-def btn2 btn-kymo" type="submit">ENVIAR</button>
+                                </div>
+                                      <%-- <div class="input-box">
                                            <input name="submit" class="sbumit-btn" value="Submit" type="submit"> 
-                                       </div>
+                                       </div>--%>
                                    </div>
                                    
                                </form>
@@ -367,4 +370,47 @@
                 }
     google.maps.event.addDomListener(window, 'load', initialize);
         </script>
+    <script src="../assets/js/form-validation.js"></script>
+    <script>
+    jQuery(document).ready(function() {
+            FormValidator.init(2);
+            });
+    </script>
+    <script>
+        function ValidarEviar() {
+            $(this).submit(function (e) {
+                e.preventDefault();
+                var Nombre = $('#Nombre').val();
+                var Correo = $('#Correo').val();
+                var Telefono = $('#Telefono').val();
+                var Direccion = $('#Direccion').val();
+                var Mensaje = $('#Mensaje').val();
+                var data = new FormData();
+                data.append('Nombre', Nombre);
+                data.append('Correo', Correo);
+                data.append('Telefono', Telefono);
+                data.append('Direccion', Direccion);
+                data.append('Mensaje', Mensaje);
+                $.ajax({
+                    type: 'POST',
+                    url: 'sfrmContactanos.aspx',
+                    contentType: false,
+                    data: data,
+                    processData: false,
+                    cache: false,
+                    success: function () {
+                        var padre = document.getElementById('IDContacto');
+                        var hijo = document.getElementById('contact-form');
+                        padre.removeChild(hijo);
+                        // document.getElementById('form').style.display = "none";
+                        document.getElementById('Correcto').innerHTML = "Gracias por contactarnos";
+                    },
+                    error: function () {
+                        document.getElementById('Correcto').innerHTML = "Error al enviar los datos .Intente mas tarde";
+                    }
+                });
+                return false;
+            });
+        }
+    </script>
 </asp:Content>

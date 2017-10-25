@@ -48,6 +48,8 @@
     <Compile Include="CH_NosotrosNegocio.cs" />
     <Compile Include="CH_ProductoNegocio.cs" />
     <Compile Include="EM_ClienteNegocio.cs" />
+    <Compile Include="EM_ContactoCorreoNegocio.cs" />
+    <Compile Include="EM_ContactoEnviarCorreoNegocio.cs" />
     <Compile Include="EM_EstadoNegocio.cs" />
     <Compile Include="EM_GeneroNegocio.cs" />
     <Compile Include="EM_HomeNegocio.cs" />

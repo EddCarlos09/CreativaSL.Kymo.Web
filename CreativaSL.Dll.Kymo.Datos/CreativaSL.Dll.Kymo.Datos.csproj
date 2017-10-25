@@ -52,6 +52,8 @@
     <Compile Include="CH_NosotrosDatos.cs" />
     <Compile Include="CH_ProductoDatos.cs" />
     <Compile Include="EM_ClienteDatos.cs" />
+    <Compile Include="EM_ContactoCorreoDatos.cs" />
+    <Compile Include="EM_ContactoEnvioCorreoDato.cs" />
     <Compile Include="EM_EstadoDatos.cs" />
     <Compile Include="EM_GeneroDatos.cs" />
     <Compile Include="EM_HomeDatos.cs" />

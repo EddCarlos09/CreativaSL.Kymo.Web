@@ -56,7 +56,7 @@ color:#abcd40;
 }
 .color {
     background-color:#ca4545;
-   color:#fff;
+   color:#fff !important;
    width: 100%;
    font-size:12px;
    text-align:center;

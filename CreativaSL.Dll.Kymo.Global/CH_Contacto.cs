@@ -170,7 +170,7 @@ namespace CreativaSL.Dll.Kymo.Global
 
         private bool _HtmlText;
         /// <summary>
-        /// Congiguración para el envío de correo de contacto con etiquetas HTML
+        /// Configuración para el envío de correo de contacto con etiquetas HTML
         /// </summary>
         public bool HtmlText
         {
@@ -187,8 +187,6 @@ namespace CreativaSL.Dll.Kymo.Global
             get { return _HostText; }
             set { _HostText = value; }
         }
-
-
 
         private List<CH_Textos> _ListaTextos;
         /// <summary>

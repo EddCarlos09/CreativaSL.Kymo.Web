@@ -102,26 +102,33 @@
                             <div class=" col-md-4">
                                 <div class="login-reg">
                                     <h3>Sobre su cuenta</h3>
+                                    <div class="row">
                                     <div class="input-box mb-20 col-md-12">
                                         <label class="control-label">Teléfono</label>
                                         <input type="text" name="Telefono" id="Telefono" value="" placeholder="Telefono">
                                     </div>
-
+                                    </div>
+                                                 <div class="row">
                                     <div class="input-box mb-20 col-md-12">
                                         <label class="control-label">Correo Electrónico</label>
                                         <input type="text" name="Correo" id="Correo" value="" placeholder="nombre@dominio.com">
                                     </div>
+                                                     </div>
                                     <div class="input-box mb-20 col-md-12">
                                         <label class="control-label">Contraseña</label>
                                         <input type="password" name="Contrasena" id="Contrasena" value="" placeholder="">
                                     </div>
+                                                 <div class="row">
                                     <div class="input-box mb-20 col-md-12">
                                         <label class="control-label">Repetir Contraseña</label>
                                         <input type="password" name="Contrasena2" id="Contrasena2" value="" placeholder="">
                                     </div>
+                                                     </div>
+                                                 <div class="row">
                                     <div class=" mb-20 col-md-12 col-xs-12">
                                         <input type="checkbox" name="CkRecibir" id="CkRecibir" value="true" style="width: 15px;"><label style="width: 250px; padding-left: 20px;">Quiero recibir correo electrónico ofertas y novedades</label>
                                     </div>
+                                                     </div>
                                 </div>
                             </div>
                             <div class="frm-action">
@@ -142,7 +149,7 @@
     <script src="../assets/js/form-validation.js"></script>
     <script>
         jQuery(document).ready(function() {
-            FormValidator.init();
+            FormValidator.init(1);
             $( "#datepicker" ).datepicker({
                 changeMonth: true,
                 changeYear: true,

@@ -18,7 +18,7 @@ namespace CreativaSL.WebForms.Kymo.Web
                 try
                 {
                     EM_Suscribite Datos = new EM_Suscribite { Conexion = Comun.Conexion };
-                    Datos.Correo = Request.Form["Correo"].ToString();
+                    Datos.Correo = Request.Form["CorreoElectronico"].ToString();
                     Datos.NombreSuscribete = "";
                     Datos.IdUsuario = "System Web";
                     EM_SuscribeteNegocio SN = new EM_SuscribeteNegocio();
