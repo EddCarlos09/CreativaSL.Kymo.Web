@@ -518,3 +518,7 @@ div.style-customizer .skin-teal {
   display: block;
   margin-bottom: 20px;
 }
+
+.buy-button-error-message {
+    visibility:hidden;
+}

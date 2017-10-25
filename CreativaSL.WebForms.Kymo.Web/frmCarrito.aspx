@@ -1,30 +1,14 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmProducto.aspx.cs" Inherits="CreativaSL.WebForms.Kymo.Web.frmProducto" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmCarrito.aspx.cs" Inherits="CreativaSL.WebForms.Kymo.Web.frmCarrito" %>
 
 <asp:Content ContentPlaceHolderID="cphPrincipal" runat="server">
-<!--breadcumb area start -->
-         <%  var imgTitle = _dataProduct.ListaImagenes.Find(x => x.NumPosition == 1);
-            if (imgTitle == null)
-            {
-        %>
-            <div class="breadcumb-area breadcumb overlay pos-rltv" style="background:rgba(0, 0, 0, 0) url('../assets/images/bg/breadcumb.jpg') no-repeat scroll 0 0;">
-        <%}
-        else
-        {
-            Response.Write("<div class='breadcumb-area breadcumb overlay pos-rltv' style='background:rgba(0, 0, 0, 0) url(" + imgTitle.UrlImagen + ") no-repeat scroll 0 0;'>");
-        }%>
+        <!--breadcumb area start -->
+        <div class="breadcumb-area overlay pos-rltv">
             <div class="bread-main">
                 <div class="bred-hading text-center">
-                    <%
-                        var _dataTitle = _dataProduct.ListaTextos.Find(x => x.NumPosition == 1);
-                        if(_dataTitle != null)
-                        {
-                            Response.Write("<h5>" + _dataTitle.Texto + "</h5>");
-                        }
-                    %>
-                </div>
+                    <h5>Prodcut Details</h5> </div>
                 <ol class="breadcrumb">
-                    <li class="home"><a title="Go to Home Page" href="/Home">Home</a></li>
-                    <li class="active">Detalle</li>
+                    <li class="home"><a title="Go to Home Page" href="index.html">Home</a></li>
+                    <li class="active">product-details</li>
                 </ol>
             </div>
         </div>
@@ -32,23 +16,22 @@
         
         <!--single-protfolio-area are start-->
         <div class="single-protfolio-area ptb-70">
-            <div class="container">
-                <div class="row">
+          <div class="container">
+              <div class="row">
                     <div class="col-md-7 col-sm-12 col-xs-12">
                        <div class="portfolio-thumbnil-area">
                         <div class="product-more-views">
                             <div class="tab_thumbnail" data-tabs="tabs">
                                 <div class="thumbnail-carousel">
                                     <ul>
-                                        <% int _aux = 1;
-                                            foreach (var item in _dataProduct.Producto.ListaImagenesThumb)
-                                            {
-                                                if (_aux == 1)
-                                                    Response.Write("<li class='active'><a href='#view" + _aux + "' class='shadow-box' aria-controls='view" + _aux + "' data-toggle='tab'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></li>");
-                                                else
-                                                    Response.Write("<li><a href='#view" + _aux + "' class='shadow-box' aria-controls='view" + _aux + "' data-toggle='tab'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></li>");
-                                                _aux++;
-                                            } %>
+                                       <li class="active">
+                                        <a href="#view11" class="shadow-box" aria-controls="view11" data-toggle="tab"><img src="images/product/01.jpg" alt="" /></a></li>
+                                       <li>
+                                        <a href="#view22" class="shadow-box" aria-controls="view22" data-toggle="tab"><img src="images/product/02.jpg" alt="" /></a></li>
+                                       <li>
+                                        <a href="#view33" class="shadow-box" aria-controls="view33" data-toggle="tab"><img src="images/product/03.jpg" alt="" /></a></li>
+                                       <li>
+                                        <a href="#view44" class="shadow-box" aria-controls="view44" data-toggle="tab"><img src="images/product/04.jpg" alt="" /></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -57,105 +40,108 @@
                            <div class="social-tag">
                               <a href="#"><i class="zmdi zmdi-share"></i></a>
                            </div>
-                            <% _aux = 1;
-                                foreach (var item in _dataProduct.Producto.ListaImagenes)
-                                {
-                                    if (_aux == 1)
-                                        Response.Write("<div role='tabpanel' class='tab-pane active' id=view" + _aux + "'><div class='product-img'><a class='fancybox' data-fancybox-group='group' href='" +item.UrlImagen + "'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></div></div>");
-                                    else
-                                        Response.Write("<div role='tabpanel' class='tab-pane' id=view" + _aux + "'><div class='product-img'><a class='fancybox' data-fancybox-group='group' href='" +item.UrlImagen + "'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></div></div>");
-                                    _aux++;
-                                } %>
+                            <div role="tabpanel" class="tab-pane active" id="view11">
+                                <div class="product-img">
+                                    <a class="fancybox" data-fancybox-group="group" href="images/product/01.jpg"><img src="images/product/01.jpg" alt="Single portfolio" /></a>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="view22">
+                                <div class="product-img">
+                                    <a class="fancybox" data-fancybox-group="group" href="images/product/02.jpg"><img src="images/product/02.jpg" alt="Single portfolio" /></a>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="view33">
+                                <div class="product-img">
+                                    <a class="fancybox" data-fancybox-group="group" href="images/product/03.jpg"><img src="images/product/03.jpg" alt="Single portfolio" /></a>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="view44">
+                                <div class="product-img">
+                                    <a class="fancybox" data-fancybox-group="group" href="images/product/04.jpg"><img src="images/product/04.jpg" alt="Single portfolio" /></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </div>
                     <div class="col-md-5 col-sm-12 col-xs-12">
                         <div class="single-product-description">
-                            <div class="sp-top-des">
-                                    <h3><% =_dataProduct.Producto.NombreProducto %> <span><% %></span></h3>
-                                    <div class="prodcut-ratting-price">
-                                        <div class="prodcut-ratting"> 
-                                            <%for (int i = 1; i <= 5; i++)
-                                            {
-                                                if (i <= _dataProduct.Producto.Valoracion)
-                                                    Response.Write("<a href='#' tabindex='0'><i class='fa fa-star'></i></a>");
-                                                else
-                                                    Response.Write("<a href='#' tabindex='0'><i class='fa fa-star-o'></i></a>");
-                                            }
-                                           %>
-                                        </div>
-                                        <div class="prodcut-price">
-                                            <div class="new-price">
-                                            <% System.Globalization.CultureInfo esMX = new System.Globalization.CultureInfo("es-MX");
-                                                Response.Write(string.Format(esMX,"Desde {0:c}", _dataProduct.Producto.MinPrecio));
-                                            %> 
-                                            </div>
-                                        </div>
+                           <div class="sp-top-des">
+                                <h3>GLOB t-SHIRT <span>(Brand)</span></h3>
+                                <div class="prodcut-ratting-price">
+                                    <div class="prodcut-ratting"> 
+                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
+                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
+                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
+                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
+                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
+                                    </div>
+                                    <div class="prodcut-price">
+                                        <div class="new-price"> $220 </div>
+                                        <div class="old-price"> <del>$250</del> </div>
                                     </div>
                                 </div>
+                            </div>
+                            
                             <div class="sp-des">
-                                <p><%=_dataProduct.Producto.Observaciones %></p>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p>
                             </div>
                             <div class="sp-bottom-des">
-                                <div class="single-product-option">
-                                    <div class="sort product-type">
-                                        <label>Color: </label>
-                                        <select id="input-sort-color">
-                                            <option value="1">Red</option>
-                                            <option value="2">Blue</option>
-                                            <option value="3">Green</option>
-                                            <option value="4">Purple</option>
-                                            <option value="5">Yellow</option>
-                                            <option value="6">Black</option>
-                                            <option value="7">Grey</option>
-                                            <option value="8">White</option>
-                                            <option value="0" selected>Chose Your Color</option>
-                                        </select>
-                                    </div>
-                                    <div class="sort product-type">
-                                        <label>Size: </label>
-                                        <select id="input-sort-size">
-                                            <option value="1">S</option>
-                                            <option value="2">M</option>
-                                            <option value="3">L</option>
-                                            <option value="4">XL</option>
-                                            <option value="5">XXL</option>
-                                            <option value="0" selected="">Chose Your Size</option>
-                                        </select>
-                                    </div>
+                            <div class="single-product-option">
+                                <div class="sort product-type">
+                                    <label>Color: </label>
+                                    <select id="input-sort-color">
+                                        <option value="1">Red</option>
+                                        <option value="2">Blue</option>
+                                        <option value="3">Green</option>
+                                        <option value="4">Purple</option>
+                                        <option value="5">Yellow</option>
+                                        <option value="6">Black</option>
+                                        <option value="7">Grey</option>
+                                        <option value="8">White</option>
+                                        <option value="0" selected>Chose Your Color</option>
+                                    </select>
                                 </div>
-                                <div class="quantity-area">
-                                    <label>Qty :</label>
-                                    <div class="cart-quantity">
-                                        <form action="#" method="POST" id="myform">
-                                            <div class="product-qty">
-                                                <div class="cart-quantity">
-                                                    <div class="cart-plus-minus">
-                                                        <div class="dec qtybutton">-</div>
-                                                        <input type="text" value="02" name="qtybutton" id="qtybutton" class="cart-plus-minus-box">
-                                                        <div class="inc qtybutton">+</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="social-icon socile-icon-style-1">
-                                    <div class="buy-button-error-messages">
-                                        <span class="buy-button-error-message" data-error-code="item.max.quantity.overflow">No es posible agregar más productos, has llegado al límite permitido</span>
-                                        <span class="buy-button-error-message" data-error-code="cart.items.max.quantity.overflow">No es posible agregar más productos, has llegado al límite permitido</span>
-                                        <span class="buy-button-error-message" data-error-code="cart.max.quantity.overflow">No es posible agregar más productos, has llegado al límite permitido</span>
-                                        <span id="default-error" class="buy-button-error-message" data-error-code="product.buy.server.error">Se ha producido un error, vuelva a intentarlo más tarde</span>
-                                    </div>
-                                    <ul>                                    
-                                        <li><a href="#" id="addCart" data-tooltip="Add To Cart" data-sku="ID0001" class="add-cart add-cart-text" data-placement="left" tabindex="0">Add To Cart<i class="fa fa-cart-plus"></i></a></li>
-                                    </ul>
+                                <div class="sort product-type">
+                                    <label>Size: </label>
+                                    <select id="input-sort-size">
+                                        <option value="1">S</option>
+                                        <option value="2">M</option>
+                                        <option value="3">L</option>
+                                        <option value="4">XL</option>
+                                        <option value="5">XXL</option>
+                                        <option value="0" selected="">Chose Your Size</option>
+                                    </select>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>  
-            </div>
+                            <div class="quantity-area">
+                                <label>Qty :</label>
+                                <div class="cart-quantity">
+                                    <form action="#" method="POST" id="myform">
+                                        <div class="product-qty">
+                                            <div class="cart-quantity">
+                                                <div class="cart-plus-minus">
+                                                    <div class="dec qtybutton">-</div>
+                                                        <input type="text" value="02" name="qtybutton" id="qtybutton" class="cart-plus-minus-box">
+                                                    <div class="inc qtybutton">+</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="social-icon socile-icon-style-1">
+                                <ul>
+                                    <li><a href="#" data-tooltip="Add To Cart" id="addCart" class="add-cart add-cart-text" data-placement="left" tabindex="0">Add To Cart<i class="fa fa-cart-plus"></i></a></li>
+                                    <li><a href="#" data-tooltip="Wishlist" class="w-list" tabindex="0"><i class="fa fa-heart-o"></i></a></li>
+                                    <li><a href="#" data-tooltip="Compare" class="cpare" tabindex="0"><i class="fa fa-refresh"></i></a></li>
+                                    <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="fa fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+          </div>  
+        </div>
         </div>
         <!--single-protfolio-area are start-->
         
@@ -237,7 +223,7 @@
                 <div class="row">
                    <div class="col-xs-12 text-center">
                        <div class="heading-title heading-style pos-rltv mb-50 text-center">
-                           <h5 class="uppercase">Productos relacionados</h5>
+                           <h5 class="uppercase">Related Product</h5>
                        </div>
                    </div>
                    <div class="clearfix"></div>
@@ -250,7 +236,7 @@
                                         <div class="new">New</div>
                                     </div>
                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="../assets/images/product/01.jpg" class="primary-image"> <img alt="" src="../assets/images/product/02.jpg" class="secondary-image"> </a>
+                                        <a href="single-product.html"> <img alt="" src="images/product/01.jpg" class="primary-image"> <img alt="" src="images/product/02.jpg" class="secondary-image"> </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
@@ -277,7 +263,7 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="../assets/images/product/03.jpg" class="primary-image"> <img alt="" src="../assets/images/product/04.jpg" class="secondary-image"> </a>
+                                        <a href="single-product.html"> <img alt="" src="images/product/03.jpg" class="primary-image"> <img alt="" src="images/product/04.jpg" class="secondary-image"> </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
@@ -307,7 +293,7 @@
                                         <div class="new">Sale</div>
                                     </div>
                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="../assets/images/product/02.jpg" class="primary-image"> <img alt="" src="../assets/images/product/03.jpg" class="secondary-image"> </a>
+                                        <a href="single-product.html"> <img alt="" src="images/product/02.jpg" class="primary-image"> <img alt="" src="images/product/03.jpg" class="secondary-image"> </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
@@ -341,7 +327,7 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="../assets/images/product/04.jpg" class="primary-image"> <img alt="" src="../assets/images/product/03.jpg" class="secondary-image"> </a>
+                                        <a href="single-product.html"> <img alt="" src="images/product/04.jpg" class="primary-image"> <img alt="" src="images/product/03.jpg" class="secondary-image"> </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
@@ -368,7 +354,7 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <div class="single-prodcut-img  product-overlay pos-rltv">
-                                        <a href="single-product.html"> <img alt="" src="../assets/images/product/05.jpg" class="primary-image"> <img alt="" src="../assets/images/product/06.jpg" class="secondary-image"> </a>
+                                        <a href="single-product.html"> <img alt="" src="images/product/05.jpg" class="primary-image"> <img alt="" src="images/product/06.jpg" class="secondary-image"> </a>
                                     </div>
                                     <div class="product-icon socile-icon-tooltip text-center">
                                         <ul>
@@ -401,6 +387,7 @@
                 </div>
             </div>
         </div>
+        <!--new arrival area end-->
     
 </asp:Content>
 

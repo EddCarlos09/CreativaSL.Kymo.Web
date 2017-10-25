@@ -136,98 +136,98 @@
         </div>
     </div>
     </asp:Content>
-<asp:Content runat="server" ContentPlaceHolderID="cphScripts">
-    
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="../assets/js/form-validation.js"></script>
-    <script>
-        jQuery(document).ready(function() {
-            FormValidator.init();
-            $( "#datepicker" ).datepicker({
-                changeMonth: true,
-                changeYear: true,
-                yearRange: "1950:2002"
-            });
-            $("#cmbEstado").change(function () {
-                $("#cmbEstado option:selected").each(function () {
-                    elegido = $(this).val();
-                    $("#cmbMunicipio option").remove();
-                    $.ajaxSetup({
-                        async: false
-                    });
-                    $.getJSON('sfrmMunicipios.aspx?estado=' + elegido, function (data) {
-                        $("#cmbMunicipio").append('<option value="">&nbsp;</option>');
-                        $.each(data, function (key, value) {
-                            $("#cmbMunicipio").append('<option value="' + value.IDMunicipio + '">' + value.Descripcion + '</option>');
+    <asp:Content runat="server" ContentPlaceHolderID="cphScripts">    
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="../assets/js/form-validation.js"></script>
+        <script>
+            jQuery(document).ready(function() {
+                FormValidator.init();
+                $( "#datepicker" ).datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "1950:2002"
+                });
+                $("#cmbEstado").change(function () {
+                    $("#cmbEstado option:selected").each(function () {
+                        elegido = $(this).val();
+                        $("#cmbMunicipio option").remove();
+                        $.ajaxSetup({
+                            async: false
                         });
-                    });
-                    $("#cmbMunicipio").trigger('change.select2');
-                    $.ajaxSetup({
-                        async: true
-                    });
+                        $.getJSON('sfrmMunicipios.aspx?estado=' + elegido, function (data) {
+                            $("#cmbMunicipio").append('<option value="">&nbsp;</option>');
+                            $.each(data, function (key, value) {
+                                $("#cmbMunicipio").append('<option value="' + value.IDMunicipio + '">' + value.Descripcion + '</option>');
+                            });
+                        });
+                        $("#cmbMunicipio").trigger('change.select2');
+                        $.ajaxSetup({
+                            async: true
+                        });
 
+                    });
                 });
             });
-        });
-    </script>
-    <script>
-     function ValidarContacto() {
-             $(this).submit(function (e) {
-                 e.preventDefault();
-                 var Nombre = $('#Nombre').val();
-                 var ApPaterno = $('#ApPaterno').val();
-                 var ApMaterno = $('#ApMaterno').val();
-                 var FechaNac = $('#datepicker').val();
-                 var Genero = $('#cmbGenero').val();
-                 var CP = $('#CP').val();
-                 var Direccion = $('#Direccion').val();
-                 var NExterior = $('#NExterior').val();
-                 var NInterior = $('#NInterior').val();
-                 var CmbEstado = $('#cmbEstado').val();
-                 var CmbMunicipio = $('#cmbMunicipio').val();
-                 var Colonia = $('#Colonia').val();
-                 var Telefono = $('#Telefono').val();
-                 var Correo = $('#Correo').val();
-                 var Contarena = $('#Contrasena').val();
-                 var Contrasena2 = $('#Contrasena2').val();
-                 var CkRecibir = $('#CkRecibir').val();
-                 var data = new FormData();
-                 data.append('Nombre', Nombre);
-                 data.append('ApPaterno', ApPaterno);
-                 data.append('ApMaterno', ApMaterno);
-                 data.append('datepicker', FechaNac);
-                 data.append('cmbGenero', Genero);
-                 data.append('CP', CP);
-                 data.append('Direccion', Direccion);
-                 data.append('NExtarior', NExterior);
-                 data.append('NInterior', NInterior);
-                 data.append('cmbEstado', CmbEstado);
-                 data.append('cmbMunicipio', CmbMunicipio);
-                 data.append('Colonia', Colonia);
-                 data.append('Telefono', Telefono);
-                 data.append('Correo', Correo);
-                 data.append('Contrasena', Contrasena);
-                 data.append('CkRecibir', CkRecibir);
-                 $.ajax({
-                     type: 'POST',
-                     url: 'sfrmRegistrar.aspx',
-                     contentType: false,
-                     data: data,
-                     processData: false,
-                     cache: false,
-                     success: function () {
-                         var padre = document.getElementById('IdRegistrar');
-                         var hijo = document.getElementById('contact-form');
-                         padre.removeChild(hijo);
-                         // document.getElementById('form').style.display = "none";
-                         document.getElementById('Correcto').innerHTML = "Gracias por registrase";
-                     },
-                     error: function () {
-                         document.getElementById('CorrectoError').innerHTML = "Error al enviar los datos .Intente mas tarde";
-                     }
-                 });
-                 return false;
-             });
-     }
         </script>
+        <script>
+         function ValidarContacto() {
+                 $(this).submit(function (e) {
+                     e.preventDefault();
+                     var Nombre = $('#Nombre').val();
+                     var ApPaterno = $('#ApPaterno').val();
+                     var ApMaterno = $('#ApMaterno').val();
+                     var FechaNac = $('#datepicker').val();
+                     var Genero = $('#cmbGenero').val();
+                     var CP = $('#CP').val();
+                     var Direccion = $('#Direccion').val();
+                     var NExterior = $('#NExterior').val();
+                     var NInterior = $('#NInterior').val();
+                     var CmbEstado = $('#cmbEstado').val();
+                     var CmbMunicipio = $('#cmbMunicipio').val();
+                     var Colonia = $('#Colonia').val();
+                     var Telefono = $('#Telefono').val();
+                     var Correo = $('#Correo').val();
+                     var Contarena = $('#Contrasena').val();
+                     var Contrasena2 = $('#Contrasena2').val();
+                     var CkRecibir = $('#CkRecibir').val();
+                     var data = new FormData();
+                     data.append('Nombre', Nombre);
+                     data.append('ApPaterno', ApPaterno);
+                     data.append('ApMaterno', ApMaterno);
+                     data.append('datepicker', FechaNac);
+                     data.append('cmbGenero', Genero);
+                     data.append('CP', CP);
+                     data.append('Direccion', Direccion);
+                     data.append('NExtarior', NExterior);
+                     data.append('NInterior', NInterior);
+                     data.append('cmbEstado', CmbEstado);
+                     data.append('cmbMunicipio', CmbMunicipio);
+                     data.append('Colonia', Colonia);
+                     data.append('Telefono', Telefono);
+                     data.append('Correo', Correo);
+                     data.append('Contrasena', Contrasena);
+                     data.append('CkRecibir', CkRecibir);
+                     $.ajax({
+                         type: 'POST',
+                         url: 'sfrmRegistrar.aspx',
+                         contentType: false,
+                         data: data,
+                         processData: false,
+                         cache: false,
+                         success: function (respuesta) {
+                             console.log(respuesta);
+                             var padre = document.getElementById('IdRegistrar');
+                             var hijo = document.getElementById('contact-form');
+                             padre.removeChild(hijo);
+                             // document.getElementById('form').style.display = "none";
+                             document.getElementById('Correcto').innerHTML = "Gracias por registrase";
+                         },
+                         error: function () {
+                             document.getElementById('CorrectoError').innerHTML = "Error al enviar los datos .Intente mas tarde";
+                         }
+                     });
+                     return false;
+                 });
+         }
+            </script>
     </asp:Content>

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CH_CarritoDatos.cs" />
     <Compile Include="CH_ClienteDatos.cs" />
     <Compile Include="CH_ConfiguracionDatos.cs" />
     <Compile Include="CH_ContactoDatos.cs" />
