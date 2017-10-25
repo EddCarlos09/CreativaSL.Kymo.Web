@@ -42,6 +42,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
+                       <p class="form-messege"></p>
                          <div class="row" id="IDContacto">
                              <form id="contact-form" method="post" onsubmit="ValidarEviar()">
                                   <div class="col-md-6">
@@ -69,7 +70,6 @@
                                             <textarea class="info" id="Mensaje" name="Mensaje" placeholder="Mensaje"></textarea>
                                         </div>
                                     </div>
-                                    <p class="form-messege"></p>
                                   <div class="col-xs-12">
                                      <div class="input-box tci-box">
                                      <button class="btn-def btn2 btn-kymo" type="submit">ENVIAR</button>
