@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmProducto.aspx.cs" Inherits="CreativaSL.WebForms.Kymo.Web.frmProducto" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="cphPrincipal">
+             
 
      <!--breadcumb area start -->
         <div class="breadcumb-area overlay pos-rltv">
@@ -64,24 +65,24 @@
                         </div>
                     </div>
                 </div>
+                  
                     <div class="col-md-5 col-sm-12 col-xs-12">
                         <div class="single-product-description">
+                            
                            <div class="sp-top-des">
                                 <h3>GLOB t-SHIRT <span>(Brand)</span></h3>
                                 <div class="prodcut-ratting-price">
-                                    <div class="prodcut-ratting"> 
-                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
-                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
-                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
-                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
-                                        <a href="#" tabindex="0"><i class="fa fa-star-o"></i></a> 
-                                    </div>
+                                    <div class="input-box">
+                                                                              
+                                               <span class="estrellas colorestrellas"></span>                                     
+                                        </div>
                                     <div class="prodcut-price">
                                         <div class="new-price"> $220 </div>
                                         <div class="old-price"> <del>$250</del> </div>
                                     </div>
                                 </div>
                             </div>
+                            
                             
                             <div class="sp-des">
                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p>
@@ -117,7 +118,7 @@
                             <div class="quantity-area">
                                 <label>Qty :</label>
                                 <div class="cart-quantity">
-                                    <form action="#" method="POST" id="myform">
+                                    <form action="frmProducto.aspx" method="POST" id="myform">
                                         <div class="product-qty">
                                             <div class="cart-quantity">
                                                 <div class="cart-plus-minus">

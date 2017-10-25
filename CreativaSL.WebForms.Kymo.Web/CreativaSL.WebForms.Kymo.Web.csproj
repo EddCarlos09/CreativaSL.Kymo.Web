@@ -107,6 +107,8 @@
     <Content Include="assets\css\shortcode\slider.css" />
     <Content Include="assets\css\style-customizer.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\dist\starrr.css" />
+    <Content Include="assets\dist\starrr.js" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\fonts\Simple-Line-Icons.svg" />

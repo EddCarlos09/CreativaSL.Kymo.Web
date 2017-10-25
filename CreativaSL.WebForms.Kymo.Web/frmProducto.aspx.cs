@@ -11,7 +11,14 @@ namespace CreativaSL.WebForms.Kymo.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
-        }
+            }
+            if (Request.Form.Count > 0)
+            {
+                var valor = Request.Form["ctl00$cph_MasterBody$valorEstrella"].ToString();
+            }
+        }        
     }
 }
