@@ -42,8 +42,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
-                         <div class="row">
-                             <form id="contact-form" method="post" onsubmit="ValidarContacto()">
+                         <div class="row" id="IDContacto">
+                             <form id="contact-form" method="post" onsubmit="ValidarEviar()">
                                   <div class="col-md-6">
                                        <div class="input-box mb-20">
                                            <input class="info" id="Nombre" name="Nombre" placeholder="Nombre completo" type="text">
@@ -403,10 +403,10 @@
                         var hijo = document.getElementById('contact-form');
                         padre.removeChild(hijo);
                         // document.getElementById('form').style.display = "none";
-                        document.getElementById('Correcto').innerHTML = "Gracias por contactarnos";
+                        document.getElementById('form-messege').innerHTML = "Gracias por contactarnos";
                     },
                     error: function () {
-                        document.getElementById('Correcto').innerHTML = "Error al enviar los datos .Intente mas tarde";
+                        document.getElementById('form-messege').innerHTML = "Error al enviar los datos .Intente mas tarde";
                     }
                 });
                 return false;

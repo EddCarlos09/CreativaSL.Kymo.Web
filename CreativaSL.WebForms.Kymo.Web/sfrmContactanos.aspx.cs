@@ -39,17 +39,17 @@ namespace CreativaSL.WebForms.Kymo.Web
                             if (!string.IsNullOrEmpty(Datos.Correo))
                             {
                                 EnvioCorreo.EnviarCorreo(
-                                    ConfigurationManager.AppSettings.Get(DatosAux.CorreoRemitente)
-                                    , ConfigurationManager.AppSettings.Get(DatosAux.PasswordCorreo)
+                                    DatosAux.CorreoRemitente
+                                    , DatosAux.PasswordCorreo
                                     , DatosAux.CorreoDestinatario
                                     , "Mensaje de contacto"
                                     , EnvioCorreo.GenerarHtmlContacto(Datos.Nombre, Datos.Correo, Datos.Telefono, Datos.Direccion, Datos.Mensaje)
                                     , false
                                     , ""
-                                    , Convert.ToBoolean(ConfigurationManager.AppSettings.Get(DatosAux.HtmlText.ToString()))
-                                    , ConfigurationManager.AppSettings.Get(DatosAux.HostText)
-                                    , Convert.ToInt32(ConfigurationManager.AppSettings.Get(DatosAux.Puerto))
-                                    , Convert.ToBoolean(ConfigurationManager.AppSettings.Get(DatosAux.EnableSSL.ToString())));
+                                    , DatosAux.HtmlText
+                                    , DatosAux.HostText
+                                    , DatosAux.Puerto
+                                    , DatosAux.EnableSSL);
                             }
                         }
                     }
@@ -58,7 +58,7 @@ namespace CreativaSL.WebForms.Kymo.Web
                         Response.Redirect("/ErrorPage", true);
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     Response.Redirect("/ErrorPage", true);
                 }
