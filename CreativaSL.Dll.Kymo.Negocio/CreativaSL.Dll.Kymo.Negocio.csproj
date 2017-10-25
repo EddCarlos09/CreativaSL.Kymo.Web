@@ -58,6 +58,7 @@
     <Compile Include="EM_SuscribeteNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RR_AvisosPrivacidadNegocio.cs" />
+    <Compile Include="RR_PrecioProductosNegocio.cs" />
     <Compile Include="RR_TallasNegocio.cs" />
     <Compile Include="RR_TerminosCondicionesNegocio.cs" />
   </ItemGroup>

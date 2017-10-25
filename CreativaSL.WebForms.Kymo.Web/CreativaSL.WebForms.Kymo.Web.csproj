@@ -389,6 +389,7 @@
     <Content Include="sfrmAddItemCart.aspx" />
     <Content Include="sfrmContactanos.aspx" />
     <Content Include="sfrmMunicipios.aspx" />
+    <Content Include="sfrmPrecioProductos.aspx" />
     <Content Include="sfrmRegistrar.aspx" />
     <Content Include="sfrmSucribete.aspx" />
     <Content Include="sfrmTallas.aspx" />
@@ -562,6 +563,13 @@
     </Compile>
     <Compile Include="sfrmMunicipios.aspx.designer.cs">
       <DependentUpon>sfrmMunicipios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmPrecioProductos.aspx.cs">
+      <DependentUpon>sfrmPrecioProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmPrecioProductos.aspx.designer.cs">
+      <DependentUpon>sfrmPrecioProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="sfrmRegistrar.aspx.cs">
       <DependentUpon>sfrmRegistrar.aspx</DependentUpon>

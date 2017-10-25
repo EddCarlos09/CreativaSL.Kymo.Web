@@ -449,6 +449,8 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="../assets/js/jquery-validation/dist/jquery.validate.min.js"></script>
      <script src="../assets/js/form-elements.js"></script>
+     <script src="../assets/dist/starrr.js"></script>
+
   
     <script>
 			jQuery(document).ready(function() {

@@ -309,7 +309,7 @@ Version: 1.0
 
 	//Estrellas de productos//
     $('.estrellas').starrr({
-    rating:3,
+    rating:4,
     change: function (e, valor) {
         alert(valor);
         document.getElementById("valorEstrella").value = valor;
@@ -337,5 +337,3 @@ Version: 1.0
       
       $('#imgpreview').attr("src",result);
      }
-
-
