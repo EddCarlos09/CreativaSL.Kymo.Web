@@ -2339,3 +2339,8 @@ p.success {
 p.error {
     color: red
 }
+.buy-button-error-message
+{
+    display:none!important;
+    visibility:hidden!important;
+}
