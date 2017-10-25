@@ -46,23 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CH_Busqueda.cs" />
     <Compile Include="CH_Cliente.cs" />
     <Compile Include="CH_ClienteJson.cs" />
+    <Compile Include="CH_Color.cs" />
     <Compile Include="CH_Configuracion.cs" />
     <Compile Include="CH_Contacto.cs" />
+    <Compile Include="CH_Familia.cs" />
     <Compile Include="CH_FAQ.cs" />
     <Compile Include="CH_Imagen.cs" />
     <Compile Include="CH_Nosotros.cs" />
+    <Compile Include="CH_PaginaProducto.cs" />
+    <Compile Include="CH_Producto.cs" />
     <Compile Include="CH_RedesSociales.cs" />
     <Compile Include="CH_SeccionA.cs" />
     <Compile Include="CH_SeccionB.cs" />
     <Compile Include="CH_SeccionC.cs" />
+    <Compile Include="CH_Talla.cs" />
     <Compile Include="CH_Textos.cs" />
+    <Compile Include="CH_VentaDetalle.cs" />
     <Compile Include="Comun.cs" />
     <Compile Include="DatosUser.cs" />
     <Compile Include="DatosUserJson.cs" />
+    <Compile Include="EM_Clientes.cs" />
+    <Compile Include="EM_Estado.cs" />
+    <Compile Include="EM_Genero.cs" />
     <Compile Include="EM_HomeBanner.cs" />
+    <Compile Include="EM_Municipio.cs" />
+    <Compile Include="EM_MunicipioJSON.cs" />
     <Compile Include="EM_Patrocinadores.cs" />
+    <Compile Include="EM_Suscribite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RR_AvisoPrivacidad.cs" />
     <Compile Include="RR_TerminosCondiciones.cs" />

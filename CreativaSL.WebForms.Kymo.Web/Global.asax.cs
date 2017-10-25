@@ -65,6 +65,7 @@ namespace CreativaSL.WebForms.Kymo.Web
                 "FAQ",
                 "~/frmFAQ.aspx");
 
+
             routes.MapPageRoute("",
                 "Products/{tipo}",
                 "~/frmProductos.aspx");

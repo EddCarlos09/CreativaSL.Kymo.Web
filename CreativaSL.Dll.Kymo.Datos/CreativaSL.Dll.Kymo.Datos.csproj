@@ -50,7 +50,13 @@
     <Compile Include="CH_ContactoDatos.cs" />
     <Compile Include="CH_FaqDatos.cs" />
     <Compile Include="CH_NosotrosDatos.cs" />
+    <Compile Include="CH_ProductoDatos.cs" />
+    <Compile Include="EM_ClienteDatos.cs" />
+    <Compile Include="EM_EstadoDatos.cs" />
+    <Compile Include="EM_GeneroDatos.cs" />
     <Compile Include="EM_HomeDatos.cs" />
+    <Compile Include="EM_MunicipioDatos.cs" />
+    <Compile Include="EM_SuscribeteDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RR_AvisoPrivacidadDatos.cs" />
     <Compile Include="RR_TerminosCondicionesDatos.cs" />

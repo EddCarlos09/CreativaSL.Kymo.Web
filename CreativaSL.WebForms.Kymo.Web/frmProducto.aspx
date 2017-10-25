@@ -1,13 +1,28 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmProducto.aspx.cs" Inherits="CreativaSL.WebForms.Kymo.Web.frmProducto" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="cphPrincipal">
-             
 
      <!--breadcumb area start -->
-        <div class="breadcumb-area overlay pos-rltv">
+         <%  var imgTitle = _dataProduct.ListaImagenes.Find(x => x.NumPosition == 1);
+            if (imgTitle == null)
+            {
+        %>
+            <div class="breadcumb-area breadcumb overlay pos-rltv" style="background:rgba(0, 0, 0, 0) url('assets/images/bg/breadcumb.jpg') no-repeat scroll 0 0;">
+        <%}
+        else
+        {
+            Response.Write("<div class='breadcumb-area breadcumb overlay pos-rltv' style='background:rgba(0, 0, 0, 0) url(" + imgTitle.UrlImagen + ") no-repeat scroll 0 0;'>");
+        }%>
             <div class="bread-main">
                 <div class="bred-hading text-center">
-                    <h5>Detalle del producto</h5> </div>
+                    <%
+                        var _dataTitle = _dataProduct.ListaTextos.Find(x => x.NumPosition == 1);
+                        if(_dataTitle != null)
+                        {
+                            Response.Write("<h5>" + _dataTitle.Texto + "</h5>");
+                        }
+                    %>
+                </div>
                 <ol class="breadcrumb">
                     <li class="home"><a title="Go to Home Page" href="/Home">Home</a></li>
                     <li class="active">Detalle</li>
@@ -26,14 +41,15 @@
                             <div class="tab_thumbnail" data-tabs="tabs">
                                 <div class="thumbnail-carousel">
                                     <ul>
-                                       <li class="active">
-                                        <a href="#view11" class="shadow-box" aria-controls="view11" data-toggle="tab"><img src="../assets/images/product/01.jpg" alt="" /></a></li>
-                                       <li>
-                                        <a href="#view22" class="shadow-box" aria-controls="view22" data-toggle="tab"><img src="../assets/images/product/02.jpg" alt="" /></a></li>
-                                       <li>
-                                        <a href="#view33" class="shadow-box" aria-controls="view33" data-toggle="tab"><img src="../assets/images/product/03.jpg" alt="" /></a></li>
-                                       <li>
-                                        <a href="#view44" class="shadow-box" aria-controls="view44" data-toggle="tab"><img src="../assets/images/product/04.jpg" alt="" /></a></li>
+                                        <% int _aux = 1;
+                                            foreach (var item in _dataProduct.Producto.ListaImagenesThumb)
+                                            {
+                                                if (_aux == 1)
+                                                    Response.Write("<li class='active'><a href='#view" + _aux + "' class='shadow-box' aria-controls='view" + _aux + "' data-toggle='tab'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></li><li>");
+                                                else
+                                                    Response.Write("<li><a href='#view" + _aux + "' class='shadow-box' aria-controls='view" + _aux + "' data-toggle='tab'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></li><li>");
+                                                _aux++;
+                                            } %>
                                     </ul>
                                 </div>
                             </div>
@@ -42,50 +58,46 @@
                            <div class="social-tag">
                               <a href="#"><i class="zmdi zmdi-share"></i></a>
                            </div>
-                            <div role="tabpanel" class="tab-pane active" id="view11">
-                                <div class="product-img">
-                                    <a class="fancybox" data-fancybox-group="group" href="../assets/images/product/01.jpg"><img src="../assets/images/product/01.jpg" alt="Single portfolio" /></a>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="view22">
-                                <div class="product-img">
-                                    <a class="fancybox" data-fancybox-group="group" href="../assets/images/product/02.jpg"><img src="../assets/images/product/02.jpg" alt="Single portfolio" /></a>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="view33">
-                                <div class="product-img">
-                                    <a class="fancybox" data-fancybox-group="group" href="../assets/images/product/03.jpg"><img src="../assets/images/product/03.jpg" alt="Single portfolio" /></a>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="view44">
-                                <div class="product-img">
-                                    <a class="fancybox" data-fancybox-group="group" href="../assets/images/product/04.jpg"><img src="../assets/images/product/04.jpg" alt="Single portfolio" /></a>
-                                </div>
-                            </div>
+                            <% _aux = 1;
+                                foreach (var item in _dataProduct.Producto.ListaImagenes)
+                                {
+                                    if (_aux == 1)
+                                        Response.Write("<div role='tabpanel' class='tab-pane active' id=view" + _aux + "'><div class='product-img'><a class='fancybox' data-fancybox-group='group' href='" +item.UrlImagen + "'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></div></div>");
+                                    else
+                                        Response.Write("<div role='tabpanel' class='tab-pane' id=view" + _aux + "'><div class='product-img'><a class='fancybox' data-fancybox-group='group' href='" +item.UrlImagen + "'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></div></div>");
+                                    _aux++;
+                                } %>
                         </div>
                     </div>
                 </div>
-                  
                     <div class="col-md-5 col-sm-12 col-xs-12">
                         <div class="single-product-description">
-                            
                            <div class="sp-top-des">
-                                <h3>GLOB t-SHIRT <span>(Brand)</span></h3>
+                                <h3><% =_dataProduct.Producto.NombreProducto %> <span><% %></span></h3>
                                 <div class="prodcut-ratting-price">
-                                    <div class="input-box">
-                                                                              
-                                               <span class="estrellas colorestrellas"></span>                                     
-                                        </div>
+                                    <div class="prodcut-ratting"> 
+                                        <%for (int i = 1; i <= 5; i++)
+                                            {
+                                                if (i <= _dataProduct.Producto.Valoracion)
+                                                    Response.Write("<a href='#' tabindex='0'><i class='fa fa-star'></i></a>");
+                                                else
+                                                    Response.Write("<a href='#' tabindex='0'><i class='fa fa-star-o'></i></a>");
+                                            }
+                                           %>
+                                    </div>
                                     <div class="prodcut-price">
-                                        <div class="new-price"> $220 </div>
-                                        <div class="old-price"> <del>$250</del> </div>
+                                        <div class="new-price">
+                                            <% System.Globalization.CultureInfo esMX = new System.Globalization.CultureInfo("es-MX");
+                                                Response.Write(string.Format(esMX,"Desde {0:c}", _dataProduct.Producto.MinPrecio));
+                                            %> 
+                                        </div>
+                                        <%--<div class="old-price"> <del>$250</del> </div>--%>
                                     </div>
                                 </div>
                             </div>
                             
-                            
                             <div class="sp-des">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p>
+                                <p><%=_dataProduct.Producto.Observaciones %></p>
                             </div>
                             <div class="sp-bottom-des">
                             <div class="single-product-option">
@@ -118,7 +130,7 @@
                             <div class="quantity-area">
                                 <label>Qty :</label>
                                 <div class="cart-quantity">
-                                    <form action="frmProducto.aspx" method="POST" id="myform">
+                                    <form action="#" method="POST" id="myform">
                                         <div class="product-qty">
                                             <div class="cart-quantity">
                                                 <div class="cart-plus-minus">
@@ -134,9 +146,6 @@
                             <div class="social-icon socile-icon-style-1">
                                 <ul>
                                     <li><a href="#" data-tooltip="Add To Cart" class="add-cart add-cart-text" data-placement="left" tabindex="0">Add To Cart<i class="fa fa-cart-plus"></i></a></li>
-                                    <li><a href="#" data-tooltip="Wishlist" class="w-list" tabindex="0"><i class="fa fa-heart-o"></i></a></li>
-                                    <li><a href="#" data-tooltip="Compare" class="cpare" tabindex="0"><i class="fa fa-refresh"></i></a></li>
-                                    <li><a href="#" data-tooltip="Quick View" class="q-view" data-toggle="modal" data-target=".modal" tabindex="0"><i class="fa fa-eye"></i></a></li>
                                 </ul>
                             </div>
                       </div>
@@ -225,7 +234,7 @@
                 <div class="row">
                    <div class="col-xs-12 text-center">
                        <div class="heading-title heading-style pos-rltv mb-50 text-center">
-                           <h5 class="uppercase">Related Product</h5>
+                           <h5 class="uppercase">Productos relacionados</h5>
                        </div>
                    </div>
                    <div class="clearfix"></div>
