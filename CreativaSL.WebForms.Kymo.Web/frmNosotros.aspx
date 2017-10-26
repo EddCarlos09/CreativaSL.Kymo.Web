@@ -7,7 +7,7 @@
             if (imgTitle == null)
             {
         %>
-            <div class="breadcumb-area breadcumb overlay pos-rltv" style="background:rgba(0, 0, 0, 0) url('assets/images/bg/breadcumb.jpg') no-repeat scroll 0 0;">
+            <div class="breadcumb-area breadcumb overlay pos-rltv" style="background:rgba(0, 0, 0, 0) url('../assets/images/bg/breadcumb.jpg') no-repeat scroll 0 0;">
         <%}
         else
         {

@@ -393,6 +393,7 @@
     <Content Include="sfrmRegistrar.aspx" />
     <Content Include="sfrmSucribete.aspx" />
     <Content Include="sfrmTallas.aspx" />
+    <Content Include="sfrmTestimonial.aspx" />
     <Content Include="Site.Master" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />
@@ -591,6 +592,13 @@
     </Compile>
     <Compile Include="sfrmTallas.aspx.designer.cs">
       <DependentUpon>sfrmTallas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmTestimonial.aspx.cs">
+      <DependentUpon>sfrmTestimonial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmTestimonial.aspx.designer.cs">
+      <DependentUpon>sfrmTestimonial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

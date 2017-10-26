@@ -19,7 +19,7 @@
                 <h1 id="Correcto" style="text-align:center; background-color:#75ea00; border-radius: 50px;"></h1>
                 <h1 id="CorrectoError" style="text-align:center; background-color:#ff0000; border-radius: 50px;"></h1>
                 <div id="IdRegistrar" class="col-sm-12 col-xs-12 lr2">
-                    <form id="contact-form" method="post" onsubmit="ValidarContacto()">
+                    <form id="contact-form" method="post">
                         <div class="col-md-12">
                             <div class=" col-md-8">
                                 <div class="login-reg">
@@ -177,65 +177,4 @@
                 });
             });
         </script>
-        <script>
-         function ValidarContacto() {
-                 $(this).submit(function (e) {
-                     e.preventDefault();
-                     var Nombre = $('#Nombre').val();
-                     var ApPaterno = $('#ApPaterno').val();
-                     var ApMaterno = $('#ApMaterno').val();
-                     var FechaNac = $('#datepicker').val();
-                     var Genero = $('#cmbGenero').val();
-                     var CP = $('#CP').val();
-                     var Direccion = $('#Direccion').val();
-                     var NExterior = $('#NExterior').val();
-                     var NInterior = $('#NInterior').val();
-                     var CmbEstado = $('#cmbEstado').val();
-                     var CmbMunicipio = $('#cmbMunicipio').val();
-                     var Colonia = $('#Colonia').val();
-                     var Telefono = $('#Telefono').val();
-                     var Correo = $('#Correo').val();
-                     var Contarena = $('#Contrasena').val();
-                     var Contrasena2 = $('#Contrasena2').val();
-                     var CkRecibir = $('#CkRecibir').val();
-                     var data = new FormData();
-                     data.append('Nombre', Nombre);
-                     data.append('ApPaterno', ApPaterno);
-                     data.append('ApMaterno', ApMaterno);
-                     data.append('datepicker', FechaNac);
-                     data.append('cmbGenero', Genero);
-                     data.append('CP', CP);
-                     data.append('Direccion', Direccion);
-                     data.append('NExtarior', NExterior);
-                     data.append('NInterior', NInterior);
-                     data.append('cmbEstado', CmbEstado);
-                     data.append('cmbMunicipio', CmbMunicipio);
-                     data.append('Colonia', Colonia);
-                     data.append('Telefono', Telefono);
-                     data.append('Correo', Correo);
-                     data.append('Contrasena', Contrasena);
-                     data.append('CkRecibir', CkRecibir);
-                     $.ajax({
-                         type: 'POST',
-                         url: 'sfrmRegistrar.aspx',
-                         contentType: false,
-                         data: data,
-                         processData: false,
-                         cache: false,
-                         success: function (respuesta) {
-                             console.log(respuesta);
-                             var padre = document.getElementById('IdRegistrar');
-                             var hijo = document.getElementById('contact-form');
-                             padre.removeChild(hijo);
-                             // document.getElementById('form').style.display = "none";
-                             document.getElementById('Correcto').innerHTML = "Gracias por registrase";
-                         },
-                         error: function () {
-                             document.getElementById('CorrectoError').innerHTML = "Error al enviar los datos .Intente mas tarde";
-                         }
-                     });
-                     return false;
-                 });
-         }
-            </script>
     </asp:Content>

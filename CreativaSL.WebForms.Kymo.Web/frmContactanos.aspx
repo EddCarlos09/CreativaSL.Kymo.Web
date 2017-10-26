@@ -42,9 +42,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
-                       <p id="formValidar" class="form-messege"></p>
+                       <p id="formValidar" class="form-messege" style="background-color:#b0c94d"></p>
                          <div class="row" id="IDContacto">
-                             <form id="contact-form" method="post" onsubmit="ValidarEnviar()">
+                             <form id="contact-form" method="post">
                                   <div class="col-md-6">
                                        <div class="input-box mb-20">
                                            <input class="info" id="Nombre" name="Nombre" placeholder="Nombre completo" type="text">
@@ -375,49 +375,5 @@
     jQuery(document).ready(function() {
             FormValidator.init(2);
             });
-    </script>
-    <script type="text/javascript">
-$(document).ready(function () {
-    $( "#button" ).click(function() {
-        $( "#form" ).submit();
-    });
-});
-</script>
-    <script>
-        function ValidarEnviar() {
-            $(this).submit(function (e) {
-                e.preventDefault();
-                var Nombre = $('#Nombre').val();
-                var Correo = $('#Correo').val();
-                var Telefono = $('#Telefono').val();
-                var Direccion = $('#Direccion').val();
-                var Mensaje = $('#Mensaje').val();
-                var data = new FormData();
-                data.append('Nombre', Nombre);
-                data.append('Correo', Correo);
-                data.append('Telefono', Telefono);
-                data.append('Direccion', Direccion);
-                data.append('Mensaje', Mensaje);
-                $.ajax({
-                    type: 'POST',
-                    url: 'sfrmContactanos.aspx',
-                    contentType: false,
-                    data: data,
-                    processData: false,
-                    cache: false,
-                    success: function () {
-                        var padre = document.getElementById('IDContacto');
-                        var hijo = document.getElementById('contact-form');
-                        padre.removeChild(hijo);
-                        // document.getElementById('form').style.display = "none";
-                        document.getElementById('formValidar').innerHTML = "Gracias por contactarnos";
-                    },
-                    error: function () {
-                        document.getElementById('formValidar').innerHTML = "Error al enviar los datos .Intente mas tarde";
-                    }
-                });
-                return false;
-            });
-        }
     </script>
 </asp:Content>

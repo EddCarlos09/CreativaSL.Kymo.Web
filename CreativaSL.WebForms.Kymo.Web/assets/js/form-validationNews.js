@@ -61,7 +61,29 @@ var FormValidatorNews = function () {
                 errorHandler1.hide();
                 // submit form
                 //$('#form').submit();
-                this.submit();
+                //this.submit();
+                var CorreoElectronico = $('#CorreoElectronico').val();
+                var data = new FormData();
+                data.append('CorreoElectronico', CorreoElectronico);
+                $.ajax({
+                    type: 'POST',
+                    url: 'sfrmSucribete.aspx',
+                    contentType: false,
+                    data: data,
+                    processData: false,
+                    cache: false,
+                    success: function () {
+                        $('#CorreoElectronico').val('');
+                        //var padre = document.getElementById('IdNews');
+                        //var hijo = document.getElementById('formnews');
+                        //padre.removeChild(hijo);
+                        document.getElementById('NewsL').innerHTML = "Gracias por suscribirte";
+                    },
+                    error: function () {
+                        document.getElementById('NewsL').innerHTML = "Error al suscribirte. Intente mas tarde";
+                    }
+                });
+                return false;
             }
         });
     };

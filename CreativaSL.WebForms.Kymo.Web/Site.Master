@@ -289,13 +289,10 @@
                                 <h5 id="NewsL">Suscribete a Newsletters</h5> 
                             </div>
                             <div id="IdNews"class="newslatter">
-                                <form id="formnews" method="post" onsubmit="ValidarNews()">
+                                <form id="formnews" method="post">
                                     <div class="input-box pos-rltv newLer" >
                                         <input type="text" name="CorreoElectronico" id="CorreoElectronico" value="" placeholder="Introduce tu email" style="width:220px">
                                         <button class="btn-def btn2 btn-kymo" type="submit"><i class="zmdi zmdi-arrow-right"></i></button>
-                                         <%--<a href="#" onClick="ValidarNews()">
-                                            <i class="zmdi zmdi-arrow-right"></i>
-                                        </a>--%>
                                     </div>
                                 </form>
                             </div>
@@ -467,35 +464,6 @@
 			    FormValidatorNews.init();
 			});
 		</script>
-    <script>
-     function ValidarNews() {
-             $(this).submit(function (e) {
-                 e.preventDefault();
-                 var CorreoElectronico = $('#CorreoElectronico').val();
-                 var data = new FormData();
-                 data.append('CorreoElectronico', CorreoElectronico);
-                 $.ajax({
-                     type: 'POST',
-                     url: 'sfrmSucribete.aspx',
-                     contentType: false,
-                     data: data,
-                     processData: false,
-                     cache: false,
-                     success: function () {
-                         var padre = document.getElementById('IdNews');
-                         var hijo = document.getElementById('formnews');
-                         padre.removeChild(hijo);
-                         // document.getElementById('form').style.display = "none";
-                         document.getElementById('NewsL').innerHTML = "Gracias por suscribirte";
-                     },
-                     error: function () {
-                         document.getElementById('NewsL').innerHTML = "Error al suscribirte. Intente mas tarde";
-                     }
-                 });
-                 return false;
-             });
-     }
-        </script>
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

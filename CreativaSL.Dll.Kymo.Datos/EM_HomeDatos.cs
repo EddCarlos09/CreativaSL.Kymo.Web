@@ -75,7 +75,36 @@ namespace CreativaSL.Dll.Kymo.Datos
             {
                 throw ex;
             }
-            #endregion
         }
+        #endregion
+
+        #region Home Patrocinadores
+        /// <summary>
+        /// Obtenemos los datos que se van a dibujar en la pagina web
+        /// </summary>
+        /// <param name="Datos">Objeto de Datos y Parametros</param>
+        /// <returns>Retorna la lista de patrocinadores</returns>
+        public List<EM_Testimoniales> ObtenerTestimonialesHome(EM_Testimoniales Datos)
+        {
+            try
+            {
+                List<EM_Testimoniales> Lista = new List<EM_Testimoniales>();
+                EM_Testimoniales Item;
+                SqlDataReader Dr = SqlHelper.ExecuteReader(Datos.Conexion, "EM_spCSLDB_get_Home_Testimoniales");
+                while (Dr.Read())
+                {
+                    Item = new EM_Testimoniales();
+                    Item.NombreCompleto = Dr.GetString(Dr.GetOrdinal("NombreCompleto"));
+                    Item.Comentario = Dr.GetString(Dr.GetOrdinal("Comentario"));
+                    Lista.Add(Item);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
     }
 }
