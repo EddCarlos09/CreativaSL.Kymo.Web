@@ -179,7 +179,8 @@
                                                 <div class="product-text">
                                                     <div class="prodcut-name"> <a href="single-product.html">Copenhagen Spitfire Chair</a> </div>
                                                     <div class="prodcut-ratting-price">
-                                                        <div class="prodcut-ratting"> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star-o"></i></a> </div>
+                                                        
+                                                        <%--<div class="prodcut-ratting"> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star"></i></a> <a href="#"><i class="fa fa-star-o"></i></a> </div>--%>
                                                         <div class="prodcut-price">
                                                             <div class="new-price"> $220 </div>
                                                         </div>
@@ -434,14 +435,21 @@
                                                     </ul>
                                                 </div>
                                             </div>
+                                            <form runat="server">
+                                                <asp:HiddenField ID="valorEstrella"  runat="server"/>
                                             <div class="product-text">
                                                 <div class="prodcut-name"> <a href="single-product.html">Quisque fringilla</a> </div>
                                                 <div class="prodcut-ratting-price">
                                                     <div class="prodcut-price">
+                                                        <div class="prodcut-ratting">
+                                                            <span class="estrellas"></span>
+                                                            </div>
                                                         <div class="new-price"> $220 </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                                <button formaction="frmProductos.aspx"></button>
+                                                </form>
                                         </div>
                                         <!-- single product end-->
                                     </div>                          

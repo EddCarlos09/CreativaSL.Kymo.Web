@@ -42,9 +42,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
-                       <p class="form-messege" id="form-messege"></p>
+                       <p class="form-messege"></p>
                          <div class="row" id="IDContacto">
-                             <form id="contact-form" method="post">
+                             <form id="contact-form" method="post" onsubmit="ValidarEviar()">
                                   <div class="col-md-6">
                                        <div class="input-box mb-20">
                                            <input class="info" id="Nombre" name="Nombre" placeholder="Nombre completo" type="text">
@@ -72,7 +72,7 @@
                                     </div>
                                   <div class="col-xs-12">
                                      <div class="input-box tci-box">
-                                     <button class="btn-def btn2 btn-kymo" type="submit">ENVIAR</button>
+                                     <button id="btnEnviar" class="btn-def btn2 btn-kymo" type="submit">ENVIAR</button>
                                 </div>
                                       <%-- <div class="input-box">
                                            <input name="submit" class="sbumit-btn" value="Submit" type="submit"> 
@@ -375,5 +375,42 @@
     jQuery(document).ready(function() {
             FormValidator.init(2);
             });
+    </script>
+    <script>
+        function ValidarEviar() {
+            $(this).submit(function (e) {
+                e.preventDefault();
+                var Nombre = $('#Nombre').val();
+                var Correo = $('#Correo').val();
+                var Telefono = $('#Telefono').val();
+                var Direccion = $('#Direccion').val();
+                var Mensaje = $('#Mensaje').val();
+                var data = new FormData();
+                data.append('Nombre', Nombre);
+                data.append('Correo', Correo);
+                data.append('Telefono', Telefono);
+                data.append('Direccion', Direccion);
+                data.append('Mensaje', Mensaje);
+                $.ajax({
+                    type: 'POST',
+                    url: 'sfrmContactanos.aspx',
+                    contentType: false,
+                    data: data,
+                    processData: false,
+                    cache: false,
+                    success: function () {
+                        var padre = document.getElementById('IDContacto');
+                        var hijo = document.getElementById('contact-form');
+                        padre.removeChild(hijo);
+                        // document.getElementById('form').style.display = "none";
+                        document.getElementById('form-messege').innerHTML = "Gracias por contactarnos";
+                    },
+                    error: function () {
+                        document.getElementById('form-messege').innerHTML = "Error al enviar los datos .Intente mas tarde";
+                    }
+                });
+                return false;
+            });
+        }
     </script>
 </asp:Content>
