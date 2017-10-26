@@ -253,23 +253,57 @@ Version: 1.0
 	/*----------------------------
      cart-plus-minus-button
     ------------------------------ */
-    $(".cart-plus-minus")
-    $(".qtybutton").on("click", function() {
-        var $button = $(this);
-        var oldValue = $button.parent().find("input").val();
-        if ($button.text() == "+") {
-            var newVal = parseFloat(oldValue) + 1;
-        } else {
-            // Don't allow decrementing below zero
-            if (oldValue > 0) {
-                var newVal = parseFloat(oldValue) - 1;
-            } else {
-                newVal = 0;
-            }
-        }
-        $button.parent().find("input").val(newVal);
-    });
-	
+	$(".cart-plus-minus")
+	$(".qtybutton").on("click", function () {
+	    var $button = $(this);
+	    var oldValue = $button.parent().find("input").val();
+	    var maxValue = $('#qtybutton').data('max');
+	    var minValue = $('#qtybutton').data('min');
+	    if ($button.text() == "+") {
+
+	        console.log("MAX: " + maxValue);
+	        if (oldValue < maxValue) {
+	            var newVal = parseFloat(oldValue) + 1;
+	        } else {
+	            newVal = maxValue;
+	        }
+	    } else {
+	        // Don't allow decrementing below zero
+	        console.log("Min: " + minValue);
+	        if (oldValue > minValue) {
+	            var newVal = parseFloat(oldValue) - 1;
+	        } else {
+	            newVal = minValue;
+	        }
+	    }
+	    $button.parent().find("input").val(newVal);
+	});
+
+	$(".cart-plus-minus")
+	$(".qtybutton2").on("click", function () {
+	    var $button = $(this);
+	    var oldValue = $button.parent().find("input").val();
+	    if ($button.text() == "+") {
+	        var newVal = parseFloat(oldValue) + 1;
+	    } else {
+	        // Don't allow decrementing below zero
+	        if (oldValue > 1) {
+	            var newVal = parseFloat(oldValue) - 1;
+	        } else {
+	            newVal = 1;
+	        }
+	    }
+
+	    // modificar cantidad de un producto
+	    var IdProducto = $button.parent().find("input").data('sku');
+	    var IdTalla = $button.parent().find("input").data('talla');
+	    var IdColor = $button.parent().find("input").data('color');
+	    console.log("idproducto: " + IdProducto);
+	    console.log("idtalla: " + IdTalla);
+	    console.log("idcolor: " + IdColor);
+	    $button.parent().find("input").val(newVal);
+	});
+
 	
 	
 		$('.acc-toggle').on('click', function(){
