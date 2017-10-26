@@ -155,5 +155,15 @@ namespace CreativaSL.Dll.Kymo.Global
             set { _Total = value; }
         }
 
+        private string _IdCarritoDetalle;
+        /// <summary>
+        /// Identificador del registro del producto en la venta
+        /// </summary>
+        public string IdCarritoDetalle
+        {
+            get { return _IdCarritoDetalle; }
+            set { _IdCarritoDetalle = value; }
+        }
+
     }
 }

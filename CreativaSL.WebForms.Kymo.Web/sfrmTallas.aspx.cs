@@ -14,23 +14,26 @@ namespace CreativaSL.WebForms.Kymo.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["IDProducto"] != null && Request.QueryString["IDColor"] != null)
+            if (!IsPostBack)
             {
-                string IDProducto = "";
-                int IDColor = 0;
-                IDProducto = Request.QueryString["IDProducto"].ToString();
-                int.TryParse(Request.QueryString["IDColor"], out IDColor);
-                CH_Producto CP = new CH_Producto();
-                CP.Color.IdColor = IDColor;
-                CP.IdProducto = IDProducto;
-                CP.Conexion = Comun.Conexion;/*"Data Source=192.168.1.150;Initial Catalog=CSL_KYMO; user=Leyder; password=12345678; MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";*/               
-                RR_TallasNegocio CN = new RR_TallasNegocio();
-                List<RR_TallasJson> Lista = CN.ObtenerTallasXIDColorProducto(CP);
-                var json = JsonConvert.SerializeObject(Lista);
-                Response.Clear();
-                Response.ContentType = "application/text;";
-                Response.Write(json);
-                Response.End();
+                if (Request.Form["IDProducto"] != null && Request.Form["IDColor"] != null)
+                {
+                    string IDProducto = "";
+                    int IDColor = 0;
+                    IDProducto = Request.Form["IDProducto"].ToString();
+                    int.TryParse(Request.Form["IDColor"], out IDColor);
+                    CH_Producto CP = new CH_Producto();
+                    CP.Color.IdColor = IDColor;
+                    CP.IdProducto = IDProducto;
+                    CP.Conexion = Comun.Conexion;
+                    RR_TallasNegocio CN = new RR_TallasNegocio();
+                    List<RR_TallasJson> Lista = CN.ObtenerTallasXIDColorProducto(CP);
+                    var json = JsonConvert.SerializeObject(Lista);
+                    Response.Clear();
+                    Response.ContentType = "application/text;";
+                    Response.Write(json);
+                    Response.End();
+                }
             }
         }
     }

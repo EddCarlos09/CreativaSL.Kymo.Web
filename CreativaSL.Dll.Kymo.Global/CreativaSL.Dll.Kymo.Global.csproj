@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CH_Busqueda.cs" />
+    <Compile Include="CH_Carrito.cs" />
     <Compile Include="CH_Cliente.cs" />
     <Compile Include="CH_ClienteJson.cs" />
     <Compile Include="CH_Color.cs" />
