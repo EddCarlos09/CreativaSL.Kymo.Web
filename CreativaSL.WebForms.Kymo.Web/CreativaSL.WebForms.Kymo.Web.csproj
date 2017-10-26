@@ -114,6 +114,7 @@
     <Content Include="assets\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\fonts\Simple-Line-Icons.svg" />
     <Content Include="assets\fonts\slick.svg" />
+    <Content Include="assets\images\team\branding1.png" />
     <Content Include="assets\js\cargarTallas.js" />
     <Content Include="assets\js\carrito.js" />
     <Content Include="assets\js\carritoAddItem.js" />

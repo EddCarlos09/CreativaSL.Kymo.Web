@@ -67,7 +67,7 @@
                         <div class="single-slider">
                             <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12"> 
                                 <div class="brand-img text-center">
-                                    <img src="assets/images/team/branding.png" alt=""> 
+                                    <img src="assets/images/team/branding1.png" alt=""> 
                                 </div>
                             </div>
                             <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
