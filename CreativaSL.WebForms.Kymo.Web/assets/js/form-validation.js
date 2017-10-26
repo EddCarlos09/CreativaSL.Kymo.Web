@@ -446,6 +446,9 @@ var FormValidator = function () {
             submitHandler: function (form) {
                 successHandler1.show();
                 errorHandler1.hide();
+                // submit form
+                //$('#form').submit();
+                //this.submit();
                 var Nombre = $('#Nombre').val();
                 var Correo = $('#Correo').val();
                 var Telefono = $('#Telefono').val();
@@ -465,19 +468,21 @@ var FormValidator = function () {
                     processData: false,
                     cache: false,
                     success: function () {
-                        var padre = document.getElementById('IDContacto');
-                        var hijo = document.getElementById('contact-form');
-                        padre.removeChild(hijo);
-                        // document.getElementById('form').style.display = "none";
-                        document.getElementById('form-messege').innerHTML = "Gracias por contactarnos";
+                        $('#Nombre').val('');
+                        $('#Correo').val('');
+                        $('#Telefono').val('');
+                        $('#Direccion').val('');
+                        $('#Mensaje').val('');
+                        //var padre = document.getElementById('IDContacto');
+                        //var hijo = document.getElementById('contact-form');
+                        //padre.removeChild(hijo);
+                        document.getElementById('formValidar').innerHTML = "Gracias por contactarnos";
                     },
                     error: function () {
-                        document.getElementById('form-messege').innerHTML = "Error al enviar los datos .Intente mas tarde";
+                        document.getElementById('formValidar').innerHTML = "Error al enviar los datos .Intente mas tarde";
                     }
                 });
-                // submit form
-                //$('#form').submit();
-                this.submit();
+                return false;
             }
         });
     };
