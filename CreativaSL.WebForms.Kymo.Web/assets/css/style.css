@@ -1422,6 +1422,31 @@ input.cart-plus-minus-box {
     background: #cc3333;
     border-color: #cc3333
 }
+
+.dec.qtybutton2,
+.inc.qtybutton2 {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #888888;
+    border-radius: 0;
+    color: #848484;
+    cursor: pointer;
+    float: left;
+    font-size: 20px;
+    font-weight: 700;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 45px;
+}
+.dec.qtybutton2:hover,
+.inc.qtybutton2:hover {
+    color: #fff;
+    background: #cc3333;
+    border-color: #cc3333
+}
+
 .sp-top-des > h3 {
     font-size: 22px;
     text-transform: uppercase;

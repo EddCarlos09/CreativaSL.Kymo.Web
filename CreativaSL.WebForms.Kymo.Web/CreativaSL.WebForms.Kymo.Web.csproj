@@ -114,8 +114,10 @@
     <Content Include="assets\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\fonts\Simple-Line-Icons.svg" />
     <Content Include="assets\fonts\slick.svg" />
-    <Content Include="assets\js\form-contacto.js" />
+    <Content Include="assets\js\cargarTallas.js" />
+    <Content Include="assets\js\carrito.js" />
     <Content Include="assets\js\carritoAddItem.js" />
+    <Content Include="assets\js\form-contacto.js" />
     <Content Include="assets\js\form-elements.js" />
     <Content Include="assets\js\form-validationNews.js" />
     <Content Include="assets\js\form-validation.js" />
@@ -372,6 +374,7 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="frmAppend.aspx" />
     <Content Include="frmAviso.aspx" />
+    <Content Include="frmCarrito.aspx" />
     <Content Include="frmContactanos.aspx" />
     <Content Include="frmDefault.aspx" />
     <Content Include="frmErrorPage.aspx" />
@@ -386,8 +389,10 @@
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.dll" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.pdb" />
     <Content Include="packages.config" />
+    <Content Include="sfrmAddCupon.aspx" />
     <Content Include="sfrmAddItemCart.aspx" />
     <Content Include="sfrmContactanos.aspx" />
+    <Content Include="sfrmDelItemCart.aspx" />
     <Content Include="sfrmMunicipios.aspx" />
     <Content Include="sfrmPrecioProductos.aspx" />
     <Content Include="sfrmRegistrar.aspx" />
@@ -467,6 +472,13 @@
     <Compile Include="frmAviso.aspx.designer.cs">
       <DependentUpon>frmAviso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmCarrito.aspx.cs">
+      <DependentUpon>frmCarrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCarrito.aspx.designer.cs">
+      <DependentUpon>frmCarrito.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmContactanos.aspx.cs">
       <DependentUpon>frmContactanos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -544,6 +556,13 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sfrmAddCupon.aspx.cs">
+      <DependentUpon>sfrmAddCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmAddCupon.aspx.designer.cs">
+      <DependentUpon>sfrmAddCupon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sfrmAddItemCart.aspx.cs">
       <DependentUpon>sfrmAddItemCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -557,6 +576,13 @@
     </Compile>
     <Compile Include="sfrmContactanos.aspx.designer.cs">
       <DependentUpon>sfrmContactanos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmDelItemCart.aspx.cs">
+      <DependentUpon>sfrmDelItemCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmDelItemCart.aspx.designer.cs">
+      <DependentUpon>sfrmDelItemCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="sfrmMunicipios.aspx.cs">
       <DependentUpon>sfrmMunicipios.aspx</DependentUpon>

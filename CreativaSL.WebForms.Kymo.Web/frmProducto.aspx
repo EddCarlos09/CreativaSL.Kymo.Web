@@ -96,34 +96,28 @@
                             <div class="sp-des">
                                 <p><%=_dataProduct.Producto.Observaciones %></p>
                             </div>
+                            <% if (_dataProduct.Producto.EsRopa)
+                                     { %>
                             <div class="sp-bottom-des">
                                 <div class="single-product-option">
                                     <div class="sort product-type">
                                         <label>Color: </label>
                                         <select id="input-sort-color">
-                                            <option value="1">Red</option>
-                                            <option value="2">Blue</option>
-                                            <option value="3">Green</option>
-                                            <option value="4">Purple</option>
-                                            <option value="5">Yellow</option>
-                                            <option value="6">Black</option>
-                                            <option value="7">Grey</option>
-                                            <option value="8">White</option>
-                                            <option value="0" selected>Chose Your Color</option>
+                                            <option value="0" selected>Seleccione</option>
+                                            <% foreach (var itemColor in _dataProduct.Producto.ListaColores)
+                                     {
+                                         Response.Write("<option value='" + itemColor.IdColor + "'>" + itemColor.Descripcion + "</option>");
+                                     } %>
                                         </select>
                                     </div>
                                     <div class="sort product-type">
-                                        <label>Size: </label>
+                                        <label>Talla: </label>
                                         <select id="input-sort-size">
-                                            <option value="1">S</option>
-                                            <option value="2">M</option>
-                                            <option value="3">L</option>
-                                            <option value="4">XL</option>
-                                            <option value="5">XXL</option>
-                                            <option value="0" selected="">Chose Your Size</option>
+                                            <option value="0" selected="">Seleccione</option>
                                         </select>
                                     </div>
                                 </div>
+                                <% } %>
                                 <div class="quantity-area">
                                     <label>Qty :</label>
                                     <div class="cart-quantity">
@@ -131,9 +125,9 @@
                                             <div class="product-qty">
                                                 <div class="cart-quantity">
                                                     <div class="cart-plus-minus">
-                                                        <div class="dec qtybutton">-</div>
-                                                        <input type="text" value="02" name="qtybutton" id="qtybutton" class="cart-plus-minus-box">
-                                                        <div class="inc qtybutton">+</div>
+                                                        <div id="decProd" class="dec qtybutton">-</div>
+                                                        <input type="text" value="1" name="qtybutton" id="qtybutton" class="cart-plus-minus-box" data-max="5" data-min="1">
+                                                        <div id="incProd" class="inc qtybutton">+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -148,7 +142,7 @@
                                         <span id="default-error" class="buy-button-error-message" data-error-code="product.buy.server.error">Se ha producido un error, vuelva a intentarlo más tarde</span>
                                     </div>
                                     <ul>                                    
-                                        <li><a href="#" id="addCart" data-tooltip="Add To Cart" data-sku="ID0001" class="add-cart add-cart-text" data-placement="left" tabindex="0">Add To Cart<i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="#" id="addCart" data-tooltip="Add To Cart" data-sku="<%=_dataProduct.Producto.IdProducto %>" class="add-cart add-cart-text" data-placement="left" tabindex="0">Add To Cart<i class="fa fa-cart-plus"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -158,78 +152,6 @@
             </div>
         </div>
         <!--single-protfolio-area are start-->
-        
-        <!--descripton-area start -->
-        <div class="descripton-area">
-            <div class="container">
-                <div class="row">
-                    <div class="product-area tab-cars-style">
-                        <div class="title-tab-product-category">
-                            <div class="col-md-12 text-center">
-                                <ul class="nav mb-40 heading-style-2" role="tablist">
-                                    <li role="presentation"><a href="#newarrival" aria-controls="newarrival" role="tab" data-toggle="tab">Description</a></li>
-                                    <li role="presentation" class="active"><a href="#bestsellr" aria-controls="bestsellr" role="tab" data-toggle="tab">Review</a></li>
-                                    <li role="presentation"><a href="#specialoffer" aria-controls="specialoffer" role="tab" data-toggle="tab">Tags</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="col-sm-12">
-                            <div class="content-tab-product-category">
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane fix fade in" id="newarrival">
-                                    <div class="review-wraper">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                            <br> veniam, quis nostrud exercitation.</p>
-                                        <h5>ABOUT ME</h5>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-                                        <h5>SIZE & FIT</h5>
-                                        <ul>
-                                            <li>Model wears: Style Photoliya U2980</li>
-                                            <li>Model's height: 185”66</li>
-                                        </ul>
-                                        <h5>Overview</h5>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fix fade in active" id="bestsellr">
-                                    <div class="review-wraper">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br> veniam, quis nostrud exercitation.</p>
-                                       <h5>SIZE & FIT</h5>
-                                       <ul>
-                                           <li>Model wears: Style Photoliya U2980</li>
-                                           <li>Model's height: 185”66</li>
-                                       </ul>
-                                        <h5>ABOUT ME</h5>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-                                       <h5>Overview</h5>
-                                       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fix fade in" id="specialoffer">
-                                    <ul class="tag-filter">
-                                        <li><a href="#">Fashion</a></li>
-                                        <li><a href="#">Women</a></li>
-                                        <li><a href="#">Winter</a></li>
-                                        <li><a href="#">Street Style</a></li>
-                                        <li><a href="#">Style</a></li>
-                                        <li><a href="#">Shop</a></li>
-                                        <li><a href="#">Collection</a></li>
-                                        <li><a href="#">Spring 2016</a></li>
-                                        <li><a href="#">Street Style</a></li>
-                                        <li><a href="#">Style</a></li>
-                                        <li><a href="#">Shop</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
-        <!--descripton-area end--> 
         
         <!--new arrival area start-->
         <div class="new-arrival-area ptb-70">
@@ -406,9 +328,11 @@
 
 <asp:Content ContentPlaceHolderID="cphScripts" runat="server">
     <script src="../assets/js/carritoAddItem.js"></script>
+    <script src="../assets/js/cargarTallas.js"></script>
     <script>
         jQuery(document).ready(function () {
             Carrito.init();
+            Tallas.init();
         });
     </script>
 </asp:Content>

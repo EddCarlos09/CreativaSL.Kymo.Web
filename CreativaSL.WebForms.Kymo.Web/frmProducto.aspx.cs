@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Profile;
+using System.Web.Security;
+
 namespace CreativaSL.WebForms.Kymo.Web
 {
     public partial class frmProducto : System.Web.UI.Page

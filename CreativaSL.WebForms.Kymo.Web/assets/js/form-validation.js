@@ -446,36 +446,38 @@ var FormValidator = function () {
             submitHandler: function (form) {
                 successHandler1.show();
                 errorHandler1.hide();
-                // submit form
-                //$('#form').submit();
-                //this.submit();
                 var Nombre = $('#Nombre').val();
-                var Mensaje = $('#Comentario').val();
+                var Correo = $('#Correo').val();
+                var Telefono = $('#Telefono').val();
+                var Direccion = $('#Direccion').val();
+                var Mensaje = $('#Mensaje').val();
                 var data = new FormData();
                 data.append('Nombre', Nombre);
+                data.append('Correo', Correo);
+                data.append('Telefono', Telefono);
+                data.append('Direccion', Direccion);
                 data.append('Mensaje', Mensaje);
                 $.ajax({
                     type: 'POST',
-                    url: 'sfrmTestimonial.aspx',
+                    url: 'sfrmContactanos.aspx',
                     contentType: false,
-                    dataType: "json",
                     data: data,
                     processData: false,
                     cache: false,
-                    success: function (Resultado2) {
-                        if (Resultado2.resultado == 1) {
-                            $('#Nombre').val('');
-                            $('#Comentario').val('');
-                            $('.close').click();
-                            // document.getElementById('form').style.display = "none";
-                            document.getElementById('Gracias').innerHTML = "Gracias por escribirnos";
-                        }
+                    success: function () {
+                        var padre = document.getElementById('IDContacto');
+                        var hijo = document.getElementById('contact-form');
+                        padre.removeChild(hijo);
+                        // document.getElementById('form').style.display = "none";
+                        document.getElementById('form-messege').innerHTML = "Gracias por contactarnos";
                     },
                     error: function () {
-                        document.getElementById('Gracias').innerHTML = "Error al enviar los datos .Intente mas tarde";
+                        document.getElementById('form-messege').innerHTML = "Error al enviar los datos .Intente mas tarde";
                     }
                 });
-                return false;
+                // submit form
+                //$('#form').submit();
+                this.submit();
             }
         });
     };
