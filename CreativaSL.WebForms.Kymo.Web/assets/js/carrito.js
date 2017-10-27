@@ -18,10 +18,20 @@
                     processData: false,
                     cache: false,
                     success: function (result) {
-                        console.log(result.resultado);
-                        console.log(result.descuento);
-                        console.log(result.total);
-                        //Ir a carrito o mostrar mensaje de error
+                        if(result.resultado == 1)
+                        {
+                            var codigoCupon = $('#cupon').val();
+                            $('#cuponInsert').addClass('hidden');
+                            $('#contCod').removeClass('hidden');
+                            document.getElementById('codigoCupon').innerHTML = codigoCupon;
+                            $('#cartDT').text(result.descuento);
+                            $('#cartTT').text(result.total);
+                        }
+                        else
+                        {
+                            //result.mensaje
+                            //Mostrar mensaje de error
+                        }
                     },
                     error: function () {
                         //Mostrar mensaje de error
@@ -42,7 +52,7 @@
             var idProducto = $button.data('sku');
             var idTalla = $button.data('talla');
             var idColor = $button.data('color');
-            console.log("Eliminar: sku=" + idProducto + ", talla=" + idTalla + ", color=" + idColor);
+            //console.log("Eliminar: sku=" + idProducto + ", talla=" + idTalla + ", color=" + idColor);
             var data = new FormData();
             data.append('IDProducto', idProducto);
             data.append('IDTalla', idTalla);
@@ -58,6 +68,29 @@
                 success: function (result) {
                     console.log(result.resultado);
                     //Eliminar la fila correspondiente
+                    var fila = $button.parents('tr');
+                    fila.remove();
+                    $('#cartST').text(result.subtotal);
+                    $('#cartDT').text(result.descuento);
+                    $('#cartTT').text(result.total);
+                    if(result.id_vale=='')
+                    {
+                        console.log("idvale vacio");
+                        if ($('#cuponInsert').hasClass('hidden'))
+                        {
+                            $('#contCod').addClass('hidden');
+                            $('#cuponInsert').removeClass('hidden');
+                            document.getElementById('codigoCupon').innerHTML = '';
+                        }
+                        else {
+                            console.log("tiene clase hidden");
+                            
+                        }
+                    }
+                    else
+                    {
+                        console.log("idvale lleno");
+                    }
                 },
                 error: function () {
                     //Mostrar mensaje de error

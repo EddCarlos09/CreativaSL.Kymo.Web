@@ -34,7 +34,9 @@ namespace CreativaSL.WebForms.Kymo.Web
                 }
             }
             catch (Exception)
-            { }
+            {
+                Response.Redirect("/ErrorPage", true);
+            }
         }
 
         public CH_PaginaProducto ObtenerDatosProducto(string _idProducto)

@@ -94,11 +94,11 @@ namespace CreativaSL.Dll.Kymo.Datos
                         while(drImagenes.Read())
                         {
                             itemImagenProd = new CH_Imagen();
-                            itemImagenProd.UrlImagen = drImagenes.GetString(drImagenes.GetOrdinal(""));
-                            itemImagenProd.Title = drImagenes.GetString(drImagenes.GetOrdinal(""));
-                            itemImagenProd.Alt = drImagenes.GetString(drImagenes.GetOrdinal(""));
+                            itemImagenProd.UrlImagen = drImagenes.GetString(drImagenes.GetOrdinal("UrlImagen"));
+                            itemImagenProd.Title = drImagenes.GetString(drImagenes.GetOrdinal("Title"));
+                            itemImagenProd.Alt = drImagenes.GetString(drImagenes.GetOrdinal("Alt"));
                             itemImagenProdThumb = new CH_Imagen { Title = itemImagenProd.Title, Alt = itemImagenProd.Alt };
-                            itemImagenProdThumb.UrlImagen = drImagenes.GetString(drImagenes.GetOrdinal(""));
+                            itemImagenProdThumb.UrlImagen = drImagenes.GetString(drImagenes.GetOrdinal("UrlImagenThumb"));
                             listaImagenesProd.Add(itemImagenProd);
                             listaImagenesProdThumb.Add(itemImagenProdThumb);
                         }

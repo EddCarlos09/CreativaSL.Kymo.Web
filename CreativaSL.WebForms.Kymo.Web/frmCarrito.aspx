@@ -109,23 +109,31 @@
                                                                         <%--<a href="#" class="btn-def btn2">Actualizar</a>--%>
                                                                         <a href="/Product" class="btn-def btn2">Continuar comprando</a>
                                                                     </div>
-                                                                    <%if (string.IsNullOrEmpty(_dataCart.CodigoVale))
-                                                                        { %>
-                                                                    <div class="coupn-area">
-                                                                        <div class="catagory-title cat-tit-5 mb-20">
-                                                                            <h3>Cupón</h3> 
-                                                                            <p>Introduce tu código aquí</p>
-                                                                        </div>                                           
+                                                                    
+                                                                    <div id="cuponInsert" class="cupon-insert <%if (!string.IsNullOrEmpty(_dataCart.CodigoVale)) Response.Write("hidden");%>">
+                                                                        <div class="coupn-area">
+                                                                            <div class="catagory-title cat-tit-5 mb-20">
+                                                                                <h3>Cupón</h3> 
+                                                                                <p>Introduce tu código aquí</p>
+                                                                            </div>                                           
                                                                             <div class="input-box input-box-2 mb-20">
                                                                                 <input type="text" placeholder="Cupón" class="info" name="cupon" id="cupon"> 
                                                                             </div>
                                                                             <a href="#" class="btn-def btn2" id="btnAplicarCupon">Canjear cupón</a>
+                                                                        </div>
                                                                     </div>
-                                                                    <%}
-                                                                    else
-                                                                    { %>
-                                                                        <%-- HTML para vale aplicado --%>
-                                                                    <% } %>
+
+                                                                    <div id="contCod" class="cont-cod <%if (string.IsNullOrEmpty(_dataCart.CodigoVale)) Response.Write("hidden");%>">
+                                                                        <div class="coupn-area">
+                                                                            <div class="catagory-title cat-tit-5 mb-20">
+                                                                                <h3>Código de cupón: <%=_dataCart.CodigoVale %></h3> 
+                                                                            </div>                                           
+                                                                            <div class="input-box input-box-2 mb-20">
+                                                                               <h5 id="codigoCupon"></h5>
+                                                                            </div>
+                                                                            <a href="#" class="btn-def btn2" id="btnEliminarCupon">Eliminar cupón</a>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4 col-sm-5 col-xs-12">
@@ -134,8 +142,8 @@
                                                                             <h3>Total</h3> 
                                                                      </div>
                                                                      <div class="sub-shipping">
-                                                                         <p>Subtotal <span><%Response.Write(string.Format(esMX,"{0:c}", _dataCart.Subtotal)); %></span></p>
-                                                                         <p>Descuento <span><%Response.Write(string.Format(esMX,"{0:c}", _dataCart.Descuento)); %></span></p>
+                                                                         <p>Subtotal <span id="cartST"><%Response.Write(string.Format(esMX,"{0:c}", _dataCart.Subtotal)); %></span></p>
+                                                                         <p>Descuento <span id="cartDT"><%Response.Write(string.Format(esMX,"{0:c}", _dataCart.Descuento)); %></span></p>
                                                                      </div>
                                                                      <div class="shipping-method text-right">
                                                                             <div class="shipp">
@@ -149,7 +157,7 @@
                                                                             <%--<p><a href="#">Calcular envío</a></p>--%>
                                                                      </div>
                                                                      <div class="process-cart-total">
-                                                                         <p>Total <span><%Response.Write(string.Format(esMX,"{0:c}", _dataCart.Total)); %></span></p>
+                                                                         <p>Total <span id="cartTT"><%Response.Write(string.Format(esMX,"{0:c}", _dataCart.Total)); %></span></p>
                                                                      </div>
                                                                      <div class="process-checkout-btn text-right">
                                                                          <a class="btn-def btn2" href="#">Siguiente</a>
