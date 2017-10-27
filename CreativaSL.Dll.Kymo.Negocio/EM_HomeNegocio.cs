@@ -69,5 +69,26 @@ namespace CreativaSL.Dll.Kymo.Negocio
             }
         }
         #endregion
+
+        #region Home Lista Imagenes Generales
+        /// <summary>
+        /// Es para obtener las imagenes por generales de la pagina
+        /// </summary>
+        /// <param name="Datos">Los datos de cadena conexion y parametros</param>
+        /// <returns>Retorna la lista de las imagenes</returns>
+        public List<EM_HomeGeneral> ListaImagenesGenerales(EM_HomeGeneral Datos)
+        {
+            try
+            {
+                EM_HomeDatos HD = new EM_HomeDatos();
+                return HD.ObtenerListaImagenesGenerales(Datos);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
     }
 }

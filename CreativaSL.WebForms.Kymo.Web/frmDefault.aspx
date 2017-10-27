@@ -853,7 +853,16 @@
         <!--discunt-featured-onsale-area end-->  
         
         <!--testimonial-area-start-->
-        <div class="testimonial-area overlay ptb-70 mt-70">
+       <%  var imgTitle = _ListaImagenes.Find(x => x.NumPosition == 1);
+            if (imgTitle == null)
+            {
+        %>
+            <div class="testimonial-area overlay ptb-70 mt-70" style="background: rgba(0, 0, 0, 0) url('../images/bg/testimonial.jpg') no-repeat fixed 0 0 / cover;">
+        <%}
+        else
+        {
+            Response.Write("<div class='testimonial-area overlay ptb-70 mt-70' style='background:rgba(0, 0, 0, 0) url(" + imgTitle.UrlImagen + ") no-repeat fixed 0 0 / cover;'>");
+        }%>
              <div class="container">
                  <div class="row">
                     <div class="col-xs-12 text-center">
