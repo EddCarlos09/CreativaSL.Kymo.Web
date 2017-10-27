@@ -116,6 +116,7 @@
     <Content Include="assets\fonts\slick.svg" />
     <Content Include="assets\images\team\branding1.png" />
     <Content Include="assets\js\cargarTallas.js" />
+    <Content Include="assets\js\delCuponCarrito.js" />
     <Content Include="assets\js\carrito.js" />
     <Content Include="assets\js\carritoAddItem.js" />
     <Content Include="assets\js\form-contacto.js" />
@@ -469,6 +470,7 @@
     <Content Include="sfrmAddCupon.aspx" />
     <Content Include="sfrmAddItemCart.aspx" />
     <Content Include="sfrmContactanos.aspx" />
+    <Content Include="sfrmDelCupon.aspx" />
     <Content Include="sfrmDelItemCart.aspx" />
     <Content Include="sfrmMunicipios.aspx" />
     <Content Include="sfrmPrecioProductos.aspx" />
@@ -654,6 +656,13 @@
     </Compile>
     <Compile Include="sfrmContactanos.aspx.designer.cs">
       <DependentUpon>sfrmContactanos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmDelCupon.aspx.cs">
+      <DependentUpon>sfrmDelCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmDelCupon.aspx.designer.cs">
+      <DependentUpon>sfrmDelCupon.aspx</DependentUpon>
     </Compile>
     <Compile Include="sfrmDelItemCart.aspx.cs">
       <DependentUpon>sfrmDelItemCart.aspx</DependentUpon>

@@ -1,30 +1,24 @@
-﻿var Carrito = function () {
+﻿var DelCuponCarrito = function () {
     "use strict";
     //function to 
-    var runCart = function () {
-        $("#btnAplicarCupon").click(function (event) {
+    var runDelCart = function () {
+        $("#btnEliminarCupon").click(function (event) {
             event.preventDefault();
-            var codigo = $('#cupon').val();
-            var patron = /^[A-Za-znñ0-9]+$/;
-            if (!codigo.search(patron)) {
-                var data = new FormData();
-                data.append('Codigo', codigo);
                 $.ajax({
                     type: 'POST',
-                    url: '../sfrmAddCupon.aspx',
+                    url: '../sfrmDelCupon.aspx',
                     contentType: false,
                     dataType: "json",
-                    data: data,
                     processData: false,
                     cache: false,
                     success: function (result) {
-                        console.log(result.resultado + "" + result.mensaje);
                         if(result.resultado == 1)
                         {
                             var codigoCupon = $('#cupon').val();
-                            $('#cuponInsert').addClass('hidden');
-                            $('#contCod').removeClass('hidden');
-                            document.getElementById('codigoCupon').innerHTML = codigoCupon;
+                            $('#contCod').addClass('hidden');
+                            $('#cuponInsert').removeClass('hidden');
+                            $('#codigoCupon').val('');
+                            document.getElementById("cupon").value = "";
                             $('#cartDT').text(result.descuento);
                             $('#cartTT').text(result.total);
                         }
@@ -38,11 +32,6 @@
                         //Mostrar mensaje de error
                     }
                 });
-            }
-            else
-            {
-                console.log("Ingrese un código válido")
-            }
             return false;
         });
 
@@ -118,7 +107,7 @@
     return {
         //main function to initiate template pages
         init: function () {
-            runCart();
+            runDelCart();
         }
     };
 }();

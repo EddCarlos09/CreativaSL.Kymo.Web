@@ -569,9 +569,11 @@
 
 <asp:Content ContentPlaceHolderID="cphScripts" runat="server">
     <script src="../assets/js/carrito.js"></script>
+     <script src="../assets/js/delCuponCarrito.js"></script>
     <script>
         jQuery(document).ready(function () {
             Carrito.init();
+            DelCuponCarrito.init();
         });
     </script>
 </asp:Content>

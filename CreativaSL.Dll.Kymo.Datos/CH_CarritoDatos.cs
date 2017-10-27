@@ -199,6 +199,42 @@ namespace CreativaSL.Dll.Kymo.Datos
             }
         }
 
-
+        /// <summary>
+        /// Eliminar un producto del carrito de compras
+        /// </summary>
+        /// <param name="_idCliente">Identificador del cliente logueado o del cliente anónimo.</param>
+        /// <param name="_esAnonimo">Bandera para identificar si un usuario está logueado o no.</param>
+        /// <param name="_conexion">Cadena de conexión para acceso.</param>
+        /// <returns>Retorna un objeto carrito con los totales y el resultado</returns>
+        public CH_Carrito EliminarCuponACarrito(string _idCliente, bool _esAnonimo, string _conexion)
+        {
+            try
+            {
+                CH_Carrito dataResult = new CH_Carrito();
+                object[] parametros = { _idCliente, _esAnonimo };
+                SqlDataReader dr = SqlHelper.ExecuteReader(_conexion, "CH_spCSLDB_set_EliminarValeCarrito", parametros);
+                while (dr.Read())
+                {
+                    int resultado = dr.GetInt32(dr.GetOrdinal("Resultado"));
+                    if (resultado == 1)
+                    {
+                        dataResult.Descuento = dr.GetDecimal(dr.GetOrdinal("descuento"));
+                        dataResult.Total = dr.GetDecimal(dr.GetOrdinal("total"));
+                        dataResult.MensajeError = string.Empty;
+                    }
+                    else
+                    {
+                        dataResult.MensajeError = dr.GetString(dr.GetOrdinal("MensajeError"));
+                    }
+                    dataResult.Resultado = resultado;
+                    break;
+                }
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
