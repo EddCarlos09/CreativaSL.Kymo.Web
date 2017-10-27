@@ -36,38 +36,38 @@
                 <div class="row">
                     <div class="col-md-7 col-sm-12 col-xs-12">
                        <div class="portfolio-thumbnil-area">
-                        <div class="product-more-views">
-                            <div class="tab_thumbnail" data-tabs="tabs">
-                                <div class="thumbnail-carousel">
-                                    <ul>
-                                        <% int _aux = 1;
-                                            foreach (var item in _dataProduct.Producto.ListaImagenesThumb)
-                                            {
-                                                if (_aux == 1)
-                                                    Response.Write("<li class='active'><a href='#view" + _aux + "' class='shadow-box' aria-controls='view" + _aux + "' data-toggle='tab'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></li>");
-                                                else
-                                                    Response.Write("<li><a href='#view" + _aux + "' class='shadow-box' aria-controls='view" + _aux + "' data-toggle='tab'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></li>");
-                                                _aux++;
-                                            } %>
-                                    </ul>
+                            <div class="product-more-views">
+                                <div class="tab_thumbnail" data-tabs="tabs">
+                                    <div class="thumbnail-carousel">
+                                        <ul>
+                                            <% int _aux = 1;
+                                                foreach (var item in _dataProduct.Producto.ListaImagenesThumb)
+                                                {
+                                                    if (_aux == 1)
+                                                        Response.Write("<li class='active'><a href='#view" + _aux + "' class='shadow-box' aria-controls='view" + _aux + "' data-toggle='tab'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></li>");
+                                                    else
+                                                        Response.Write("<li><a href='#view" + _aux + "' class='shadow-box' aria-controls='view" + _aux + "' data-toggle='tab'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></li>");
+                                                    _aux++;
+                                                } %>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="tab-content active-portfolio-area pos-rltv">
+                               <div class="social-tag">
+                                  <a href="#"><i class="zmdi zmdi-share"></i></a>
+                               </div>
+                                <% _aux = 1;
+                                    foreach (var item in _dataProduct.Producto.ListaImagenes)
+                                    {
+                                        if (_aux == 1)
+                                            Response.Write("<div role='tabpanel' class='tab-pane active' id='view" + _aux + "'><div class='product-img'><a class='fancybox' data-fancybox-group='group' href='" +item.UrlImagen + "'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></div></div>");
+                                        else
+                                            Response.Write("<div role='tabpanel' class='tab-pane' id='view" + _aux + "'><div class='product-img'><a class='fancybox' data-fancybox-group='group' href='" +item.UrlImagen + "'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></div></div>");
+                                        _aux++;
+                                    } %>
+                            </div>
                         </div>
-                        <div class="tab-content active-portfolio-area pos-rltv">
-                           <div class="social-tag">
-                              <a href="#"><i class="zmdi zmdi-share"></i></a>
-                           </div>
-                            <% _aux = 1;
-                                foreach (var item in _dataProduct.Producto.ListaImagenes)
-                                {
-                                    if (_aux == 1)
-                                        Response.Write("<div role='tabpanel' class='tab-pane active' id=view" + _aux + "'><div class='product-img'><a class='fancybox' data-fancybox-group='group' href='" +item.UrlImagen + "'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></div></div>");
-                                    else
-                                        Response.Write("<div role='tabpanel' class='tab-pane' id=view" + _aux + "'><div class='product-img'><a class='fancybox' data-fancybox-group='group' href='" +item.UrlImagen + "'><img src='" + item.UrlImagen + "' alt='" + item.Alt + "' title='" + item.Title + "' /></a></div></div>");
-                                    _aux++;
-                                } %>
-                        </div>
-                    </div>
                     </div>
                     <div class="col-md-5 col-sm-12 col-xs-12">
                         <div class="single-product-description">
@@ -78,9 +78,9 @@
                                             <%for (int i = 1; i <= 5; i++)
                                             {
                                                 if (i <= _dataProduct.Producto.Valoracion)
-                                                    Response.Write("<a href='#' tabindex='0'><i class='fa fa-star'></i></a>");
+                                                    Response.Write("<a href='javascript:;' tabindex='0'><i class='fa fa-star'></i></a>");
                                                 else
-                                                    Response.Write("<a href='#' tabindex='0'><i class='fa fa-star-o'></i></a>");
+                                                    Response.Write("<a href='javascript:;' tabindex='0'><i class='fa fa-star-o'></i></a>");
                                             }
                                            %>
                                         </div>

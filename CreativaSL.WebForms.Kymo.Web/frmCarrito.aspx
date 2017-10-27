@@ -70,7 +70,8 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <% foreach (var itemDet in _dataCart.ListaVentaDetalle)
+                                                            <%  int contAux = 1;
+                                                                foreach (var itemDet in _dataCart.ListaVentaDetalle)
                                                                 { %>
                                                             <tr class="cart_item">
                                                                 <td class="item-title"> <a href="/Product/<%=itemDet.Producto.IdProducto%>"><%=itemDet.Producto.NombreProducto %></a></td>
@@ -93,14 +94,39 @@
                                                                 <%--<td class="subtotal-price"><strong><%Response.Write(string.Format(esMX,"{0:c}", itemDet.Subtotal)); %></strong></td>
                                                                 <td class="discount"><strong><%Response.Write(string.Format(esMX,"{0:c}", itemDet.Descuento)); %></strong></td>--%>
                                                                 <td class="total-price"><strong><%Response.Write(string.Format(esMX,"{0:c}", itemDet.Total)); %></strong></td>
-                                                                <td class="remove-item"><a href="#" class="removeCart" data-sku="<%=itemDet.Producto.IdProducto %>" data-talla ="<%=itemDet.Producto.Talla.IdTalla %>" data-color="<%=itemDet.Producto.Color.IdColor %>"><i class="fa fa-trash-o"></i></a></td>
+                                                                <td class="remove-item">
+                                                                    <a href="#" class="removeCart" data-sku="<%=itemDet.Producto.IdProducto %>" data-talla ="<%=itemDet.Producto.Talla.IdTalla %>" data-color="<%=itemDet.Producto.Color.IdColor %>"><i class="fa fa-trash-o"></i></a>
+                                                                    <%--<a href="#" data-toggle="modal" data-target="#Modal<%=contAux %>" ><i class="fa fa-trash-o"></i></a>--%>
+                                                                    <!--====  Start modal  ====-->
+                                                                    <%--<div class="modal fade" id="Modal<%=contAux %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="top: 100px;">
+                                                                        <div class="modal-dialog" role="document">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header" style="background: #abcd40;">
+                                                                                    <h5 class="modal-title text-center" id="exampleModalLabel" style="color: white; width: 50%;margin-left: 25%;">Confirmación</h5>
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -25px;">
+                                                                                        <span aria-hidden="true">&times;</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    <div class="form-group input-box mb-20 ">
+                                                                                        <h5>¿Está seguro de quitar el producto del carrito?</h5>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="modal-footer" style="background: #abcd40;">
+                                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: black;">Cancelar</button>
+                                                                                    <button type="button" class="btn btn-success current removeCart" style="background: #abcd10;" data-sku="<%=itemDet.Producto.IdProducto %>" data-talla ="<%=itemDet.Producto.Talla.IdTalla %>" data-color="<%=itemDet.Producto.Color.IdColor %>">Aceptar</button>
+                                                                                </div>   
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>--%>
+                                                                    <!--====  modal  ====-->
+                                                                </td>
                                                             </tr>
-                                                            <%} %>
+                                                            <% contAux++;
+                                                                } %>
                                                         </tbody>
                                                     </table>
                                                     </div>
-
-
                                                     <div class="cart-bottom-area">
                                                         <div class="row">
                                                             <div class="col-md-8 col-sm-7 col-xs-12">
