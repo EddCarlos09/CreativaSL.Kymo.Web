@@ -51,8 +51,7 @@
             var $button = $(this);
             var idProducto = $button.data('sku');
             var idTalla = $button.data('talla');
-            var idColor = $button.data('color');
-            //console.log("Eliminar: sku=" + idProducto + ", talla=" + idTalla + ", color=" + idColor);
+            var idColor = $button.data('color');            
             var data = new FormData();
             data.append('IDProducto', idProducto);
             data.append('IDTalla', idTalla);
@@ -66,7 +65,6 @@
                 processData: false,
                 cache: false,
                 success: function (result) {
-                    console.log(result.resultado);
                     //Eliminar la fila correspondiente
                     var fila = $button.parents('tr');
                     fila.remove();
@@ -75,7 +73,6 @@
                     $('#cartTT').text(result.total);
                     if(result.id_vale=='')
                     {
-                        console.log("idvale vacio");
                         if ($('#cuponInsert').hasClass('hidden'))
                         {
                             $('#contCod').addClass('hidden');
@@ -83,13 +80,10 @@
                             document.getElementById('codigoCupon').innerHTML = '';
                         }
                         else {
-                            console.log("tiene clase hidden");
-                            
                         }
                     }
                     else
                     {
-                        console.log("idvale lleno");
                     }
                 },
                 error: function () {

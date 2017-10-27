@@ -114,6 +114,8 @@ namespace CreativaSL.Dll.Kymo.Datos
                             itemProducto = new CH_Producto();
                             itemProducto.IdProducto = drProductos.GetString(drProductos.GetOrdinal("IDProducto"));
                             imgProducto.UrlImagen = drProductos.GetString(drProductos.GetOrdinal("UrlImagen"));
+                            imgProducto.Alt = drProductos.GetString(drProductos.GetOrdinal("Alt"));
+                            imgProducto.Title = drProductos.GetString(drProductos.GetOrdinal("Title"));
                             itemProducto.ImagenPrincipal = imgProducto;
                             itemProducto.NombreProducto = drProductos.GetString(drProductos.GetOrdinal("Producto"));
                             itemProducto.MinPrecio = drProductos.GetDecimal(drProductos.GetOrdinal("MinPrecio"));
@@ -124,15 +126,15 @@ namespace CreativaSL.Dll.Kymo.Datos
 
                         dataPageResult.Producto = dataResult;
                         dataPageResult.Completado = true;
-                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
-                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
-                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
-                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
+                        //dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
+                        //dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
+                        //dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
+                        //dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
 
-                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
-                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
-                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
-                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
+                        //dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
+                        //dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
+                        //dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
+                        //dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
                         //dataPageResult.Producto.Valoracion = 4;
                         //dataPageResult.Producto.NombreProducto = "Pantalón Niño Preescolar";
                         //dataPageResult.Producto.MinPrecio = 280;
