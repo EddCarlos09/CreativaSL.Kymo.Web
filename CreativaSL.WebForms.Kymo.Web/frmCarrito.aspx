@@ -34,7 +34,7 @@
         <!--breadcumb area end -->
         
         <!--cart-checkout-area start -->
-        <div class="cart-checkout-area  pt-30">
+        <div id="cart" class="cart-checkout-area  pt-30">
             <div class="container">
                 <div class="row">
                     <div class="product-area">

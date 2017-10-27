@@ -56,6 +56,7 @@
             data.append('IDProducto', idProducto);
             data.append('IDTalla', idTalla);
             data.append('IDColor', idColor);
+            
             $.ajax({
                 type: 'POST',
                 url: '../sfrmDelItemCart.aspx',
@@ -64,6 +65,21 @@
                 data: data,
                 processData: false,
                 cache: false,
+                beforeSend: function () {
+                    /*SE CREA NUEVO ELEMENTO */
+                    var sidebar = document.querySelector('#cart');
+                    var nuevoDivElemento = document.createElement('div');
+                    var nuevaImagen = document.createElement('img');
+                    nuevoDivElemento.setAttribute("id", "load");
+                    nuevoDivElemento.setAttribute("style", "display:none;position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:10000;top:0;");
+                    nuevoDivElemento.setAttribute('class', 'text-center');
+                    /*nuevaImagen.setAttribute('src', 'images/icons/ajax-loader.gif');*/
+                    nuevaImagen.setAttribute('style', 'position:relative; top:350px');
+                    sidebar.appendChild(nuevoDivElemento);
+                    nuevoDivElemento.appendChild(nuevaImagen);
+                    $('#load').toggle(1000);
+                    
+                },
                 success: function (result) {
                     //Eliminar la fila correspondiente
                     var fila = $button.parents('tr');
@@ -88,7 +104,11 @@
                 },
                 error: function () {
                     //Mostrar mensaje de error
+                },
+                complete: function () {
+                    $('#load').toggle(1000);
                 }
+
             });
 
             return false;
