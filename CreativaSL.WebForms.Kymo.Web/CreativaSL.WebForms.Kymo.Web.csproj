@@ -441,6 +441,7 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.csprojResolveAssemblyReference.cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Properties\PublishProfiles\enrique.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

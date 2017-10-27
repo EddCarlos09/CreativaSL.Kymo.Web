@@ -9,8 +9,8 @@
                     {%>
                         <div class="single-slider pos-rltv">
                             <div class="slider-img">
-                                <img src="assets/images/slider/slider02.jpg" alt="<%=item.Alt%>" title="<%=item.Title%>"">
-                                <%--<img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>"">--%>
+                                <%--<img src="assets/images/slider/slider02.jpg" alt="<%=item.Alt%>" title="<%=item.Title%>"">--%>
+                                <img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>"">
                             </div>
                             <div class="slider-content pos-abs">
                                 <h4><%=item.TextoInicial%></h4>
@@ -940,8 +940,8 @@
                         <div class="col-md-3">
                             <div class="single-brand shadow-box">
                                 <a href="<%=item.UrlDestino%>">
-                                    <img src="assets/images/brand/01.png" alt="<%=item.Alt%>" title="<%=item.Title%>">
-                                    <%--<img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>">--%>
+                                    <%--<img src="assets/images/brand/01.png" alt="<%=item.Alt%>" title="<%=item.Title%>">--%>
+                                    <img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>">
                                 </a>
                             </div>
                         </div>
