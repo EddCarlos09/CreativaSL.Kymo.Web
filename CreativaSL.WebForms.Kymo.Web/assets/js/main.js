@@ -309,10 +309,9 @@ Version: 1.0
 
 	//Estrellas de productos//
     $('.estrellas').starrr({
-    rating:4,
-    change: function (e, valor) {
-        alert(valor);
-        document.getElementById("valorEstrella").value = valor;
+    rating:3,
+    change: function (e, valor) {             
+        document.getElementById("ValueHiddenField").value = valor;
     }
 });
  $('#file-input').change(function(e) {
