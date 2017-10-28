@@ -75,7 +75,62 @@ namespace CreativaSL.Dll.Kymo.Datos
             {
                 throw ex;
             }
-            #endregion
         }
+        #endregion
+
+        #region Home Testimoniales
+        /// <summary>
+        /// Obtenemos los datos que se van a dibujar en la pagina web
+        /// </summary>
+        /// <param name="Datos">Objeto de Datos y Parametros</param>
+        /// <returns>Retorna la lista de patrocinadores</returns>
+        public List<EM_Testimoniales> ObtenerTestimonialesHome(EM_Testimoniales Datos)
+        {
+            try
+            {
+                List<EM_Testimoniales> Lista = new List<EM_Testimoniales>();
+                EM_Testimoniales Item;
+                SqlDataReader Dr = SqlHelper.ExecuteReader(Datos.Conexion, "EM_spCSLDB_get_Home_Testimoniales");
+                while (Dr.Read())
+                {
+                    Item = new EM_Testimoniales();
+                    Item.NombreCompleto = Dr.GetString(Dr.GetOrdinal("NombreCompleto"));
+                    Item.Comentario = Dr.GetString(Dr.GetOrdinal("Comentario"));
+                    Lista.Add(Item);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Home Lista De Imagenes Generales 
+        public List<EM_HomeGeneral> ObtenerListaImagenesGenerales(EM_HomeGeneral Datos)
+        {
+            try
+            {
+                List<EM_HomeGeneral> Lista = new List<EM_HomeGeneral>();
+                EM_HomeGeneral Item;
+                SqlDataReader Dr = SqlHelper.ExecuteReader(Datos.Conexion, "EM_spCSLDB_get_Home_ImagenesGenerales");
+                while (Dr.Read())
+                {
+                    Item = new EM_HomeGeneral();
+                    Item.UrlImagen = Dr.GetString(Dr.GetOrdinal("UrlImagen"));
+                    Item.Alt = Dr.GetString(Dr.GetOrdinal("TextoAlternativo"));
+                    Item.Title = Dr.GetString(Dr.GetOrdinal("TituloImagen"));
+                    Item.NumPosition = Dr.GetInt32(Dr.GetOrdinal("NumPosition"));
+                    Lista.Add(Item);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
     }
 }

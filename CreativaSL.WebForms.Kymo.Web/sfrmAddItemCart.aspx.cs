@@ -36,7 +36,6 @@ namespace CreativaSL.WebForms.Kymo.Web
                     bool esAnonimo = !Request.IsAuthenticated;
                     CH_CarritoNegocio cartNeg = new CH_CarritoNegocio();
                     int resultado = cartNeg.AgregarProductoACarrito(idCliente, esAnonimo, datos, conexion);
-                    resultado = 0;
                     var json = JsonConvert.SerializeObject(new Result { resultado = resultado });
                     Response.Clear();
                     Response.ContentType = "application/text;";
@@ -62,8 +61,5 @@ namespace CreativaSL.WebForms.Kymo.Web
             }
         }
     }
-    struct Result
-    {
-        public int resultado { get; set; }
-    }
+    
 }

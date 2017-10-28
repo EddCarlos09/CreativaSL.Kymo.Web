@@ -10,6 +10,10 @@ namespace CreativaSL.Dll.Kymo.Negocio
 {
     public class EM_SuscribeteNegocio
     {
+        /// <summary>
+        /// Es el metodo para sucribir a nuestro clientes
+        /// </summary>
+        /// <param name="Datos">Se envia la cadena de conexion y lo parametros que recibe</param>
         public void AC_Sucribirte(EM_Suscribite Datos)
         {
             try

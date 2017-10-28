@@ -13,12 +13,16 @@ namespace CreativaSL.WebForms.Kymo.Web
     {
         public List<EM_HomeBanner> _ListaBanner = new List<EM_HomeBanner>();
         public List<EM_Patrocinadores> _ListaPatrocinadores = new List<EM_Patrocinadores>();
+        public List<EM_Testimoniales> _ListaTestimoniales = new List<EM_Testimoniales>();
+        public List<EM_HomeGeneral> _ListaImagenes = new List<EM_HomeGeneral>();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
                 this.BannerInicial();
                 this.Patrocinadores();
+                this.Testimoniales();
+                this.ListaImagenes();
             }
             catch (Exception)
             {
@@ -39,6 +43,20 @@ namespace CreativaSL.WebForms.Kymo.Web
             EM_Patrocinadores DatosPatro = new EM_Patrocinadores { Conexion = Comun.Conexion };
             EM_HomeNegocio HN = new EM_HomeNegocio();
             this._ListaPatrocinadores = HN.ObtenerPatrocinadores(DatosPatro);
+        }
+
+        private void Testimoniales()
+        {
+            EM_Testimoniales DatosTes = new EM_Testimoniales { Conexion = Comun.Conexion};
+            EM_HomeNegocio HN = new EM_HomeNegocio();
+            this._ListaTestimoniales = HN.ObtenerTestimoniales(DatosTes);
+        }
+
+        private void ListaImagenes()
+        {
+            EM_HomeGeneral DatosGen = new EM_HomeGeneral { Conexion = Comun.Conexion };
+            EM_HomeNegocio HN = new EM_HomeNegocio();
+            this._ListaImagenes = HN.ListaImagenesGenerales(DatosGen);
         }
     }
 }

@@ -7,7 +7,7 @@
             var color = $('#input-sort-color').val();
             var talla = $('#input-sort-size').val();
             var cantidad = $('#qtybutton').val();
-            var idProducto = $('#addCart').data('sku')
+            var idProducto = $('#addCart').data('sku');
             console.log("AddCarrito ( " +idProducto + ", " + color + ", " + talla + ", " + cantidad + ")");
             
             var data = new FormData();
@@ -20,14 +20,20 @@
                 type: 'POST',
                 url: '../sfrmAddItemCart.aspx',
                 contentType: false,
-                
+                dataType:"json",
                 data: data,
                 processData: false,
                 cache: false,
                 success: function (result) {
-                    console.log(result);
+                    console.log(result.resultado);
+                    //Ir a carrito o mostrar mensaje de error
+                    if(result.resultado == 1)
+                    {
+                        location.href = "/Carrito";
+                    }
                 },
                 error: function () {
+                    //Mostrar mensaje de error
                 }
             });
 

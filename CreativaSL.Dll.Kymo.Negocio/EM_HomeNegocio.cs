@@ -49,5 +49,46 @@ namespace CreativaSL.Dll.Kymo.Negocio
             }
         }
         #endregion
+
+        #region Home Testimoniales
+        /// <summary>
+        /// Es para obtener la lista de los Testimoniales que se van a visualizar
+        /// </summary>
+        /// <param name="Datos">Los datos son cadena conexion y parametos</param>
+        /// <returns>Retorna la lista de los patrocinadores</returns>
+        public List<EM_Testimoniales> ObtenerTestimoniales(EM_Testimoniales Datos)
+        {
+            try
+            {
+                EM_HomeDatos PD = new EM_HomeDatos();
+                return PD.ObtenerTestimonialesHome(Datos);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Home Lista Imagenes Generales
+        /// <summary>
+        /// Es para obtener las imagenes por generales de la pagina
+        /// </summary>
+        /// <param name="Datos">Los datos de cadena conexion y parametros</param>
+        /// <returns>Retorna la lista de las imagenes</returns>
+        public List<EM_HomeGeneral> ListaImagenesGenerales(EM_HomeGeneral Datos)
+        {
+            try
+            {
+                EM_HomeDatos HD = new EM_HomeDatos();
+                return HD.ObtenerListaImagenesGenerales(Datos);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
     }
 }

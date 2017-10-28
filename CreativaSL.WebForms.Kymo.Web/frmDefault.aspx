@@ -9,8 +9,8 @@
                     {%>
                         <div class="single-slider pos-rltv">
                             <div class="slider-img">
-                                <img src="assets/images/slider/slider02.jpg" alt="<%=item.Alt%>" title="<%=item.Title%>"">
-                                <%--<img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>"">--%>
+                                <%--<img src="assets/images/slider/slider02.jpg" alt="<%=item.Alt%>" title="<%=item.Title%>"">--%>
+                                <img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>"">
                             </div>
                             <div class="slider-content pos-abs">
                                 <h4><%=item.TextoInicial%></h4>
@@ -67,7 +67,7 @@
                         <div class="single-slider">
                             <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12"> 
                                 <div class="brand-img text-center">
-                                    <img src="assets/images/team/branding.png" alt=""> 
+                                    <img src="assets/images/team/branding1.png" alt=""> 
                                 </div>
                             </div>
                             <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
@@ -853,62 +853,39 @@
         <!--discunt-featured-onsale-area end-->  
         
         <!--testimonial-area-start-->
-        <div class="testimonial-area overlay ptb-70 mt-70">
+       <%  var imgTitle = _ListaImagenes.Find(x => x.NumPosition == 1);
+            if (imgTitle == null)
+            {
+        %>
+            <div class="testimonial-area overlay ptb-70 mt-70" style="background: rgba(0, 0, 0, 0) url('../images/bg/testimonial.jpg') no-repeat fixed 0 0 / cover;">
+        <%}
+        else
+        {
+            Response.Write("<div class='testimonial-area overlay ptb-70 mt-70' style='background:rgba(0, 0, 0, 0) url(" + imgTitle.UrlImagen + ") no-repeat fixed 0 0 / cover;'>");
+        }%>
              <div class="container">
                  <div class="row">
                     <div class="col-xs-12 text-center">
                         <div class="heading-title color-lightgrey mb-40 text-center">
-                            <h5 class="uppercase">Testimoniales</h5> 
+                            <h5 id="Gracias" class="uppercase">Testimoniales</h5> 
                         </div>
-
                     </div>
-
                      <div class="col-xs-12">
-
                          <div class="total-testimonial active-slider carosule-pagi pagi-03">
-
+                             <%foreach (var itemTes in _ListaTestimoniales)
+                                 {%>
                              <div class="single-testimonial">
-                                 <div class="testimonial-img">
-                                     <img src="images/team/testi-03.jpg" alt="">
-                                 </div>
                                  <div class="testimonial-content color-lightgrey">
                                      <div class="name-degi pos-rltv">
-                                         <h5>Anik Islam</h5>
-                                         <p>Developer</p>
+                                         <h5><%=itemTes.NombreCompleto%></h5>
+                                         <p></p>
                                      </div>
                                      <div class="testi-text">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                                         <p><%=itemTes.Comentario%></p>
                                      </div>
                                  </div>
                              </div>
-                             <div class="single-testimonial">
-                                 <div class="testimonial-img">
-                                     <img src="images/team/testi-02.jpg" alt="">
-                                 </div>
-                                 <div class="testimonial-content color-lightgrey">
-                                     <div class="name-degi pos-rltv">
-                                         <h5>Shakara Tasnim</h5>
-                                         <p>Facebook Liker</p>
-                                     </div>
-                                     <div class="testi-text">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="single-testimonial">
-                                 <div class="testimonial-img">
-                                     <img src="images/team/testi-01.jpg" alt="">
-                                 </div>
-                                 <div class="testimonial-content color-lightgrey">
-                                     <div class="name-degi pos-rltv">
-                                         <h5>Momen Buhyan</h5>
-                                         <p>Designer</p>
-                                     </div>
-                                     <div class="testi-text">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                                     </div>
-                                 </div>
-                             </div>
+                             <%} %>
                          </div>
                           <a href="#" class="btn btn-primary" title="" style="background: #333;" data-toggle="modal" data-target="#exampleModal">Comentanos</a>
                      </div>
@@ -927,35 +904,23 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form  method="post" accept-charset="utf-8">
+      <form id="IDKYMO" method="post" accept-charset="utf-8">
       <div class="modal-body">
        
           <div class="form-group input-box mb-20 ">
               <label>Nombre</label>
-              <input type="text" name="" value="" >
+              <input id="Nombre"type="text" name="Nombre" value="" >
               
           </div>
-          <div class="form-group  ">
-              <!-- <label>Imagen</label>
-              <input id="file-input" style="background-color: transparent;" type="file" name="" value=""> -->
-                <img id="imgpreview" style="width: 100px;height: auto;" src="" alt="">
-
-          </div>
-          <div class="form-group  ">
-              <label>Imagen</label>
-              <input id="file-input" style="background-color: transparent;" type="file" name="" value="">
-               
-
-          </div>
-          
           <div class="form-group ">
-              <label>Comentario <textarea name="" cols="60"></textarea></label>
+              <label>Comentario</label>
+              <textarea name="Comentario" id="Comentario" cols="60"></textarea>
           </div>
-      
+          <p id="Error"></p>
       </div>
       <div class="modal-footer" style="background: #abcd40;">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: black;">Close</button>
-        <button type="button" class="btn btn-warning current">Enviar</button>
+        <button id="IDBTNKYMO" type="submit" class="btn btn-warning current">Enviar</button>
       </div>
        </form>
     </div>
@@ -975,8 +940,8 @@
                         <div class="col-md-3">
                             <div class="single-brand shadow-box">
                                 <a href="<%=item.UrlDestino%>">
-                                    <img src="assets/images/brand/01.png" alt="<%=item.Alt%>" title="<%=item.Title%>">
-                                    <%--<img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>">--%>
+                                    <%--<img src="assets/images/brand/01.png" alt="<%=item.Alt%>" title="<%=item.Title%>">--%>
+                                    <img src="<%=item.UrlImagen%>" alt="<%=item.Alt%>" title="<%=item.Title%>">
                                 </a>
                             </div>
                         </div>
@@ -987,4 +952,19 @@
     </div>
         <!--brand area are start-->
 
+
+    
 </asp:Content>
+
+<asp:Content ContentPlaceHolderID="cphScripts" runat="server">
+<script src="../assets/js/form-validation.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            FormValidator.init(3);
+        });
+    </script>
+    
+    <script>
+        
+    </script>
+    </asp:Content>

@@ -10,6 +10,10 @@ namespace CreativaSL.Dll.Kymo.Datos
 {
     public class EM_SuscribeteDatos
     {
+        /// <summary>
+        /// el metodo conector que realiza la operacion indicada
+        /// </summary>
+        /// <param name="Datos">Son los datos que recibe nuestro metodo </param>
         public void AC_Suscribete(EM_Suscribite Datos)
         {
             try

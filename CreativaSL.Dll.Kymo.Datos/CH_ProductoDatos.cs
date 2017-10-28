@@ -32,7 +32,7 @@ namespace CreativaSL.Dll.Kymo.Datos
                 DataSet ds = SqlHelper.ExecuteDataset(_datos.Conexion, "CH_spCSLDB_get_DetalleProductoXID", parametros);
                 if(ds != null)
                 {
-                    if(ds.Tables.Count == 5)
+                    if(ds.Tables.Count == 6)
                     {
                         //Textos
                         DataTableReader dr = ds.Tables[0].CreateDataReader();
@@ -86,42 +86,59 @@ namespace CreativaSL.Dll.Kymo.Datos
                         }
                         dataResult.ListaColores = listaColores;
 
-                        DataTableReader drProductos = ds.Tables[4].CreateDataReader();
+                        DataTableReader drImagenes = ds.Tables[4].CreateDataReader();
+                        List<CH_Imagen> listaImagenesProd = new List<CH_Imagen>();
+                        List<CH_Imagen> listaImagenesProdThumb = new List<CH_Imagen>();
+                        CH_Imagen itemImagenProd;
+                        CH_Imagen itemImagenProdThumb;
+                        while(drImagenes.Read())
+                        {
+                            itemImagenProd = new CH_Imagen();
+                            itemImagenProd.UrlImagen = drImagenes.GetString(drImagenes.GetOrdinal("UrlImagen"));
+                            itemImagenProd.Title = drImagenes.GetString(drImagenes.GetOrdinal("Title"));
+                            itemImagenProd.Alt = drImagenes.GetString(drImagenes.GetOrdinal("Alt"));
+                            itemImagenProdThumb = new CH_Imagen { Title = itemImagenProd.Title, Alt = itemImagenProd.Alt };
+                            itemImagenProdThumb.UrlImagen = drImagenes.GetString(drImagenes.GetOrdinal("UrlImagenThumb"));
+                            listaImagenesProd.Add(itemImagenProd);
+                            listaImagenesProdThumb.Add(itemImagenProdThumb);
+                        }
+                        dataResult.ListaImagenes = listaImagenesProd;
+                        dataResult.ListaImagenesThumb = listaImagenesProdThumb;
+
+                        DataTableReader drProductos = ds.Tables[5].CreateDataReader();
                         List<CH_Producto> listaProductos = new List<CH_Producto>();
                         CH_Producto itemProducto;
                         while(drProductos.Read())
                         {
                             CH_Imagen imgProducto = new CH_Imagen();
                             itemProducto = new CH_Producto();
-                            dataResult.IdProducto = drProductos.GetString(drProductos.GetOrdinal("IDProducto"));
+                            itemProducto.IdProducto = drProductos.GetString(drProductos.GetOrdinal("IDProducto"));
                             imgProducto.UrlImagen = drProductos.GetString(drProductos.GetOrdinal("UrlImagen"));
+                            imgProducto.Alt = drProductos.GetString(drProductos.GetOrdinal("Alt"));
+                            imgProducto.Title = drProductos.GetString(drProductos.GetOrdinal("Title"));
                             itemProducto.ImagenPrincipal = imgProducto;
-                            dataResult.NombreProducto = drProductos.GetString(drProductos.GetOrdinal("Producto"));
-                            dataResult.MinPrecio = drProductos.GetDecimal(drProductos.GetOrdinal("MinPrecio"));
-                            dataResult.MinPrecioMayoreo = drProductos.GetDecimal(drProductos.GetOrdinal("MinPrecioMayoreo"));
+                            itemProducto.NombreProducto = drProductos.GetString(drProductos.GetOrdinal("Producto"));
+                            itemProducto.MinPrecio = drProductos.GetDecimal(drProductos.GetOrdinal("MinPrecio"));
+                            itemProducto.MinPrecioMayoreo = drProductos.GetDecimal(drProductos.GetOrdinal("MinPrecioMayoreo"));
                             listaProductos.Add(itemProducto);
                         }
                         dataResult.ListaProductosRelacionados = listaProductos;
 
                         dataPageResult.Producto = dataResult;
                         dataPageResult.Completado = true;
+                        //dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
+                        //dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
+                        //dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
+                        //dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
 
-                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
-                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
-                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
-                        dataPageResult.Producto.ListaImagenes.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
-
-                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
-                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
-                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
-                        dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
-
-                        dataPageResult.Producto.Valoracion = 4;
-                        dataPageResult.Producto.NombreProducto = "Pantalón Niño Preescolar";
-                        dataPageResult.Producto.MinPrecio = 280;
-                        dataPageResult.Producto.Observaciones = "Uniforme UPGCH para niños de preescolar.";
-
-                        
+                        //dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/01.jpg", Alt = "Img01" });
+                        //dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/02.jpg", Alt = "Img02" });
+                        //dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/03.jpg", Alt = "Img03" });
+                        //dataPageResult.Producto.ListaImagenesThumb.Add(new CH_Imagen { UrlImagen = "../assets/images/product/04.jpg", Alt = "Img04" });
+                        //dataPageResult.Producto.Valoracion = 4;
+                        //dataPageResult.Producto.NombreProducto = "Pantalón Niño Preescolar";
+                        //dataPageResult.Producto.MinPrecio = 280;
+                        //dataPageResult.Producto.Observaciones = "Uniforme UPGCH para niños de preescolar.";
                     }
                 }
                 return dataPageResult;

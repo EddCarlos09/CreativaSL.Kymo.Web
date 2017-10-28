@@ -114,8 +114,12 @@
     <Content Include="assets\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\fonts\Simple-Line-Icons.svg" />
     <Content Include="assets\fonts\slick.svg" />
-    <Content Include="assets\js\form-contacto.js" />
+    <Content Include="assets\images\team\branding1.png" />
+    <Content Include="assets\js\cargarTallas.js" />
+    <Content Include="assets\js\delCuponCarrito.js" />
+    <Content Include="assets\js\carrito.js" />
     <Content Include="assets\js\carritoAddItem.js" />
+    <Content Include="assets\js\form-contacto.js" />
     <Content Include="assets\js\form-elements.js" />
     <Content Include="assets\js\form-validationNews.js" />
     <Content Include="assets\js\form-validation.js" />
@@ -353,6 +357,82 @@
     <Content Include="assets\plugins\select2\select2_locale_vi.js" />
     <Content Include="assets\plugins\select2\select2_locale_zh-CN.js" />
     <Content Include="assets\plugins\select2\select2_locale_zh-TW.js" />
+    <Content Include="assets\Resources\ProductosImagen\audifono-color-morado.png" />
+    <Content Include="assets\Resources\ProductosImagen\audifono-color-rosa.png" />
+    <Content Include="assets\Resources\ProductosImagen\audifono-con-soporte-para-orejas.png" />
+    <Content Include="assets\Resources\ProductosImagen\audifono-de-color-gris.png" />
+    <Content Include="assets\Resources\ProductosImagen\audifono-gamer.png" />
+    <Content Include="assets\Resources\ProductosImagen\audifono-negro-y-rojo.png" />
+    <Content Include="assets\Resources\ProductosImagen\audifono-skull-candy.png" />
+    <Content Include="assets\Resources\ProductosImagen\audifonos-de-color-negro.png" />
+    <Content Include="assets\Resources\ProductosImagen\audifonos-para-hombre.png" />
+    <Content Include="assets\Resources\ProductosImagen\bata-talla-l.png" />
+    <Content Include="assets\Resources\ProductosImagen\bata-talla-m.png" />
+    <Content Include="assets\Resources\ProductosImagen\bata-talla-s.png" />
+    <Content Include="assets\Resources\ProductosImagen\bata-talla-xs.png" />
+    <Content Include="assets\Resources\ProductosImagen\blusa-licensiatura-talla-28-y-30.png" />
+    <Content Include="assets\Resources\ProductosImagen\blusa-licensiatura-talla-32-y-34.png" />
+    <Content Include="assets\Resources\ProductosImagen\blusa-licensiatura-talla-36-y-38.png" />
+    <Content Include="assets\Resources\ProductosImagen\blusa-licensiatura-talla-40-a-44.png" />
+    <Content Include="assets\Resources\ProductosImagen\c.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-licensiatura-talla-28-y-30.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-licensiatura-talla-32-y-34.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-licensiatura-talla-36-y-38.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-licensiatura-talla-40-a-44.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-para-hombre-talla-30.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-para-hombre-talla-32.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-para-hombre-talla-36.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-para-hombre-talla-40.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-para-nina-talla-10-a-14.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-para-nina-talla-4-a-8.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-para-nino-talla-10-a-14.png" />
+    <Content Include="assets\Resources\ProductosImagen\camisa-para-nino-talla-4-a-8.png" />
+    <Content Include="assets\Resources\ProductosImagen\pantalon-para-nino-talla-04.png" />
+    <Content Include="assets\Resources\ProductosImagen\pantalon-para-nino-talla-06.png" />
+    <Content Include="assets\Resources\ProductosImagen\pantalon-para-nino-talla-08.png" />
+    <Content Include="assets\Resources\ProductosImagen\pantalon-para-nino-talla-10.png" />
+    <Content Include="assets\Resources\ProductosImagen\pants-de-color-gris-talla-12-y-36.png" />
+    <Content Include="assets\Resources\ProductosImagen\pants-de-color-gris-talla-14-y-16.png" />
+    <Content Include="assets\Resources\ProductosImagen\pants-de-color-gris-talla-38-y-40.png" />
+    <Content Include="assets\Resources\ProductosImagen\pants-de-color-gris-talla-42.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\audifono-color-morado.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\audifono-color-rosa.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\audifono-con-soporte-para-orejas.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\audifono-de-color-gris.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\audifono-gamer.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\audifono-negro-y-rojo.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\audifono-skull-candy.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\audifonos-de-color-negro.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\audifonos-para-hombre.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\bata-talla-l.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\bata-talla-m.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\bata-talla-s.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\bata-talla-xs.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\blusa-licensiatura-talla-28-y-30.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\blusa-licensiatura-talla-32-y-34.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\blusa-licensiatura-talla-36-y-38.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\blusa-licensiatura-talla-40-a-44.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\c.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-licensiatura-talla-28-y-30.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-licensiatura-talla-32-y-34.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-licensiatura-talla-36-y-38.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-licensiatura-talla-40-a-44.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-para-hombre-talla-30.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-para-hombre-talla-32.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-para-hombre-talla-36.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-para-hombre-talla-40.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-para-nina-talla-10-a-14.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-para-nina-talla-4-a-8.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-para-nino-talla-10-a-14.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\camisa-para-nino-talla-4-a-8.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\pantalon-para-nino-talla-04.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\pantalon-para-nino-talla-06.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\pantalon-para-nino-talla-08.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\pantalon-para-nino-talla-10.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\pants-de-color-gris-talla-12-y-36.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\pants-de-color-gris-talla-14-y-16.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\pants-de-color-gris-talla-38-y-40.png" />
+    <Content Include="assets\Resources\ProductosImagen\Thum\pants-de-color-gris-talla-42.png" />
     <Content Include="bin\CreativaSL.Dll.Kymo.Global.dll" />
     <Content Include="bin\CreativaSL.Dll.Kymo.Global.pdb" />
     <Content Include="bin\CreativaSL.WebForms.Kymo.Web.dll" />
@@ -372,6 +452,7 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="frmAppend.aspx" />
     <Content Include="frmAviso.aspx" />
+    <Content Include="frmCarrito.aspx" />
     <Content Include="frmContactanos.aspx" />
     <Content Include="frmDefault.aspx" />
     <Content Include="frmErrorPage.aspx" />
@@ -386,13 +467,17 @@
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.dll" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.pdb" />
     <Content Include="packages.config" />
+    <Content Include="sfrmAddCupon.aspx" />
     <Content Include="sfrmAddItemCart.aspx" />
     <Content Include="sfrmContactanos.aspx" />
+    <Content Include="sfrmDelCupon.aspx" />
+    <Content Include="sfrmDelItemCart.aspx" />
     <Content Include="sfrmMunicipios.aspx" />
     <Content Include="sfrmPrecioProductos.aspx" />
     <Content Include="sfrmRegistrar.aspx" />
     <Content Include="sfrmSucribete.aspx" />
     <Content Include="sfrmTallas.aspx" />
+    <Content Include="sfrmTestimonial.aspx" />
     <Content Include="Site.Master" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />
@@ -434,6 +519,7 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.csprojResolveAssemblyReference.cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Properties\PublishProfiles\enrique.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -465,6 +551,13 @@
     </Compile>
     <Compile Include="frmAviso.aspx.designer.cs">
       <DependentUpon>frmAviso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarrito.aspx.cs">
+      <DependentUpon>frmCarrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCarrito.aspx.designer.cs">
+      <DependentUpon>frmCarrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmContactanos.aspx.cs">
       <DependentUpon>frmContactanos.aspx</DependentUpon>
@@ -543,6 +636,13 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sfrmAddCupon.aspx.cs">
+      <DependentUpon>sfrmAddCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmAddCupon.aspx.designer.cs">
+      <DependentUpon>sfrmAddCupon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sfrmAddItemCart.aspx.cs">
       <DependentUpon>sfrmAddItemCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -556,6 +656,20 @@
     </Compile>
     <Compile Include="sfrmContactanos.aspx.designer.cs">
       <DependentUpon>sfrmContactanos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmDelCupon.aspx.cs">
+      <DependentUpon>sfrmDelCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmDelCupon.aspx.designer.cs">
+      <DependentUpon>sfrmDelCupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmDelItemCart.aspx.cs">
+      <DependentUpon>sfrmDelItemCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmDelItemCart.aspx.designer.cs">
+      <DependentUpon>sfrmDelItemCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="sfrmMunicipios.aspx.cs">
       <DependentUpon>sfrmMunicipios.aspx</DependentUpon>
@@ -591,6 +705,13 @@
     </Compile>
     <Compile Include="sfrmTallas.aspx.designer.cs">
       <DependentUpon>sfrmTallas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmTestimonial.aspx.cs">
+      <DependentUpon>sfrmTestimonial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmTestimonial.aspx.designer.cs">
+      <DependentUpon>sfrmTestimonial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
