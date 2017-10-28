@@ -86,6 +86,7 @@
     <Compile Include="RR_Ropa.cs" />
     <Compile Include="RR_TallasJson.cs" />
     <Compile Include="RR_TerminosCondiciones.cs" />
+    <Compile Include="RR_Valoraciones.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
