@@ -83,9 +83,9 @@
                                                                         <div class="product-qty">
                                                                             <div class="cart-quantity">
                                                                                 <div class="cart-plus-minus">
-                                                                                    <div class="dec qtybutton2">-</div>
-                                                                                    <input value="<%=itemDet.Cantidad%>" data-sku="<%=itemDet.Producto.IdProducto%>" data-talla ="<%=itemDet.Producto.Talla.IdTalla %>" data-color="<%=itemDet.Producto.Color.IdColor %>" name="qtybutton" class="cart-plus-minus-box" type="text">
-                                                                                    <div class="inc qtybutton2">+</div>
+                                                                                    <a href="#" id="delCart" class="dec qtybutton2">-</a>
+                                                                                    <input value="<%=itemDet.Cantidad%>" data-sku="<%=itemDet.Producto.IdProducto%>" data-talla ="<%=itemDet.Producto.Talla.IdTalla %>" data-color="<%=itemDet.Producto.Color.IdColor %>" name="qtybutton" class="cart-plus-minus-box" type="text" id="PruebadelCart">
+                                                                                    <a href="#" id="MasCart" class="inc qtybutton2">+</a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -143,7 +143,8 @@
                                                                                 <p>Introduce tu código aquí</p>
                                                                             </div>                                           
                                                                             <div class="input-box input-box-2 mb-20">
-                                                                                <input type="text" placeholder="Cupón" class="info" name="cupon" id="cupon"> 
+                                                                                <input type="text" placeholder="Cupón" class="info" name="cupon" id="cupon">
+                                                                                <span class="error" id="errorCupon"></span>
                                                                             </div>
                                                                             <a href="#" class="btn-def btn2" id="btnAplicarCupon">Canjear cupón</a>
                                                                         </div>
@@ -156,6 +157,7 @@
                                                                             </div>                                           
                                                                             <div class="input-box input-box-2 mb-20">
                                                                                <h5 id="codigoCupon"></h5>
+                                                                                <span class="errorEli" id="errorEliCupon"></span>
                                                                             </div>
                                                                             <a href="#" class="btn-def btn2" id="btnEliminarCupon">Eliminar cupón</a>
                                                                         </div>
@@ -568,12 +570,12 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="cphScripts" runat="server">
+    <script src="../assets/js/delCarritoAddItem.js"></script>
     <script src="../assets/js/carrito.js"></script>
-     <script src="../assets/js/delCuponCarrito.js"></script>
     <script>
         jQuery(document).ready(function () {
             Carrito.init();
-            DelCuponCarrito.init();
+            DelCarrito.init();
         });
     </script>
 </asp:Content>

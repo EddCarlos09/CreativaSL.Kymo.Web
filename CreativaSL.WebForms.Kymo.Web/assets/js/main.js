@@ -260,20 +260,30 @@ Version: 1.0
 	    var maxValue = $('#qtybutton').data('max');
 	    var minValue = $('#qtybutton').data('min');
 	    if ($button.text() == "+") {
-
-	        console.log("MAX: " + maxValue);
+	        //$('.errorTalla').removeClass('color');
+	        //document.getElementById('errorTalla').innerHTML = '';
+	        $('.ErrorMin').removeClass('color');
+	        document.getElementById('ErrorMin').innerHTML = '';
 	        if (oldValue < maxValue) {
 	            var newVal = parseFloat(oldValue) + 1;
+	           
 	        } else {
 	            newVal = maxValue;
+	            $('.ErrorMin').addClass('color');
+	            document.getElementById('ErrorMin').innerHTML = "Es el n&uacute;mero maximo de productos";
 	        }
 	    } else {
-	        // Don't allow decrementing below zero
-	        console.log("Min: " + minValue);
+	        //$('.errorTalla').removeClass('color');
+	        //document.getElementById('errorTalla').innerHTML = '';
+	        $('.ErrorMin').removeClass('color');
+	        document.getElementById('ErrorMin').innerHTML = '';
+	        //Don't allow decrementing below zero
 	        if (oldValue > minValue) {
 	            var newVal = parseFloat(oldValue) - 1;
 	        } else {
 	            newVal = minValue;
+	            $('.ErrorMin').addClass('color');
+	            document.getElementById('ErrorMin').innerHTML = "Es el n&uacute;mero minimo de productos";
 	        }
 	    }
 	    $button.parent().find("input").val(newVal);
