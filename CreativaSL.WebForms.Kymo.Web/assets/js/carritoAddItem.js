@@ -47,6 +47,19 @@
                             if (result.resultado == 1) {
                                 location.href = "/Carrito";
                             }
+                            if (result.resultado == -1) {
+                                $('.ErrorAddCart').addClass('color');
+                                document.getElementById('ErrorAddCart').innerHTML = "No existe suficiente existencia del producto";
+                            }
+                            if (result.resultado == -5)
+                            {
+                                $('.ErrorAddCart').addClass('color');
+                                document.getElementById('ErrorAddCart').innerHTML = "No existe el Producto";
+                            }
+                            if (result.resultado == -6) {
+                                $('.ErrorAddCart').addClass('color');
+                                document.getElementById('ErrorAddCart').innerHTML = "La cantidad de producto debe ser mayor a 0";
+                            }
                         },
                         error: function () {
                             $('.ErrorAddCart').addClass('color');
@@ -78,6 +91,18 @@
                         //Ir a carrito o mostrar mensaje de error
                         if (result.resultado == 1) {
                             location.href = "/Carrito";
+                        }
+                        if (result.resultado == -1) {
+                            $('.ErrorAddCart').addClass('color');
+                            document.getElementById('ErrorAddCart').innerHTML = "No existe suficiente existencia del producto";
+                        }
+                        if (result.resultado == -5) {
+                            $('.ErrorAddCart').addClass('color');
+                            document.getElementById('ErrorAddCart').innerHTML = "No existe el Producto";
+                        }
+                        if (result.resultado == -6) {
+                            $('.ErrorAddCart').addClass('color');
+                            document.getElementById('ErrorAddCart').innerHTML = "La cantidad de producto debe ser mayor a 0";
                         }
                     },
                     error: function () {

@@ -30,7 +30,7 @@
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   
     <link rel="stylesheet" href="/assets/css/plugins.css">
-    <link rel="apple-touch-icon" href="/assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.ico">
     
     <!-- Modernizr JS -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
