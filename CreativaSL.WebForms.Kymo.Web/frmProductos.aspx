@@ -56,13 +56,24 @@
                                         <h5 class="uppercase">Filtro</h5> 
                                     </div>
                                     <div id="search-treeview" class="product-cat">
-                                        <ul class="erase">
+                                        <ul class="erase treeview">
                                             <% if (_datosBusqueda.BandFamilia)
                                                 {
-                                                    _datosBusqueda.Familia.Descripcion = "Cat 01";
-                                                    Response.Write("<li class='closed'>" + _datosBusqueda.Familia.Descripcion + "<div class='erase-area'><a href='#' data-sku='" + _datosBusqueda.Familia.IdFamilia  +"' ><i class='fa fa-times-circle'></i></a></div></li>");
-                                                } %> 
-                                                                       
+                                                    Response.Write("<li class='closed'>" + _datosBusqueda.Familia.Descripcion + "<div class='erase-area'><a href='#' data-sku='" + _datosBusqueda.Familia.IdFamilia  +"' data-type='CT'><i class='fa fa-times-circle'></i></a></div></li>");
+                                                } %>
+                                            <% if (_datosBusqueda.BandColor)
+                                                {
+                                                    Response.Write("<li class='closed'>Color " + _datosBusqueda.Color.Descripcion + "<div class='erase-area'><a href='#' data-sku='" + _datosBusqueda.Color.IdColor  +"' data-type='CL'><i class='fa fa-times-circle'></i></a></div></li>");
+                                                } %>
+                                            <% if (_datosBusqueda.BandTalla)
+                                                {
+                                                    Response.Write("<li class='closed'>" + _datosBusqueda.Talla.Descripcion + "<div class='erase-area'><a href='#' data-sku='" + _datosBusqueda.Talla.IdTalla  +"' data-type='TL'><i class='fa fa-times-circle'></i></a></div></li>");
+                                                } %>
+                                            <% if (_datosBusqueda.BandRangoPrecios)
+                                                {
+                                                    System.Globalization.CultureInfo esMX = new System.Globalization.CultureInfo("es-MX");
+                                                    Response.Write("<li class='closed'>" + string.Format(esMX,"{0:c}", _datosBusqueda.PrecioInicial) + " - " + string.Format(esMX,"{0:c}", _datosBusqueda.PrecioFinal) + "<div class='erase-area'><a href='#' data-min='" + _datosBusqueda.PrecioInicial  +"' data-max='" + _datosBusqueda.PrecioFinal + "' data-type='RP'><i class='fa fa-times-circle'></i></a></div></li>");
+                                                } %>
                                         </ul>
                                     </div>
                                 </aside>
@@ -88,18 +99,21 @@
                                 <!--single aside end-->
                                 
                                 <!--single aside start-->
+                                <%if (!_datosBusqueda.BandRangoPrecios)
+                                    { %>
                                 <aside class="single-aside price-aside fix">
                                     <div class="heading-title aside-title pos-rltv">
                                         <h5 class="uppercase">Precio</h5> 
                                     </div>
-                                    <div class="price_filter">
+                                    <div class="price_filter"  id="rngPrice" data-max="<%=(int)_datosBusqueda.MaxPrice %>" data-min="<%=(int)_datosBusqueda.MinPrice %>">
                                         <div id="slider-range" ></div>
                                         <div class="price_slider_amount">
-                                            <input type="text" id="amount" name="amount" placeholder="Add Your Price" />
-                                            <input type="submit" value="Filter" /> 
+                                            <input type="text" id="amount" name="amount" data-minvalue="100" data-maxvalue="1000" placeholder="Add Your Price" />
+                                            <input type="submit" id="btnPrice" value="Filter" /> 
                                         </div>
                                     </div>
                                 </aside>
+                                <%} %>
                                 <!--single aside end-->
                                 
                                 <%if (!_datosBusqueda.BandColor)

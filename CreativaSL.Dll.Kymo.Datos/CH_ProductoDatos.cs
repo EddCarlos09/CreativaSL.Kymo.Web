@@ -305,7 +305,7 @@ namespace CreativaSL.Dll.Kymo.Datos
                                         _datos.Talla.IdTalla, _datos.BandColor, _datos.Color.IdColor,
                                         _datos.BandRangoPrecios, _datos.PrecioFinal, _datos.PrecioInicial};
                 DataSet ds = SqlHelper.ExecuteDataset(_datos.Conexion, "CH_spCSLDB_get_DatosProductos", parametros);
-                if (ds.Tables.Count == 7)
+                if (ds.Tables.Count == 8)
                 {
                     //Textos
                     DataTableReader dr = ds.Tables[0].CreateDataReader();
@@ -376,15 +376,28 @@ namespace CreativaSL.Dll.Kymo.Datos
                     dataResult.ListaTallas = listaTallas;
 
                     // Cantidad total de registros del resultado de búsqueda
-                    DataTableReader drTP = ds.Tables[5].CreateDataReader();
+                    DataTableReader drDesc = ds.Tables[5].CreateDataReader();
+                    while (drDesc.Read())
+                    {
+                        dataResult.Talla.Descripcion = drDesc.GetString(drDesc.GetOrdinal("Talla"));
+                        dataResult.Color.Descripcion = drDesc.GetString(drDesc.GetOrdinal("Color"));
+                        dataResult.Familia.Descripcion = drDesc.GetString(drDesc.GetOrdinal("Familia"));
+                        dataResult.Completado = true;
+                        break;
+                    }
+
+                    // Cantidad total de registros del resultado de búsqueda
+                    DataTableReader drTP = ds.Tables[6].CreateDataReader();
                     while (drTP.Read())
                     {
                         dataResult.TotalRegistros = drTP.GetInt32(drTP.GetOrdinal("Registros"));
+                        dataResult.MinPrice = drTP.GetDecimal(drTP.GetOrdinal("PrecioMinimo"));
+                        dataResult.MaxPrice = drTP.GetDecimal(drTP.GetOrdinal("PrecioMaximo"));
                         dataResult.Completado = true;
                         break;
                     }
                     // Resultado de la búsqueda
-                    DataTableReader drProductos = ds.Tables[6].CreateDataReader();
+                    DataTableReader drProductos = ds.Tables[7].CreateDataReader();
                     List<CH_Producto> listaProductos = new List<CH_Producto>();
                     CH_Producto itemProducto;
                     while (drProductos.Read())

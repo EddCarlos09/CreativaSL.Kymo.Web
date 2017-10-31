@@ -1037,7 +1037,7 @@ background:#fff none repeat scroll 0 0 !important;
     position: absolute;
     right: 0;
     text-align: center;
-    top: 0;
+    top: -5px;
     width: 40px;
 }
 .product-cat ul li a {

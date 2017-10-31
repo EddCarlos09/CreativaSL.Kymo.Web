@@ -345,6 +345,25 @@ namespace CreativaSL.Dll.Kymo.Global
             set { _ListaCantRegistros = value; }
         }
 
+        private decimal _MaxPrice;
+        /// <summary>
+        /// Precio máximo como resultado de búsqueda
+        /// </summary>
+        public decimal MaxPrice
+        {
+            get { return _MaxPrice; }
+            set { _MaxPrice = value; }
+        }
+
+        private decimal _MinPrice;
+        /// <summary>
+        /// Precio mínimo como resultado de búsqueda
+        /// </summary>
+        public decimal MinPrice
+        {
+            get { return _MinPrice; }
+            set { _MinPrice = value; }
+        }
 
     }
 }

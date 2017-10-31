@@ -22,12 +22,69 @@
             var $button = $(this);
             // Obtener el id de la familia
             var idFamilia = $button.data('sku');
+            var textFam = $button.text();
             // Insertar el script para id familia
-            //var TipoBusq = "Hombre";
+            $("ul.erase").append("<li class='closed'>" + textFam + "<div class='erase-area'><a href='#' data-sku='" + idFamilia + "' data-type='CT'><i class='fa fa-times-circle'></i></a></div></li>");
             //Generar el enlace final
-            location.href =  generarEnlace(); 
+            location.href = generarEnlace();
             return false;
         });
+
+        //Búsqueda por color
+        $('ul.color-filter').delegate("a[class=color-1]", "click", function (e) {
+            e.preventDefault();
+            // Obtener el botón donce se hizo click
+            var $button = $(this);
+            // Obtener el id de la familia
+            var idColor = $button.data('sku');
+            var textColor = $button.text();
+            // Insertar el script para id familia
+            $("ul.erase").append("<li class='closed'>" + textColor + "<div class='erase-area'><a href='#' data-sku='" + idColor + "' data-type='CL'><i class='fa fa-times-circle'></i></a></div></li>");
+            //Generar el enlace final
+            location.href = generarEnlace();
+            return false;
+        });
+
+        //Búsqueda por talla
+        $('ul.size-filter').delegate("a[class=size-xl]", "click", function (e) {
+            e.preventDefault();
+            // Obtener el botón donce se hizo click
+            var $button = $(this);
+            // Obtener el id de la familia
+            var idTalla = $button.data('sku');
+            var textTalla = $button.text();
+            // Insertar el script para id familia
+            $("ul.erase").append("<li class='closed'>" + textTalla + "<div class='erase-area'><a href='#' data-sku='" + idTalla + "' data-type='TL'><i class='fa fa-times-circle'></i></a></div></li>");
+            //Generar el enlace final
+            location.href = generarEnlace();
+            return false;
+        });
+        
+        //Eliminar tag de búsqueda
+        $('ul.erase').delegate("a", "click", function (e) {
+            e.preventDefault();
+            // Obtener el botón donde se hizo click
+            var $button = $(this);
+            //console.log("click remove");
+            // Obtener el li padre
+            $button.parents('li').remove();
+            //Generar el enlace final
+            location.href = generarEnlace();
+            return false;
+        });
+
+        //Rango de precios tag de búsqueda
+        $('.price_filter').delegate("#btnPrice", "click", function (e) {
+            e.preventDefault();
+            var $button = $(this);            
+            var MinPrice = $("#slider-range").slider("values", 0);
+            var maxPrice = $("#slider-range").slider("values", 1);
+            $("ul.erase").append("<li class='closed'> $ " +  MinPrice + ".00 - $ " + maxPrice + ".00<div class='erase-area'><a href='#' data-min='" + MinPrice + "' data-max='" + maxPrice +"' data-type='RP'><i class='fa fa-times-circle'></i></a></div></li>");
+            //Generar el enlace final
+            location.href = generarEnlace();
+            return false;
+        });
+
         //Cambio de página
         var currentPage = 1;
         $('ul.page-numbers').delegate("a.page-numbers", "click", function (e) {
@@ -74,7 +131,6 @@
         {
             var tb = parseInt($('#tb20ds').val());
             var strTipo = '';
-            console.log("tipo de busqueda: " + tb);
             switch(tb)
             {
                 case 1: strTipo ='Hombre'
@@ -126,7 +182,31 @@
                 BandFirst = true;
             }
 
-            //"/Products/" + TipoBusq + "?CT=" + idFamilia;
+            
+            $("ul.erase").find("a").each(function () {
+                var tp = $(this).data('type');
+                if (tp === 'RP') {
+                    var minp = $(this).data('min');
+                    var maxp = $(this).data('max');
+                    if (BandFirst === false)
+                        urlReturn = urlReturn + "?"
+                    else
+                        urlReturn = urlReturn + "&"
+                    urlReturn = urlReturn + "PI=" + minp + "&PF=" + maxp;
+                    BandFirst = true;
+                }
+                else
+                {
+                    var id = $(this).data('sku');
+                    console.log(tp + " : " + id);
+                    if (BandFirst === false)
+                        urlReturn = urlReturn + "?"
+                    else
+                        urlReturn = urlReturn + "&"
+                    urlReturn = urlReturn + tp + "=" + id;
+                    BandFirst = true;
+                }
+            });
 
             return urlReturn;
         }
