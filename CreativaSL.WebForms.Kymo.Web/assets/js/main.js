@@ -295,9 +295,112 @@ Version: 1.0
 	    var IdProducto = $button.parent().find("input").data('sku');
 	    var IdTalla = $button.parent().find("input").data('talla');
 	    var IdColor = $button.parent().find("input").data('color');
-	    console.log("idproducto: " + IdProducto);
-	    console.log("idtalla: " + IdTalla);
-	    console.log("idcolor: " + IdColor);
+	    var Cantidad = $button.parent().find("input").val();
+	    //console.log("idproducto: " + IdProducto);
+	    //console.log("idtalla: " + IdTalla);
+	    //console.log("idcolor: " + IdColor);
+	    if ($button.text() == "+") {
+	        var data = new FormData();
+	        data.append('IDProducto', IdProducto);
+	        data.append('IDColor', IdColor);
+	        data.append('IDTalla', IdTalla);
+	        data.append('Cantidad', Cantidad);
+	        $.ajax({
+	            type: 'POST',
+	            url: '/sfrmMasItemCart.aspx',
+	            contentType: false,
+	            dataType: "json",
+	            data: data,
+	            processData: false,
+	            cache: false,
+	            success: function (result) {
+	                console.log(result.resultado);
+	                //Ir a carrito o mostrar mensaje de error
+	                if (result.resultado == 1) {
+	                    location.href = "/Carrito";
+	                }
+	                else if (result.resultado == -1) {
+	                    $('.Errror').addClass('color');
+	                    document.getElementById('Errords').innerHTML = "No hay susficiente existencia";
+	                }
+	                else if (result.resultado == -5) {
+	                    $('.Errror').addClass('color');
+	                    document.getElementById('Errords').innerHTML = "No hay existencia del producto";
+	                }
+	                else if (result.resultado == -6) {
+	                    $('.Errror').addClass('color');
+	                    document.getElementById('Errords').innerHTML = "La cantidad del producto debe ser mayor a 0";
+	                }
+	                else if (result.resultado == -10) {
+	                    $('.Errror').addClass('color');
+	                    document.getElementById('Errords').innerHTML = "Error de conexi&oacute;n. Intente m&aacute;s tarde";
+	                }
+	                else if (result.resultado == -20) {
+	                    $('.Errror').addClass('color');
+	                    document.getElementById('Errords').innerHTML = "Error de conexi&oacute;n. Intente m&aacute;s tarde";
+	                }
+	            },
+	            error: function () {
+	                $('.Errror').addClass('color');
+	                document.getElementById('Errords').innerHTML = "Error de conexi&oacute;n. Intente m&aacute;s tarde";
+	            }
+	        });
+	    }
+	    else
+	    {
+	        if (Cantidad > 1) {
+	            var data = new FormData();
+	            data.append('IDProducto', IdProducto);
+	            data.append('IDColor', IdColor);
+	            data.append('IDTalla', IdTalla);
+	            data.append('Cantidad', Cantidad);
+	            $.ajax({
+	                type: 'POST',
+	                url: '/sfrmEliminarItemCart.aspx',
+	                contentType: false,
+	                dataType: "json",
+	                data: data,
+	                processData: false,
+	                cache: false,
+	                success: function (result) {
+	                    console.log(result.resultado);
+	                    //Ir a carrito o mostrar mensaje de error
+	                    if (result.resultado == 1) {
+	                        location.href = "/Carrito";
+	                    }
+	                    else if (result.resultado == -1) {
+	                        $('.Errror').addClass('color');
+	                        document.getElementById('Errords').innerHTML = "No hay susficiente existencia";
+	                    }
+	                    else if (result.resultado == -5) {
+	                        $('.Errror').addClass('color');
+	                        document.getElementById('Errords').innerHTML = "No hay existencia del producto";
+	                    }
+	                    else if (result.resultado == -6) {
+	                        $('.Errror').addClass('color');
+	                        document.getElementById('Errords').innerHTML = "La cantidad del producto debe ser mayor a 0";
+	                    }
+	                    else if (result.resultado == -10)
+	                    {
+	                        $('.Errror').addClass('color');
+	                        document.getElementById('Errords').innerHTML = "Error de conexi&oacute;n. Intente m&aacute;s tarde";
+	                    }
+	                    else if (result.resultado == -20) {
+	                        $('.Errror').addClass('color');
+	                        document.getElementById('Errords').innerHTML = "Error de conexi&oacute;n. Intente m&aacute;s tarde";
+	                    }
+	                },
+	                error: function () {
+	                    $('.Errror').addClass('color');
+	                    document.getElementById('Errords').innerHTML = "Error de conexi&oacute;n. Intente m&aacute;s tarde";
+	                }
+	            });
+	        } else {
+	            $('.Errror').addClass('color');
+	            document.getElementById('Errords').innerHTML = "No se puede disminuir m&aacute;s producto";
+	        }
+
+	    }
 	    $button.parent().find("input").val(newVal);
 	});
 

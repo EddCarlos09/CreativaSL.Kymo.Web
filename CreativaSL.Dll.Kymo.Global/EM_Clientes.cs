@@ -115,7 +115,7 @@ namespace CreativaSL.Dll.Kymo.Global
             get { return _Colonia; }
             set { _Colonia = value; }
         }
-        private int _IdGenero;
+        private int _IdGenero = 1;
         /// <summary>
         /// El genero de el cliente
         /// </summary>

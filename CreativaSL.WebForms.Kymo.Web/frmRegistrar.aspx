@@ -24,111 +24,114 @@
                             <div class=" col-md-8">
                                 <div class="login-reg">
                                     <h3>Registrase</h3>
-                                  <div class="row">
+                                    <div class="row">
                                         <div class="input-box mb-20 col-md-4">
-                                        <label class="control-label">Nombre</label>
-                                        <input type="text" name="Nombre" id="Nombre" value="" placeholder="Tu Nombre">
+                                            <label class="control-label">Nombre</label>
+                                            <input type="text" name="Nombre" id="Nombre" value="" placeholder="Tu Nombre">
+                                        </div>
+                                        <div class="input-box mb-20 col-md-4">
+                                            <label class="control-label">Apellido Paterno</label>
+                                            <input type="text" name="ApPaterno" id="ApPaterno" value="" placeholder="Apellido Paterno">
+                                        </div>
+                                        <div class="input-box mb-20 col-md-4">
+                                            <label class="control-label">Apellido Materno</label>
+                                            <input type="text" name="ApMaterno" id="ApMaterno" value="" placeholder="Apellido Materno">
+                                        </div>
                                     </div>
-                                    <div class="input-box mb-20 col-md-4">
-                                        <label class="control-label">Apellido Paterno</label>
-                                        <input type="text" name="ApPaterno" id="ApPaterno" value="" placeholder="Apellido Paterno">
-                                    </div>
-                                    <div class="input-box mb-20 col-md-4">
-                                        <label class="control-label">Apellido Materno</label>
-                                        <input type="text" name="ApMaterno" id="ApMaterno" value="" placeholder="Apellido Materno">
-                                    </div>
-                                  </div>
-                                    
-                                   <div class="row">
-                                       <div class="input-box mb-20 col-md-6">
-                                        <label class="control-label">Fecha de nacimiento</label>
-                                        <input type="text" id="datepicker" name="datepicker" value="" placeholder="Fecha de nacimiento">
-                                    </div>
-                                        <div class="input-box mb-20 col-md-6">
-                                        <label class="control-label">Sexo</label>
-                                        <select name="cmbGenero" id="cmbGenero" class="form-control search-select">
-                                            <option value="">&nbsp;</option>
-                                            <% foreach (var Item in _ListaGenero)
-                                                {
-                                                    Response.Write("<option value='" + Item.IdGenero.ToString() + "'>" + Item.NombreGenero.ToString() + "</option>");
-                                                } %>
-                                        </select>
-                                    </div>
-                                   </div>
+
                                     <div class="row">
                                         <div class="input-box mb-20 col-md-6">
+                                            <label class="control-label">Fecha de nacimiento</label>
+                                            <input type="text" id="datepicker" name="datepicker" value="" placeholder="Fecha de nacimiento">
+                                        </div>
+                                        <div class="input-box mb-20 col-md-6">
+                                            <label class="control-label">Sexo</label>
+                                            <select name="cmbGenero" id="cmbGenero" class="form-control search-select">
+                                                <option value="">&nbsp;</option>
+                                                <% foreach (var Item in _ListaGenero)
+                                                    {
+                                                        Response.Write("<option value='" + Item.IdGenero.ToString() + "'>" + Item.NombreGenero.ToString() + "</option>");
+                                                    } %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <%-- <div class="input-box mb-20 col-md-6">
                                         <label class="control-label">Tu Código postal</label>
                                         <input type="text" name="CP" id="CP" value="" placeholder="Tu Código postal">
-                                    </div>
-                                    <div class="input-box mb-20 col-md-6">
-                                        <label class="control-label">Dirección</label>
-                                        <input type="text" name="Direccion" id="Direccion" value="" placeholder="Dirección">
-                                    </div>
+                                    </div>--%>
+                                        <div class="input-box mb-20 col-md-6">
+                                            <label class="control-label">Dirección</label>
+                                            <input type="text" name="Direccion" id="Direccion" value="" placeholder="Dirección">
+                                        </div>
+                                        <div class="input-box mb-20 col-md-6">
+                                            <label class="control-label">Colonias</label>
+                                            <input type="text" name="Colonia" id="Colonia" value="" placeholder="Colonia">
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        <div class="input-box mb-20 col-md-3">
+                                        <%-- <div class="input-box mb-20 col-md-3">
                                         <label class="control-label">No. Exterior</label>
                                         <input type="text" name="NExterior" id="NExterior" value="" placeholder="No. Exterior">
                                     </div>
                                     <div class="input-box mb-20 col-md-3">
                                         <label class="control-label">No. Interior</label>
                                         <input type="text" name="NInterior" id="NInterior" value="" placeholder="No. Interior">
-                                    </div>
-                                     <div class="input-box mb-20 col-md-6">
-                                        <label class="control-label">Colonias</label>
-                                        <input type="text" name="Colonia" id="Colonia" value="" placeholder="Colonia">
-                                    </div>
+                                    </div>--%>
                                     </div>
                                     <div class="row">
                                         <div class="input-box mb-20 col-md-6">
-                                        <label class="control-label">Estado</label>
-                                        <select id="cmbEstado" name="cmbEstado" class="form-control search-select">
-                                            <option value="">&nbsp;</option>
-                                            <% foreach (var Item in _ListaEstado)
-                                                {
-                                                    Response.Write("<option value='" + Item.IdEstado.ToString() + "'>" + Item.DescrpcionEs.ToString() + "</option>");
-                                                } %>
-                                        </select>
+                                            <label class="control-label">Estado</label>
+                                            <select id="cmbEstado" name="cmbEstado" class="form-control search-select">
+                                                <option value="">&nbsp;</option>
+                                                <% foreach (var Item in _ListaEstado)
+                                                    {
+                                                        Response.Write("<option value='" + Item.IdEstado.ToString() + "'>" + Item.DescrpcionEs.ToString() + "</option>");
+                                                    } %>
+                                            </select>
+                                        </div>
+                                        <div class="input-box mb-20 col-md-6">
+                                            <label class="control-label">Municipio</label>
+                                            <select name="cmbMunicipio" id="cmbMunicipio" class="form-control search-select">
+                                                <option value="">&nbsp;</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="input-box mb-20 col-md-6">
-                                        <label class="control-label">Municipio</label>
-                                        <select name="cmbMunicipio" id="cmbMunicipio" class="form-control search-select">
-                                            <option value="">&nbsp;</option>
-                                        </select>
-                                    </div>
-                                    </div>
+                                    <div class="row"><br /><br /><br /><br /></div>
                                 </div>
                             </div>
                             <div class=" col-md-4">
                                 <div class="login-reg">
                                     <h3>Sobre su cuenta</h3>
                                     <div class="row">
-                                    <div class="input-box mb-20 col-md-12">
-                                        <label class="control-label">Teléfono</label>
-                                        <input type="text" name="Telefono" id="Telefono" value="" placeholder="Telefono">
+                                        <div class="input-box mb-20 col-md-12">
+                                            <label class="control-label">Teléfono</label>
+                                            <input type="text" name="Telefono" id="Telefono" value="" placeholder="Telefono">
+                                        </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="input-box mb-20 col-md-12">
+                                            <label class="control-label">Correo Electrónico</label>
+                                            <input type="text" name="Correo" id="Correo" value="" placeholder="nombre@dominio.com">
+                                        </div>
                                     </div>
-                                                 <div class="row">
-                                    <div class="input-box mb-20 col-md-12">
-                                        <label class="control-label">Correo Electrónico</label>
-                                        <input type="text" name="Correo" id="Correo" value="" placeholder="nombre@dominio.com">
+                                    <div class="row">
+                                        <div class="input-box mb-20 col-md-12">
+                                            <label class="control-label">Contraseña</label>
+                                            <input type="password" name="Contrasena" id="Contrasena" value="" placeholder="">
+                                        </div>
                                     </div>
-                                                     </div>
-                                    <div class="input-box mb-20 col-md-12">
-                                        <label class="control-label">Contraseña</label>
-                                        <input type="password" name="Contrasena" id="Contrasena" value="" placeholder="">
+                                    <div class="row">
+                                        <div class="input-box mb-20 col-md-12">
+                                            <label class="control-label">Repetir Contraseña</label>
+                                            <input type="password" name="Contrasena2" id="Contrasena2" value="" placeholder="">
+                                        </div>
                                     </div>
-                                                 <div class="row">
-                                    <div class="input-box mb-20 col-md-12">
-                                        <label class="control-label">Repetir Contraseña</label>
-                                        <input type="password" name="Contrasena2" id="Contrasena2" value="" placeholder="">
+                                    <div class="row">
+                                        <div class=" mb-20 col-md-12 col-xs-12">
+                                            <input type="checkbox" name="CkRecibir" id="CkRecibir" value="true" style="width: 15px;"><label style="width: 250px; padding-left: 20px;">Quiero recibir correo electrónico ofertas y novedades</label>
+                                        </div>
                                     </div>
-                                                     </div>
-                                                 <div class="row">
-                                    <div class=" mb-20 col-md-12 col-xs-12">
-                                        <input type="checkbox" name="CkRecibir" id="CkRecibir" value="true" style="width: 15px;"><label style="width: 250px; padding-left: 20px;">Quiero recibir correo electrónico ofertas y novedades</label>
-                                    </div>
-                                                     </div>
                                 </div>
                             </div>
                             <div class="frm-action">
@@ -147,34 +150,17 @@
     
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../assets/js/form-validation.js"></script>
+     <script src="../assets/js/Estado.js"></script>
     <script>
         jQuery(document).ready(function() {
-            FormValidator.init();
+            FormValidator.init(1);
+            Estado.init();
             $( "#datepicker" ).datepicker({
                 changeMonth: true,
                 changeYear: true,
                 yearRange: "1950:2002"
             });
-            $("#cmbEstado").change(function () {
-                $("#cmbEstado option:selected").each(function () {
-                    elegido = $(this).val();
-                    $("#cmbMunicipio option").remove();
-                    $.ajaxSetup({
-                        async: false
-                    });
-                    $.getJSON('sfrmMunicipios.aspx?estado=' + elegido, function (data) {
-                        $("#cmbMunicipio").append('<option value="">&nbsp;</option>');
-                        $.each(data, function (key, value) {
-                            $("#cmbMunicipio").append('<option value="' + value.IDMunicipio + '">' + value.Descripcion + '</option>');
-                        });
-                    });
-                    $("#cmbMunicipio").trigger('change.select2');
-                    $.ajaxSetup({
-                        async: true
-                    });
-
-                    });
-                });
-            });
+          });
         </script>
+   
     </asp:Content>

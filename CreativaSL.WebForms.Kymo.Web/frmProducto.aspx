@@ -109,14 +109,14 @@
                                                  Response.Write("<option value='" + itemColor.IdColor + "'>" + itemColor.Descripcion + "</option>");
                                              } %>
                                         </select>
-                                        <div><span class="errorColor" id="errorColor"></span></div>
+                                        <div><span class="errorColor" id="errorColor" style="display: block; width: 271px;"></span></div>
                                     </div>
                                     <div class="sort product-type">
                                         <label>Talla: </label>
                                         <select id="input-sort-size">
                                             <option value="0" selected="">Seleccione</option>
                                         </select>
-                                        <div> <span class="errorTalla" id="errorTalla"></span></div>
+                                        <div> <span class="errorTalla" id="errorTalla" style="display: block; width: 271px;"></span></div>
                                     </div>
                                 </div>
                                 <% } %>
@@ -132,7 +132,7 @@
                                                         <div id="incProd" class="inc qtybutton">+</div>
                                                     </div>
                                                 </div>
-                                                <div><span class="ErrorMin" id="ErrorMin"></span></div>
+                                                <div><span class="ErrorMin" id="ErrorMin" style="display: block;"></span></div>
                                             </div>
                                         </form>
                                     </div>
@@ -148,8 +148,9 @@
                                         <li><a href="#" id="addCart" data-tooltip="Add To Cart" data-ropa="<%=_dataProduct.Producto.EsRopa %>" data-sku="<%=_dataProduct.Producto.IdProducto %>" class="add-cart add-cart-text" data-placement="left" tabindex="0">Add To Cart<i class="fa fa-cart-plus"></i></a></li>
                                     </ul>
                                 </div>
-                                <div><span class="ErrorAddCart" id="ErrorAddCart"></span></div>
+                                <div><span class="ErrorAddCart" id="ErrorAddCart" style="display: block;"></span></div>
                             </div>
+
                         </div>
                     </div>
                 </div>  

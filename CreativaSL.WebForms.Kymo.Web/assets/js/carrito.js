@@ -154,6 +154,31 @@
 
             return false;
         });
+
+        $("#validarR").click(function (event) {
+            event.preventDefault();
+            var Radio = document.getElementsByName("ship");
+            var ship = -1
+            if ($('#TablaProducto >tbody >tr').length == 0) {
+                $('.errorEntr').addClass('color');
+                document.getElementById('ValEntraga').innerHTML = "¡No tiene campras en sus carrito!";
+            }
+            else
+            {
+                for (var i = 0; i < Radio.length; i++) {
+                    if (Radio[i].checked) {
+                        ship = i;
+                        $('.errorEntr').removeClass('color');
+                        document.getElementById('ValEntraga').innerHTML = '';
+                        location.href = "/frmCarritoDatos.aspx";
+                    }
+                }
+                if (ship == -1) {
+                    $('.errorEntr').addClass('color');
+                    document.getElementById('ValEntraga').innerHTML = "Seleccion el medio de entrega del producto";
+                }
+            }
+        });
     };
     return {
         //main function to initiate template pages

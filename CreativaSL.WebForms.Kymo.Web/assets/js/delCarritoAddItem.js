@@ -25,7 +25,7 @@
                         processData: false,
                         cache: false,
                         success: function (result) {
-                            console.log(result.resultado);
+                            console.log(result.resultado + "Resulasdasdasdasdsadasd");
                             //Ir a carrito o mostrar mensaje de error
                             if (result.resultado == 1) {
                                 location.href = "/Carrito";
@@ -62,7 +62,7 @@
                 processData: false,
                 cache: false,
                 success: function (result) {
-                    console.log(result.resultado);
+                    console.log(result.resultado + "Resulasdasdasdasdsadasd");
                     //Ir a carrito o mostrar mensaje de error
                     if (result.resultado == 1) {
                         location.href = "/Carrito";
