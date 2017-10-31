@@ -16,6 +16,8 @@ namespace CreativaSL.WebForms.Kymo.Web
         {
             if (!IsPostBack)
             {
+                //string idPedido = HttpContext.Current.Profile.PropertyValues["IDPedido"].PropertyValue != null ? HttpContext.Current.Profile.PropertyValues["IDPedido"].PropertyValue.ToString() : string.Empty;
+                
                 if (Request.Form["IDProducto"] != null
                     && Request.Form["IDTalla"] != null
                     && Request.Form["IDColor"] != null
