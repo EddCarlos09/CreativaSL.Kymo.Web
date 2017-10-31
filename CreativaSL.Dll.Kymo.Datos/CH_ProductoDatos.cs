@@ -283,5 +283,135 @@ namespace CreativaSL.Dll.Kymo.Datos
             }
         }
 
+        /// <summary>
+        /// Obtener datos para mostrar en la página productos
+        /// </summary>
+        /// <param name="_datos">Objeto con datos de conexión y parámetros</param>
+        /// <returns></returns>
+        public CH_Busqueda ObtenerDatosProductos(CH_Busqueda _datos)
+        {
+            try
+            {
+                CH_Busqueda dataResult = new CH_Busqueda {
+                    TipoOrden = _datos.TipoOrden, IdTipoBusqueda = _datos.IdTipoBusqueda, NumPagina = _datos.NumPagina, MaxRows = _datos.MaxRows,
+                    BandFamilia = _datos.BandFamilia, Familia = new CH_Familia { IdFamilia = _datos.Familia.IdFamilia }, Hombre = _datos.Hombre,
+                    Mujer = _datos.Mujer, Accesorio = _datos.Accesorio, BandTalla = _datos.BandTalla, Talla = new CH_Talla { IdTalla = _datos.Talla.IdTalla },
+                    BandColor = _datos.BandColor, Color = new CH_Color { IdColor = _datos.Color.IdColor }, BandRangoPrecios = _datos.BandRangoPrecios, 
+                    PrecioFinal = _datos.PrecioFinal, PrecioInicial = _datos.PrecioInicial 
+                };
+                object[] parametros = { _datos.TipoOrden, _datos.IdTipoBusqueda, _datos.NumPagina, _datos.MaxRows,
+                                        _datos.BandFamilia, _datos.Familia.IdFamilia, _datos.Hombre,
+                                        _datos.Mujer, _datos.Accesorio, _datos.BandTalla,
+                                        _datos.Talla.IdTalla, _datos.BandColor, _datos.Color.IdColor,
+                                        _datos.BandRangoPrecios, _datos.PrecioFinal, _datos.PrecioInicial};
+                DataSet ds = SqlHelper.ExecuteDataset(_datos.Conexion, "CH_spCSLDB_get_DatosProductos", parametros);
+                if (ds.Tables.Count == 7)
+                {
+                    //Textos
+                    DataTableReader dr = ds.Tables[0].CreateDataReader();
+                    List<CH_Textos> listaTextos = new List<CH_Textos>();
+                    CH_Textos itemTexto;
+                    while (dr.Read())
+                    {
+                        itemTexto = new CH_Textos();
+                        itemTexto.Texto = dr.GetString(dr.GetOrdinal("Texto"));
+                        itemTexto.NumPosition = dr.GetInt32(dr.GetOrdinal("NumPosition"));
+                        listaTextos.Add(itemTexto);
+                    }
+                    dataResult.ListaTextos = listaTextos;
+                    //Imagenes
+                    DataTableReader drImg = ds.Tables[1].CreateDataReader();
+                    List<CH_Imagen> listaImagenes = new List<CH_Imagen>();
+                    CH_Imagen itemImagen;
+                    while (drImg.Read())
+                    {
+                        itemImagen = new CH_Imagen();
+                        itemImagen.Alt = drImg.GetString(drImg.GetOrdinal("TextoAlternativo"));
+                        itemImagen.Title = drImg.GetString(drImg.GetOrdinal("TituloImagen"));
+                        itemImagen.UrlImagen = drImg.GetString(drImg.GetOrdinal("UrlImagen"));
+                        itemImagen.NumPosition = drImg.GetInt32(drImg.GetOrdinal("NumPosition"));
+                        listaImagenes.Add(itemImagen);
+                    }
+                    dataResult.ListaImagenes = listaImagenes;
+
+                    //Familias de producto
+                    DataTableReader drFamilia = ds.Tables[2].CreateDataReader();
+                    List<CH_Familia> listaFamilias = new List<CH_Familia>();
+                    CH_Familia itemFamilia;
+                    while(drFamilia.Read())
+                    {
+                        itemFamilia = new CH_Familia();
+                        itemFamilia.IdFamilia = drFamilia.GetInt32(drFamilia.GetOrdinal("IDFamilia"));
+                        itemFamilia.Descripcion = drFamilia.GetString(drFamilia.GetOrdinal("Descripcion"));
+                        itemFamilia.CantidadProductos = drFamilia.GetInt32(drFamilia.GetOrdinal("Total"));
+                        listaFamilias.Add(itemFamilia);
+                    }
+                    dataResult.ListaFamilias = listaFamilias;
+
+                    //Colores 
+                    DataTableReader drColor = ds.Tables[3].CreateDataReader();
+                    List<CH_Color> listaColores = new List<CH_Color>();
+                    CH_Color itemColor;
+                    while (drColor.Read())
+                    {
+                        itemColor = new CH_Color();
+                        itemColor.IdColor = drColor.GetInt32(drColor.GetOrdinal("id_colorRopa"));
+                        itemColor.Descripcion = drColor.GetString(drColor.GetOrdinal("descripcion"));
+                        listaColores.Add(itemColor);
+                    }
+                    dataResult.ListaColor = listaColores;
+
+                    //Tallas 
+                    DataTableReader drTallas = ds.Tables[4].CreateDataReader();
+                    List<CH_Talla> listaTallas = new List<CH_Talla>();
+                    CH_Talla itemTalla;
+                    while (drTallas.Read())
+                    {
+                        itemTalla = new CH_Talla();
+                        itemTalla.IdTalla = drTallas.GetInt32(drTallas.GetOrdinal("id_tallaRopa"));
+                        itemTalla.Descripcion = drTallas.GetString(drTallas.GetOrdinal("descripcion"));
+                        itemTalla.Descripcion = itemTalla.Descripcion.ToUpper().Replace("TALLA", "").Trim();
+                        listaTallas.Add(itemTalla);
+                    }
+                    dataResult.ListaTallas = listaTallas;
+
+                    // Cantidad total de registros del resultado de búsqueda
+                    DataTableReader drTP = ds.Tables[5].CreateDataReader();
+                    while (drTP.Read())
+                    {
+                        dataResult.TotalRegistros = drTP.GetInt32(drTP.GetOrdinal("Registros"));
+                        dataResult.Completado = true;
+                        break;
+                    }
+                    // Resultado de la búsqueda
+                    DataTableReader drProductos = ds.Tables[6].CreateDataReader();
+                    List<CH_Producto> listaProductos = new List<CH_Producto>();
+                    CH_Producto itemProducto;
+                    while (drProductos.Read())
+                    {
+                        CH_Imagen imgProducto = new CH_Imagen();
+                        itemProducto = new CH_Producto();
+                        itemProducto.IdProducto = drProductos.GetString(drProductos.GetOrdinal("IDProducto"));
+                        imgProducto.UrlImagen = drProductos.GetString(drProductos.GetOrdinal("UrlImagen"));
+                        itemProducto.ImagenPrincipal = imgProducto;
+                        itemProducto.NombreProducto = drProductos.GetString(drProductos.GetOrdinal("Producto"));
+                        itemProducto.MinPrecio = drProductos.GetDecimal(drProductos.GetOrdinal("MinPrecio"));
+                        //itemProducto.MinPrecioMayoreo = drProductos.GetDecimal(drProductos.GetOrdinal("Descripcion"));
+                        listaProductos.Add(itemProducto);
+                    }
+                    dataResult.ListaProductosResultado = listaProductos;
+                    dataResult.TotalPaginas = (dataResult.TotalRegistros / _datos.MaxRows) + (dataResult.TotalRegistros % _datos.MaxRows > 0 ? 1 : 0);
+                    dataResult.RegistroInicial = dataResult.TotalRegistros > 0 ? ((dataResult.NumPagina - 1) * dataResult.MaxRows) + 1 : 0;
+                    dataResult.RegistroFinal = (dataResult.NumPagina * dataResult.MaxRows) > dataResult.TotalRegistros ? dataResult.TotalRegistros : (dataResult.NumPagina * dataResult.MaxRows);
+                }
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

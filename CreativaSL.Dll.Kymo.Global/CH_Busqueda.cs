@@ -17,9 +17,19 @@ namespace CreativaSL.Dll.Kymo.Global
         public CH_Busqueda()
         {
             _ListaProductosResultado = new List<CH_Producto>();
+            _ListaTextos = new List<CH_Textos>();
+            _ListaImagenes = new List<CH_Imagen>();
+            _ListaFamilias = new List<CH_Familia>();
+            _ListaTallas = new List<CH_Talla>();
+            _ListaColor = new List<CH_Color>();
             _Talla = new CH_Talla();
             _Color = new CH_Color();
             _Familia = new CH_Familia();
+            _ListaCantRegistros = new List<int>();
+            _ListaCantRegistros.Add(10);
+            _ListaCantRegistros.Add(15);
+            _ListaCantRegistros.Add(20);
+            _ListaCantRegistros.Add(25);
         }
 
 
@@ -66,6 +76,38 @@ namespace CreativaSL.Dll.Kymo.Global
         }
 
         #endregion
+
+
+        private List<CH_Textos> _ListaTextos;
+        /// <summary>
+        /// Lista que contiene los textos a mostrar en la página Web
+        /// </summary>
+        public List<CH_Textos> ListaTextos
+        {
+            get { return _ListaTextos; }
+            set { _ListaTextos = value; }
+        }
+
+        private List<CH_Imagen> _ListaImagenes;
+        /// <summary>
+        /// Lista que contiene las imágenes a mostrar en la página Web 
+        /// </summary>
+        public List<CH_Imagen> ListaImagenes
+        {
+            get { return _ListaImagenes; }
+            set { _ListaImagenes = value; }
+        }
+
+        private int _IdTipoBusqueda;
+        /// <summary>
+        /// Identificador del tipo de búsqueda principal para determinas submenús a mostrar
+        /// </summary>
+        public int IdTipoBusqueda
+        {
+            get { return _IdTipoBusqueda; }
+            set { _IdTipoBusqueda = value; }
+        }
+
 
         private bool _Hombre;
         /// <summary>
@@ -218,12 +260,91 @@ namespace CreativaSL.Dll.Kymo.Global
         }
 
         private List<CH_Producto> _ListaProductosResultado;
-
+        /// <summary>
+        /// Productos como resultado de una búsqueda
+        /// </summary>
         public List<CH_Producto> ListaProductosResultado
         {
             get { return _ListaProductosResultado; }
             set { _ListaProductosResultado = value; }
         }
+
+        private List<CH_Familia> _ListaFamilias;
+        /// <summary>
+        /// Lista de familias de productos que forman parte del resultado de la búsqueda
+        /// </summary>
+        public List<CH_Familia> ListaFamilias
+        {
+            get { return _ListaFamilias; }
+            set { _ListaFamilias = value; }
+        }
+
+        private List<CH_Talla> _ListaTallas;
+        /// <summary>
+        /// Lista de tallas que forman parte del resultado de la búsqueda
+        /// </summary>
+        public List<CH_Talla> ListaTallas 
+        {
+            get { return _ListaTallas; }
+            set { _ListaTallas = value; }
+        }
+
+        private List<CH_Color> _ListaColor;
+        /// <summary>
+        /// Lista de colores que forman parte del resultado de la búsqueda
+        /// </summary>
+        public List<CH_Color> ListaColor
+        {
+            get { return _ListaColor; }
+            set { _ListaColor = value; }
+        }
+
+        private int _TotalPaginas;
+        /// <summary>
+        /// Total de páginas como resultado de la búsqueda
+        /// </summary>
+        public int TotalPaginas
+        {
+            get { return _TotalPaginas; }
+            set { _TotalPaginas = value; }
+        }
+
+        private int _TipoOrden;
+        /// <summary>
+        /// Identificador del ordenamiento a utilizar en la búsqueda
+        /// </summary>
+        public int TipoOrden
+        {
+            get { return _TipoOrden; }
+            set { _TipoOrden = value; }
+        }
+
+        private int _RegistroInicial;
+
+        public int RegistroInicial
+        {
+            get { return _RegistroInicial; }
+            set { _RegistroInicial = value; }
+        }
+
+        private int _RegistroFinal;
+
+        public int RegistroFinal
+        {
+            get { return _RegistroFinal; }
+            set { _RegistroFinal = value; }
+        }
+
+        private List<int> _ListaCantRegistros;
+        /// <summary>
+        /// Lista con la cantidad de registros que se pueden obtener en una búsqueda
+        /// </summary>
+        public List<int> ListaCantidadRegistros
+        {
+            get { return _ListaCantRegistros; }
+            set { _ListaCantRegistros = value; }
+        }
+
 
     }
 }

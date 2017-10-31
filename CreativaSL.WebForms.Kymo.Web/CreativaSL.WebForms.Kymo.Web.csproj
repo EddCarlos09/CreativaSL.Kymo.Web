@@ -294,6 +294,8 @@
     <Content Include="assets\js\jquery.countdown.min.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\plugins.js" />
+    <Content Include="assets\js\productos.js" />
+    <Content Include="assets\js\sliderPrice.js" />
     <Content Include="assets\js\slider\jquery.nivo.slider.pack.js" />
     <Content Include="assets\js\slider\nivo-active.js" />
     <Content Include="assets\js\vendor\jquery-1.12.0.min.js" />
