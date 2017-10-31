@@ -104,5 +104,24 @@ namespace CreativaSL.Dll.Kymo.Negocio
             }
         }
 
+        /// <summary>
+        /// Obtener datos para mostrar en la página productos
+        /// </summary>
+        /// <param name="_datos">Objeto con datos de conexión y parámetros</param>
+        /// <returns></returns>
+        public CH_Busqueda ObtenerDatosProductos(CH_Busqueda _datos)
+        {
+            try
+            {
+                CH_ProductoDatos dataProd = new CH_ProductoDatos();
+                return dataProd.ObtenerDatosProductos(_datos);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

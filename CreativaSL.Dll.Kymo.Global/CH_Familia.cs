@@ -83,5 +83,16 @@ namespace CreativaSL.Dll.Kymo.Global
             set { _Descripcion = value; }
         }
 
+        private int _CantidadProductos;
+        /// <summary>
+        /// Cantidad de productos asociados a la categoría
+        /// </summary>
+        public int CantidadProductos
+        {
+            get { return _CantidadProductos; }
+            set { _CantidadProductos = value; }
+        }
+
+
     }
 }

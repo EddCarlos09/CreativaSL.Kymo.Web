@@ -471,6 +471,9 @@ select.form-control {
     top: 50%;
     width: 5px;
 }
+.erase-area a:before{
+background:#fff none repeat scroll 0 0 !important;
+}
 .banner-text > p {
     color: #999999;
 }
@@ -876,7 +879,7 @@ select.form-control {
     width: 55px;
 }
 .sort.product-type select {
-    width: 150px;
+    width: 180px;
 }
 .sort {
     float: left;
@@ -1027,6 +1030,16 @@ select.form-control {
     content: "-";
     font-size: 20px;
 }
+.erase .erase-area {
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: -5px;
+    width: 40px;
+}
 .product-cat ul li a {
     color: #333;
     font-size: 14px;
@@ -1124,7 +1137,7 @@ select.form-control {
     margin-bottom: 10px;
     margin-right: 20px;
 }
-.color-filter li a {
+/*.color-filter li a {
     background: #fff none repeat scroll 0 0;
     display: block;
     height: 20px;
@@ -1132,6 +1145,19 @@ select.form-control {
     transition: all 0.3s ease 0s;
     width: 20px;
     border: 2px solid transparent;
+}*/
+.color-filter li a {
+    background: #fff none repeat scroll 0 0;
+   
+    height: 20px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    border: 2px solid transparent;
+    padding:5px;
+    color:#abdc40;
+}
+.order li + li {
+    margin:0px !important;
 }
 .color-filter li a:hover,
 .color-filter li a.active {

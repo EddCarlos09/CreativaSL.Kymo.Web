@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmProducto.aspx.cs" Inherits="CreativaSL.WebForms.Kymo.Web.frmProducto" %>
 
 <asp:Content ContentPlaceHolderID="cphPrincipal" runat="server">
-<!--breadcumb area start -->
+        <!--breadcumb area start -->
          <%  var imgTitle = _dataProduct.ListaImagenes.Find(x => x.NumPosition == 1);
             if (imgTitle == null)
             {
