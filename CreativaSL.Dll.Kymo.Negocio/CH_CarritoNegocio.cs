@@ -92,5 +92,64 @@ namespace CreativaSL.Dll.Kymo.Negocio
             }
         }
 
+        /// <summary>
+        /// Aplicar un cupón al carrito de compras
+        /// </summary>
+        /// <param name="_idCliente">Identificador del cliente logueado o del cliente anónimo.</param>
+        /// <param name="_esAnonimo">Bandera para identificar si un usuario está logueado o no.</param>
+        /// <param name="_conexion">Cadena de conexión para acceso.</param>
+        /// <returns>Retorna un objeto carrito con los totales y el resultado</returns>
+        public CH_Carrito EliminarCuponACarrito(string _idCliente, bool _esAnonimo, string _conexion)
+        {
+            try
+            {
+                CH_CarritoDatos dataCart = new CH_CarritoDatos();
+                return dataCart.EliminarCuponACarrito(_idCliente, _esAnonimo, _conexion);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Eliminar un producto al carrito de compras del cliente
+        /// </summary>
+        /// <param name="_idCliente">Identificador del cliente logueado o del cliente anónimo.</param>
+        /// <param name="_esAnonimo">Bandera para identificar si un usuario está logueado o no.</param>
+        /// <param name="_producto">Datos del producto a agregar al carrito de compras.</param>
+        /// <param name="_conexion">Cadena de conexión para acceso </param>
+        public int DismiinuirsProductoACarrito(string _idCliente, bool _esAnonimo, CH_VentaDetalle _producto, string _conexion)
+        {
+            try
+            {
+                CH_CarritoDatos dataCart = new CH_CarritoDatos();
+                return dataCart.DisminuirProductoACarrito(_idCliente, _esAnonimo, _producto, _conexion);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Aumentar un producto al carrito de compras del cliente
+        /// </summary>
+        /// <param name="_idCliente">Identificador del cliente logueado o del cliente anónimo.</param>
+        /// <param name="_esAnonimo">Bandera para identificar si un usuario está logueado o no.</param>
+        /// <param name="_producto">Datos del producto a agregar al carrito de compras.</param>
+        /// <param name="_conexion">Cadena de conexión para acceso </param>
+        public int AumentarProductoACarrito(string _idCliente, bool _esAnonimo, CH_VentaDetalle _producto, string _conexion)
+        {
+            try
+            {
+                CH_CarritoDatos dataCart = new CH_CarritoDatos();
+                return dataCart.AumentarrProductoACarrito(_idCliente, _esAnonimo, _producto, _conexion);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

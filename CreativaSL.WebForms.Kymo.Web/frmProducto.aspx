@@ -105,16 +105,18 @@
                                         <select id="input-sort-color">
                                             <option value="0" selected>Seleccione</option>
                                             <% foreach (var itemColor in _dataProduct.Producto.ListaColores)
-                                     {
-                                         Response.Write("<option value='" + itemColor.IdColor + "'>" + itemColor.Descripcion + "</option>");
-                                     } %>
+                                             {
+                                                 Response.Write("<option value='" + itemColor.IdColor + "'>" + itemColor.Descripcion + "</option>");
+                                             } %>
                                         </select>
+                                        <div><span class="errorColor" id="errorColor"></span></div>
                                     </div>
                                     <div class="sort product-type">
                                         <label>Talla: </label>
                                         <select id="input-sort-size">
                                             <option value="0" selected="">Seleccione</option>
                                         </select>
+                                        <div> <span class="errorTalla" id="errorTalla"></span></div>
                                     </div>
                                 </div>
                                 <% } %>
@@ -126,10 +128,11 @@
                                                 <div class="cart-quantity">
                                                     <div class="cart-plus-minus">
                                                         <div id="decProd" class="dec qtybutton">-</div>
-                                                        <input type="text" value="1" name="qtybutton" id="qtybutton" class="cart-plus-minus-box" data-max="5" data-min="1">
+                                                        <input type="text" value="1" data-ropa="<%=_dataProduct.Producto.EsRopa %>" name="qtybutton" id="qtybutton" class="cart-plus-minus-box" data-max="5" data-min="1">
                                                         <div id="incProd" class="inc qtybutton">+</div>
                                                     </div>
                                                 </div>
+                                                <div><span class="ErrorMin" id="ErrorMin"></span></div>
                                             </div>
                                         </form>
                                     </div>
@@ -142,9 +145,10 @@
                                         <span id="default-error" class="buy-button-error-message" data-error-code="product.buy.server.error">Se ha producido un error, vuelva a intentarlo más tarde</span>
                                     </div>
                                     <ul>                                    
-                                        <li><a href="#" id="addCart" data-tooltip="Add To Cart" data-sku="<%=_dataProduct.Producto.IdProducto %>" class="add-cart add-cart-text" data-placement="left" tabindex="0">Add To Cart<i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="#" id="addCart" data-tooltip="Add To Cart" data-ropa="<%=_dataProduct.Producto.EsRopa %>" data-sku="<%=_dataProduct.Producto.IdProducto %>" class="add-cart add-cart-text" data-placement="left" tabindex="0">Add To Cart<i class="fa fa-cart-plus"></i></a></li>
                                     </ul>
                                 </div>
+                                <div><span class="ErrorAddCart" id="ErrorAddCart"></span></div>
                             </div>
                         </div>
                     </div>

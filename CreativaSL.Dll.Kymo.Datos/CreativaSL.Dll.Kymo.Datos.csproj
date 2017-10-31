@@ -66,6 +66,7 @@
     <Compile Include="RR_PrecioProductosDatos.cs" />
     <Compile Include="RR_TallasDatos.cs" />
     <Compile Include="RR_TerminosCondicionesDatos.cs" />
+    <Compile Include="RR_ValoracionProductosDatos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CreativaSL.Dll.Kymo.Global\CreativaSL.Dll.Kymo.Global.csproj">

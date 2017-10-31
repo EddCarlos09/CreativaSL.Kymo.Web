@@ -2395,3 +2395,8 @@ p.error {
     display:none!important;
     visibility:hidden!important;
 }
+
+/*Color de las estrellas con las que se califica un producto*/
+.estrellas a{
+    color:#abcd40;
+}
