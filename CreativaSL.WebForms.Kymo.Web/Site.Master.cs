@@ -14,6 +14,7 @@ namespace CreativaSL.WebForms.Kymo.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             VerificarDatosConfiguracion();
+            //Cargar datos del carrito
         }
 
         /// <summary>

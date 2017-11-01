@@ -10,14 +10,12 @@ using System.Web.UI.WebControls;
 
 namespace CreativaSL.WebForms.Kymo.Web
 {
-    public partial class sfrmAddItemCart : System.Web.UI.Page
+    public partial class sfrmEliminarItemCart : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //string idPedido = HttpContext.Current.Profile.PropertyValues["IDPedido"].PropertyValue != null ? HttpContext.Current.Profile.PropertyValues["IDPedido"].PropertyValue.ToString() : string.Empty;
-                
                 if (Request.Form["IDProducto"] != null
                     && Request.Form["IDTalla"] != null
                     && Request.Form["IDColor"] != null
@@ -37,7 +35,7 @@ namespace CreativaSL.WebForms.Kymo.Web
                     string idCliente = HttpContext.Current.Profile.UserName;
                     bool esAnonimo = !Request.IsAuthenticated;
                     CH_CarritoNegocio cartNeg = new CH_CarritoNegocio();
-                    int resultado = cartNeg.AgregarProductoACarrito(idCliente, esAnonimo, datos, conexion);
+                    int resultado = cartNeg.DismiinuirsProductoACarrito(idCliente, esAnonimo, datos, conexion);
                     var json = JsonConvert.SerializeObject(new Result { resultado = resultado });
                     Response.Clear();
                     Response.ContentType = "application/text;";

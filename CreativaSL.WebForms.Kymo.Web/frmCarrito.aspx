@@ -39,13 +39,13 @@
                 <div class="row">
                     <div class="product-area">
                         <div class="title-tab-product-category">
-                            <div class="col-md-12 text-center pb-60">
+                            <%--<div class="col-md-12 text-center pb-60">
                                 <ul class="nav heading-style-3" role="tablist">
                                     <li role="presentation" class="active shadow-box"><a href="#cart" aria-controls="cart" role="tab" data-toggle="tab"><span>01</span> Carrito de compras</a></li>
                                     <li role="presentation" class="shadow-box"><a href="#checkout" aria-controls="checkout" role="tab" data-toggle="tab"><span>02</span>Datos </a></li>
                                     <li role="presentation" class="shadow-box"><a href="#complete-order" aria-controls="complete-order" role="tab" data-toggle="tab"><span>03</span> Orden completada</a></li>
                                 </ul>
-                            </div>
+                            </div>--%>
                         </div>
                         <div class="clearfix"></div>
                         <div class="col-sm-12">
@@ -57,7 +57,7 @@
                                     <div class="cart-page-area">
                                        <form method="post" action="#">
                                                    <div class="table-responsive mb-20">
-                                                    <table class="shop_table-2 cart table">
+                                                    <table class="shop_table-2 cart table" id="TablaProducto">
                                                         <thead>
                                                             <tr>
                                                                 <th class="product-name ">Producto</th>
@@ -86,6 +86,7 @@
                                                                                     <div class="dec qtybutton2">-</div>
                                                                                     <input value="<%=itemDet.Cantidad%>" data-sku="<%=itemDet.Producto.IdProducto%>" data-talla ="<%=itemDet.Producto.Talla.IdTalla %>" data-color="<%=itemDet.Producto.Color.IdColor %>" name="qtybutton" class="cart-plus-minus-box" type="text">
                                                                                     <div class="inc qtybutton2">+</div>
+                                                                                    
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -126,6 +127,7 @@
                                                                 } %>
                                                         </tbody>
                                                     </table>
+                                                       <div><span id="Errords" class="Errror" style="top: 87%; left: 55%; width: 271px; display: block;"></span></div>
                                                     </div>
                                                     <div class="cart-bottom-area">
                                                         <div class="row">
@@ -143,7 +145,8 @@
                                                                                 <p>Introduce tu código aquí</p>
                                                                             </div>                                           
                                                                             <div class="input-box input-box-2 mb-20">
-                                                                                <input type="text" placeholder="Cupón" class="info" name="cupon" id="cupon"> 
+                                                                                <input type="text" placeholder="Cupón" class="info" name="cupon" id="cupon">
+                                                                                <span class="error" id="errorCupon" style="display: block;"></span>
                                                                             </div>
                                                                             <a href="#" class="btn-def btn2" id="btnAplicarCupon">Canjear cupón</a>
                                                                         </div>
@@ -156,6 +159,7 @@
                                                                             </div>                                           
                                                                             <div class="input-box input-box-2 mb-20">
                                                                                <h5 id="codigoCupon"></h5>
+                                                                                <span class="errorEli" id="errorEliCupon" style="display: block;"></span>
                                                                             </div>
                                                                             <a href="#" class="btn-def btn2" id="btnEliminarCupon">Eliminar cupón</a>
                                                                         </div>
@@ -181,12 +185,13 @@
                                                                                 <label for="pay-toggle3">Entrega en sucursal</label>
                                                                             </div>
                                                                             <%--<p><a href="#">Calcular envío</a></p>--%>
+                                                                         <div><span class="errorEntr" id="ValEntraga" style="display: block;"></span></div>
                                                                      </div>
                                                                      <div class="process-cart-total">
                                                                          <p>Total <span id="cartTT"><%Response.Write(string.Format(esMX,"{0:c}", _dataCart.Total)); %></span></p>
                                                                      </div>
                                                                      <div class="process-checkout-btn text-right">
-                                                                         <a class="btn-def btn2" href="#">Siguiente</a>
+                                                                         <a class="btn-def btn2" id="validarR" href="#">Siguiente</a>
                                                                      </div>
                                                                 </div>
                                                             </div>
@@ -196,7 +201,7 @@
                                     </div>
                                     <!-- cart are end-->
                                 </div>
-                                <div role="tabpanel" class="tab-pane  fade in " id="checkout">
+<%--                                <div role="tabpanel" class="tab-pane  fade in " id="checkout">
                                     <!-- Checkout are start-->
                                     <div class="checkout-area">
                                         <div class="">
@@ -555,7 +560,7 @@
                                         </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--%>
                             </div>
                         </div>
                         </div>
@@ -569,11 +574,9 @@
 
 <asp:Content ContentPlaceHolderID="cphScripts" runat="server">
     <script src="../assets/js/carrito.js"></script>
-     <script src="../assets/js/delCuponCarrito.js"></script>
     <script>
         jQuery(document).ready(function () {
             Carrito.init();
-            DelCuponCarrito.init();
         });
     </script>
 </asp:Content>

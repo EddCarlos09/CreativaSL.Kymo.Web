@@ -27,25 +27,66 @@
                             document.getElementById('codigoCupon').innerHTML = codigoCupon;
                             $('#cartDT').text(result.descuento);
                             $('#cartTT').text(result.total);
+                            $('.error').removeClass('color');
+                            document.getElementById('errorCupon').innerHTML = '';
+                            $('.errorEli').removeClass('color');
+                            document.getElementById('errorEliCupon').innerHTML = '';
                         }
                         else
                         {
-                            //result.mensaje
-                            //Mostrar mensaje de error
+                            $('.error').addClass('color');
+                            document.getElementById('errorCupon').innerHTML = result.mensaje;
                         }
                     },
                     error: function () {
-                        //Mostrar mensaje de error
+                        $('.error').addClass('color');
+                        document.getElementById('errorCupon').innerHTML = "Error de conexión. Intente más tarde";
                     }
                 });
             }
             else
             {
-                console.log("Ingrese un código válido")
+                $('.error').addClass('color');
+                document.getElementById('errorCupon').innerHTML = "Ingrese un código válido";
             }
             return false;
         });
 
+        $("#btnEliminarCupon").click(function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '../sfrmDelCupon.aspx',
+                contentType: false,
+                dataType: "json",
+                processData: false,
+                cache: false,
+                success: function (result) {
+                    if (result.resultado == 1) {
+                        var codigoCupon = $('#cupon').val();
+                        $('#contCod').addClass('hidden');
+                        $('#cuponInsert').removeClass('hidden');
+                        $('#codigoCupon').val('');
+                        document.getElementById("cupon").value = "";
+                        $('#cartDT').text(result.descuento);
+                        $('#cartTT').text(result.total);
+                        $('.error').removeClass('color');
+                        document.getElementById('errorCupon').innerHTML = '';
+                        $('.errorEli').addClass('color');
+                        document.getElementById('errorEliCupon').innerHTML = '';
+                    }
+                    else {
+                        $('.errorEli').addClass('color');
+                        document.getElementById('errorEliCupon').innerHTML = result.mensaje;
+                    }
+                },
+                error: function () {
+                    $('.errorEli').addClass('color');
+                    document.getElementById('errorEliCupon').innerHTML = "Error de conexión. Intente más tarde";
+                }
+            });
+            return false;
+        });
         
         $("a[class=removeCart]").click(function (event) {
             event.preventDefault();
@@ -79,7 +120,6 @@
                     sidebar.appendChild(nuevoDivElemento);
                     nuevoDivElemento.appendChild(nuevaImagen);
                     $('#load').toggle(1000);
-                    
                 },
                 success: function (result) {
                     //Eliminar la fila correspondiente
@@ -113,6 +153,31 @@
             });
 
             return false;
+        });
+
+        $("#validarR").click(function (event) {
+            event.preventDefault();
+            var Radio = document.getElementsByName("ship");
+            var ship = -1
+            if ($('#TablaProducto >tbody >tr').length == 0) {
+                $('.errorEntr').addClass('color');
+                document.getElementById('ValEntraga').innerHTML = "¡No tiene campras en sus carrito!";
+            }
+            else
+            {
+                for (var i = 0; i < Radio.length; i++) {
+                    if (Radio[i].checked) {
+                        ship = i;
+                        $('.errorEntr').removeClass('color');
+                        document.getElementById('ValEntraga').innerHTML = '';
+                        location.href = "/frmCarritoDatos.aspx";
+                    }
+                }
+                if (ship == -1) {
+                    $('.errorEntr').addClass('color');
+                    document.getElementById('ValEntraga').innerHTML = "Seleccion el medio de entrega del producto";
+                }
+            }
         });
     };
     return {

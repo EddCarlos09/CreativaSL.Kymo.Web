@@ -116,6 +116,8 @@
     <Content Include="assets\fonts\slick.svg" />
     <Content Include="assets\images\team\branding1.png" />
     <Content Include="assets\js\cargarTallas.js" />
+    <Content Include="assets\js\Estado.js" />
+    <Content Include="assets\js\delCarritoAddItem.js" />
     <Content Include="assets\js\delCuponCarrito.js" />
     <Content Include="assets\js\carrito.js" />
     <Content Include="assets\js\carritoAddItem.js" />
@@ -296,6 +298,8 @@
     <Content Include="assets\js\logout.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\plugins.js" />
+    <Content Include="assets\js\productos.js" />
+    <Content Include="assets\js\sliderPrice.js" />
     <Content Include="assets\js\slider\jquery.nivo.slider.pack.js" />
     <Content Include="assets\js\slider\nivo-active.js" />
     <Content Include="assets\js\vendor\jquery-1.12.0.min.js" />
@@ -451,9 +455,12 @@
     <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="favicon.ico" />
     <Content Include="frmAppend.aspx" />
     <Content Include="frmAviso.aspx" />
     <Content Include="frmCarrito.aspx" />
+    <Content Include="frmCarritoDatos.aspx" />
+    <Content Include="frmCarritoDatosFinal.aspx" />
     <Content Include="frmContactanos.aspx" />
     <Content Include="frmDefault.aspx" />
     <Content Include="frmDetallePedidos.aspx" />
@@ -471,6 +478,8 @@
     <Content Include="obj\Debug\CreativaSL.WebForms.Kymo.Web.pdb" />
     <Content Include="packages.config" />
     <Content Include="sfrmAddCupon.aspx" />
+    <Content Include="sfrmMasItemCart.aspx" />
+    <Content Include="sfrmEliminarItemCart.aspx" />
     <Content Include="sfrmAddItemCart.aspx" />
     <Content Include="sfrmContactanos.aspx" />
     <Content Include="sfrmDelCupon.aspx" />
@@ -562,6 +571,20 @@
     </Compile>
     <Compile Include="frmCarrito.aspx.designer.cs">
       <DependentUpon>frmCarrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarritoDatos.aspx.cs">
+      <DependentUpon>frmCarritoDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCarritoDatos.aspx.designer.cs">
+      <DependentUpon>frmCarritoDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarritoDatosFinal.aspx.cs">
+      <DependentUpon>frmCarritoDatosFinal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCarritoDatosFinal.aspx.designer.cs">
+      <DependentUpon>frmCarritoDatosFinal.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmContactanos.aspx.cs">
       <DependentUpon>frmContactanos.aspx</DependentUpon>
@@ -660,6 +683,20 @@
     </Compile>
     <Compile Include="sfrmAddCupon.aspx.designer.cs">
       <DependentUpon>sfrmAddCupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmMasItemCart.aspx.cs">
+      <DependentUpon>sfrmMasItemCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmMasItemCart.aspx.designer.cs">
+      <DependentUpon>sfrmMasItemCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmEliminarItemCart.aspx.cs">
+      <DependentUpon>sfrmEliminarItemCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmEliminarItemCart.aspx.designer.cs">
+      <DependentUpon>sfrmEliminarItemCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="sfrmAddItemCart.aspx.cs">
       <DependentUpon>sfrmAddItemCart.aspx</DependentUpon>
