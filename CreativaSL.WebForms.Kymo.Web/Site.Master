@@ -34,6 +34,8 @@
     
     <!-- Modernizr JS -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--Cerrrar cession-->
+    
 </head>
 
 <body>
@@ -54,7 +56,7 @@
                                 <ul>
                                     <% if (Request.IsAuthenticated)
                                         { %>
-                                    <li><a href="#">Cerrar Sesión</a></li>
+                                    <li><a href="/Login" id="btnlogout" >Cerrar Sesión</a></li>
                                     <% }
                                     else
                                     { %>
@@ -446,12 +448,14 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="/assets/js/jquery-validation/dist/jquery.validate.min.js"></script>
      <script src="/assets/js/form-elements.js"></script>
-     <script src="/assets/dist/starrr.js"></script>
+     <script src="/assets/dist/starrr.js"></script>    
+    <script src="/assets/js/logout.js"></script>
 
   
     <script>
 			jQuery(document).ready(function() {
 			    FormElements.init();
+			    Logout.init();
 			});
 		</script>
     
@@ -459,9 +463,11 @@
     
     </asp:ContentPlaceHolder>
     <script src="../assets/js/form-validationNews.js"></script>
+    
       <script>
 			jQuery(document).ready(function() {
 			    FormValidatorNews.init();
+			    
 			});
 		</script>
     <script src="../assets/js/main.js"></script>

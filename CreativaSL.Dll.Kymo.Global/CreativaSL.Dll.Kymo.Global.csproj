@@ -82,6 +82,8 @@
     <Compile Include="EM_Testimoniales.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RR_AvisoPrivacidad.cs" />
+    <Compile Include="RR_MiCuenta.cs" />
+    <Compile Include="RR_Pedido.cs" />
     <Compile Include="RR_PrecioJson.cs" />
     <Compile Include="RR_Ropa.cs" />
     <Compile Include="RR_TallasJson.cs" />

@@ -94,7 +94,6 @@ namespace CreativaSL.Dll.Kymo.Global
             get { return _PrecioVenta; }
             set { _PrecioVenta = value; }
         }
-
         private decimal _IvaVenta;
         /// <summary>
         /// Iva por producto
@@ -164,6 +163,27 @@ namespace CreativaSL.Dll.Kymo.Global
             get { return _IdCarritoDetalle; }
             set { _IdCarritoDetalle = value; }
         }
+
+        private string _Folio;
+        /// <summary>
+        /// Folio del producto
+        /// </summary>
+        public string Folio
+        {
+            get { return _Folio; }
+            set { _Folio = value; }
+        }
+
+        private DateTime _FechaVenta;
+        /// <summary>
+        /// Fecha de la venta del producto
+        /// </summary>
+        public DateTime FechaVenta
+        {
+            get { return _FechaVenta; }
+            set { _FechaVenta = value; }
+        }
+
 
     }
 }

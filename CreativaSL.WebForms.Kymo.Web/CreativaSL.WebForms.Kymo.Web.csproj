@@ -293,6 +293,7 @@
     <Content Include="assets\js\jquery-validation\localization\methods_nl.js" />
     <Content Include="assets\js\jquery-validation\localization\methods_pt.js" />
     <Content Include="assets\js\jquery.countdown.min.js" />
+    <Content Include="assets\js\logout.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\plugins.js" />
     <Content Include="assets\js\slider\jquery.nivo.slider.pack.js" />
@@ -455,8 +456,10 @@
     <Content Include="frmCarrito.aspx" />
     <Content Include="frmContactanos.aspx" />
     <Content Include="frmDefault.aspx" />
+    <Content Include="frmDetallePedidos.aspx" />
     <Content Include="frmErrorPage.aspx" />
     <Content Include="frmFAQ.aspx" />
+    <Content Include="frmMiCuenta.aspx" />
     <Content Include="frmNosotros.aspx" />
     <Content Include="frmProducto.aspx" />
     <Content Include="frmProductos.aspx" />
@@ -472,6 +475,7 @@
     <Content Include="sfrmContactanos.aspx" />
     <Content Include="sfrmDelCupon.aspx" />
     <Content Include="sfrmDelItemCart.aspx" />
+    <Content Include="sfrmLogout.aspx" />
     <Content Include="sfrmMunicipios.aspx" />
     <Content Include="sfrmPrecioProductos.aspx" />
     <Content Include="sfrmRegistrar.aspx" />
@@ -573,6 +577,13 @@
     <Compile Include="frmDefault.aspx.designer.cs">
       <DependentUpon>frmDefault.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmDetallePedidos.aspx.cs">
+      <DependentUpon>frmDetallePedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmDetallePedidos.aspx.designer.cs">
+      <DependentUpon>frmDetallePedidos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmErrorPage.aspx.cs">
       <DependentUpon>frmErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -586,6 +597,13 @@
     </Compile>
     <Compile Include="frmFAQ.aspx.designer.cs">
       <DependentUpon>frmFAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMiCuenta.aspx.cs">
+      <DependentUpon>frmMiCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmMiCuenta.aspx.designer.cs">
+      <DependentUpon>frmMiCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmNosotros.aspx.cs">
       <DependentUpon>frmNosotros.aspx</DependentUpon>
@@ -670,6 +688,13 @@
     </Compile>
     <Compile Include="sfrmDelItemCart.aspx.designer.cs">
       <DependentUpon>sfrmDelItemCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sfrmLogout.aspx.cs">
+      <DependentUpon>sfrmLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sfrmLogout.aspx.designer.cs">
+      <DependentUpon>sfrmLogout.aspx</DependentUpon>
     </Compile>
     <Compile Include="sfrmMunicipios.aspx.cs">
       <DependentUpon>sfrmMunicipios.aspx</DependentUpon>

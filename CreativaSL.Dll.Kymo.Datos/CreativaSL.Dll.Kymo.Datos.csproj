@@ -63,6 +63,8 @@
     <Compile Include="EM_TestimonialesDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RR_AvisoPrivacidadDatos.cs" />
+    <Compile Include="RR_MiCuentaDatos.cs" />
+    <Compile Include="RR_PedidoDatos.cs" />
     <Compile Include="RR_PrecioProductosDatos.cs" />
     <Compile Include="RR_TallasDatos.cs" />
     <Compile Include="RR_TerminosCondicionesDatos.cs" />
